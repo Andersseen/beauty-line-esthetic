@@ -77,7 +77,7 @@ export default function Features() {
           <svg className="absolute top-[-250px] w-full h-[500px]">
             <path
               ref={path}
-              className="stroke-white stroke-[1px] fill-none"
+              className="stroke-neutral-900 dark:stroke-neutral-100 stroke-[1px] fill-none"
             ></path>
           </svg>
         </div>

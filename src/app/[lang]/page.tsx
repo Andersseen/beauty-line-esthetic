@@ -1,3 +1,4 @@
+import ContactSection from "@/components/client/form-section";
 import ServicesSection from "@/components/client/services-section";
 import Features from "@/components/pages/Features";
 import Hero from "@/components/pages/Hero";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Features />
       <ServicesSection />
+      <ContactSection />
     </section>
   );
 }
