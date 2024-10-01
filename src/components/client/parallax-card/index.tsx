@@ -34,6 +34,8 @@ const Card: React.FC<CardProps> = ({
   });
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (

@@ -14,6 +14,7 @@ export default function Hero() {
     setTimeout(() => {
       requestAnimationFrame(animate);
     }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const animate = (timestamp: number) => {

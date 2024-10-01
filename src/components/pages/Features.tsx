@@ -12,6 +12,7 @@ export default function Features() {
 
   useEffect(() => {
     setPath(progress);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setPath = (progress: number) => {
