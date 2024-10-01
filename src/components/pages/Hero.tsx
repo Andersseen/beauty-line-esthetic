@@ -1,81 +1,54 @@
-"use client";
-import { useRef, useEffect } from "react";
-import ParticlesHero from "../client/particles-background/particles-hero";
+import { Calendar, Sparkles, Leaf, Heart } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
-  const loader = useRef<HTMLDivElement>(null);
-  const path = useRef<SVGPathElement>(null);
-  const initialCurve = 200;
-  const duration = 600;
-  let start: number | undefined;
-
-  useEffect(() => {
-    setPath(initialCurve);
-    setTimeout(() => {
-      requestAnimationFrame(animate);
-    }, 1000);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const animate = (timestamp: number) => {
-    if (start === undefined) {
-      start = timestamp;
-    }
-    const elapsed = timestamp - start;
-
-    const newCurve = easeOutQuad(elapsed, initialCurve, -200, duration);
-    setPath(newCurve);
-
-    if (loader.current) {
-      loader.current.style.top =
-        easeOutQuad(elapsed, 0, -loaderHeight(), duration) + "px";
-    }
-
-    if (elapsed < duration) {
-      requestAnimationFrame(animate);
-    }
-  };
-
-  const easeOutQuad = (
-    time: number,
-    start: number,
-    end: number,
-    duration: number
-  ) => {
-    return -end * (time /= duration) * (time - 2) + start;
-  };
-
-  const loaderHeight = () => {
-    if (loader.current) {
-      const loaderBounds = loader.current.getBoundingClientRect();
-      return loaderBounds.height;
-    }
-    return 0;
-  };
-
-  const setPath = (curve: number) => {
-    const width = window.innerWidth;
-    const height = loaderHeight();
-    if (path.current) {
-      path.current.setAttribute(
-        "d",
-        `M0 0
-        L${width} 0
-        L${width} ${height}
-        Q${width / 2} ${height - curve} 0 ${height}
-        L0 0`
-      );
-    }
-  };
-
   return (
-    <main className="flex items-center justify-center h-screen">
-      <ParticlesHero />
-      <div ref={loader} className="fixed w-full h-[calc(100vh+200px)] z-50">
-        <svg className="w-full h-full">
-          <path ref={path} className="stroke-black stroke-[1px]"></path>
-        </svg>
+    <div className="min-h-screen w-full [background:radial-gradient(125%_125%_at_50%_10%,#ffe4e6_40%,#fecdd3_100%)]  flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl w-full space-y-8">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900">
+              Descubre tu belleza natural
+            </h1>
+            <p className="text-xl sm:text-2xl text-gray-600">
+              Tratamientos personalizados para realzar tu belleza interior y
+              exterior
+            </p>
+
+            <div className="flex justify-center lg:justify-start space-x-8 pt-4">
+              <div className="flex flex-col items-center">
+                <Calendar className="h-8 w-8 text-purple-600" />
+                <span className="mt-2 text-sm text-gray-600">
+                  Horarios flexibles
+                </span>
+              </div>
+              <div className="flex flex-col items-center">
+                <Sparkles className="h-8 w-8 text-purple-600" />
+                <span className="mt-2 text-sm text-gray-600">
+                  Resultados brillantes
+                </span>
+              </div>
+              <div className="flex flex-col items-center">
+                <Leaf className="h-8 w-8 text-purple-600" />
+                <span className="mt-2 text-sm text-gray-600">
+                  Productos naturales
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 mt-12 lg:mt-0">
+            <div className="relative h-80 sm:h-96 lg:h-[500px]">
+              <Image
+                src="/placeholder.svg?height=500&width=500"
+                alt="Tratamiento de belleza"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

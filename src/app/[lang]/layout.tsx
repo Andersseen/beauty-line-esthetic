@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Web Landing Boilerplate",
+  title: "Beauty Salon",
   description: "Created by Andersseen",
 };
 

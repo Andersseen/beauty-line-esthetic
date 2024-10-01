@@ -66,7 +66,7 @@ export default function Features() {
   };
 
   return (
-    <div className="flex items-center justify-center w-full h-full">
+    <div className="flex items-center justify-center w-full h-full bg-main-300">
       <div className="flex flex-col">
         <div className="relative w-full h-px mb-5">
           <div
