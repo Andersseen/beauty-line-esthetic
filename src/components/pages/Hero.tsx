@@ -1,4 +1,4 @@
-import { Calendar, Sparkles, Leaf, Heart } from "lucide-react";
+import { Calendar, Sparkles, Leaf } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
