@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Providers from "./providers";
 import Footer from "@/components/client/footer";
 import Header from "@/components/client/header";
 
@@ -39,11 +38,10 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <Providers>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </Providers>
+
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
