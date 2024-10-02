@@ -1,6 +1,4 @@
-import React from "react";
 import Content from "./content";
-import { BackgroundBeamsWithCollision } from "../background-beams-with-collision";
 
 export default function Footer() {
   return (
@@ -9,9 +7,7 @@ export default function Footer() {
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="fixed bottom-0 h-[800px] w-full">
-        <BackgroundBeamsWithCollision>
-          <Content />
-        </BackgroundBeamsWithCollision>
+        <Content />
       </div>
     </div>
   );

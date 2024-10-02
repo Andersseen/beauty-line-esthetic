@@ -1,11 +1,10 @@
-import Form from "./form";
 import { Globe } from "./globe";
 
 export default function ContactSection() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-background flex justify-center">
       <div className="w-full px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+        <div className="grid gap-6  items-center">
           {/* Content - hidden on mobile, visible on desktop */}
           <div className="hidden lg:block space-y-4 relative w-full h-full">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -53,8 +52,6 @@ export default function ContactSection() {
             </ul>
             <Globe className="absolute right-0 md:-right-10 -bottom-80 md:-bottom-96" />
           </div>
-          {/* Form */}
-          <Form />
         </div>
       </div>
     </section>

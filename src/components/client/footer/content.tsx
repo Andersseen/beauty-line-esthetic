@@ -1,6 +1,6 @@
 export default function Content() {
   return (
-    <div className="bg-neutral-700 py-8 px-12 h-full w-full flex flex-col justify-between">
+    <div className="bg-main-300 py-8 px-12 h-full w-full flex flex-col justify-between">
       <Section1 />
       <Section2 />
     </div>
