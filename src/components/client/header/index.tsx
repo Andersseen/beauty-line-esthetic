@@ -5,7 +5,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { background, opacity } from "./anim";
 import Nav from "./nav";
-import ThemeSwitcher from "@/components/client/theme-switcher";
 
 const Index: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
@@ -48,9 +47,7 @@ const Index: React.FC = () => {
           variants={opacity}
           animate={!isActive ? "open" : "closed"}
           className="absolute right-0 flex gap-7"
-        >
-          <ThemeSwitcher />
-        </motion.div>
+        ></motion.div>
       </div>
       <motion.div
         variants={background}
