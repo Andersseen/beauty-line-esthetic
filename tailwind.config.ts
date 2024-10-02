@@ -79,24 +79,24 @@ const config: Config = {
         light: {
           layout: {}, // light theme layout tokens
           colors: {
-            background: "#fef3eb",
-            foreground: "#150015",
+            background: "#fae9e9",
+            foreground: "#40111c",
             secondary: {
-              DEFAULT: "#f87272",
-              foreground: "#fef3eb",
+              DEFAULT: "#d86674",
+              foreground: "#fae9e9",
             },
           },
         },
         dark: {
           layout: {}, // dark theme layout tokens
           colors: {
-            background: "#150015",
-            foreground: "#fef3eb",
+            background: "#40111c",
+            foreground: "#fae9e9",
             secondary: {
-              DEFAULT: "#f87272",
-              foreground: "#150015",
+              DEFAULT: "#d86674",
+              foreground: "#40111c",
             },
-            focus: "#F182F6",
+            focus: "#d86674",
           },
         },
         custom: {
