@@ -3,38 +3,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { height } from "../anim";
+import { HEADER_LINKS as links } from "@/data/links";
 import Body from "./body";
 import Footer from "./footer";
 
-const links = [
-  {
-    title: "Home",
-    href: "/",
-    src: "home.png",
-  },
-  {
-    title: "Shop",
-    href: "/shop",
-    src: "shop.png",
-  },
-  {
-    title: "About Us",
-    href: "/about",
-    src: "home.png",
-  },
-  {
-    title: "Lookbook",
-    href: "/lookbook",
-    src: "lookbook.png",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-    src: "contact.png",
-  },
-];
+interface NavProps {
+  setIsActive: (isActive: boolean) => void;
+}
 
-export default function Index() {
+const Nav: React.FC<NavProps> = ({ setIsActive }) => {
   const [selectedLink, setSelectedLink] = useState<{
     isActive: boolean;
     index: number;
@@ -56,9 +33,12 @@ export default function Index() {
           links={links}
           selectedLink={selectedLink}
           setSelectedLink={setSelectedLink}
+          setIsActive={setIsActive}
         />
         <Footer />
       </div>
     </motion.div>
   );
-}
+};
+
+export default Nav;

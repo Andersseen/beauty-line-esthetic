@@ -26,7 +26,7 @@ const FeatureItem = ({ title, description, icon }) => {
     <div className="p-3 rounded-md bg-white dark:bg-gray-950 shadow-lg dark:shadow-none hover:shadow-main-800/20 shadow-transparent transition-all ease-linear border border-gray-100 hover:border-gray-100 dark:border-gray-900 dark:hover:border-gray-600">
       <div className="flex gap-4">
         <div className="min-w-max">
-          <span className="flex text-emerald-600 dark:text-gray-100 aspect-square rounded bg-emerald-600/10 dark:bg-gray-900 p-3">
+          <span className="flex text-main-600 dark:text-gray-100 aspect-square rounded bg-main-600/10 dark:bg-gray-900 p-3">
             {iconRender(icon)}
           </span>
         </div>

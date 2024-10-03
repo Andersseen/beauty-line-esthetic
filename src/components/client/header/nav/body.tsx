@@ -15,12 +15,14 @@ interface BodyProps {
   setSelectedLink: React.Dispatch<
     React.SetStateAction<{ isActive: boolean; index: number }>
   >;
+  setIsActive: (isActive: boolean) => void;
 }
 
 const Body: React.FC<BodyProps> = ({
   links,
   selectedLink,
   setSelectedLink,
+  setIsActive,
 }) => {
   const getChars = (word: string) => {
     return word.split("").map((char, i) => (
@@ -46,6 +48,7 @@ const Body: React.FC<BodyProps> = ({
             key={`l_${index}`}
             href={href}
             className="text-black no-underline uppercase"
+            onClick={() => setIsActive(false)}
           >
             <motion.p
               onMouseOver={() => {
