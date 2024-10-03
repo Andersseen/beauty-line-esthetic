@@ -120,19 +120,6 @@ const config: Config = {
             },
             focus: "#701a75",
           },
-          layout: {
-            disabledOpacity: "0.3",
-            radius: {
-              small: "1px",
-              medium: "2px",
-              large: "4px",
-            },
-            borderWidth: {
-              small: "1px",
-              medium: "2px",
-              large: "3px",
-            },
-          },
         },
       },
     }),

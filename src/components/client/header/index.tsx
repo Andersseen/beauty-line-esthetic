@@ -55,7 +55,9 @@ const Index: React.FC = () => {
         animate={isActive ? "open" : "closed"}
         className="absolute top-full left-0 w-full h-full bg-neutral-900 opacity-50"
       ></motion.div>
-      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+      <AnimatePresence mode="wait">
+        {isActive && <Nav setIsActive={setIsActive} />}
+      </AnimatePresence>
     </div>
   );
 };
