@@ -1,9 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const languages = [
+  { code: "es", label: "ES" },
+  { code: "en", label: "EN" },
+  { code: "ua", label: "UA" },
+];
 
 export default function LanguageSwitcher() {
-  const [currentLanguage, setCurrentLanguage] = useState("es");
+  const pathname = usePathname();
+  const currentPathLang = pathname.split("/")[1];
+  const defaultLang = languages.find((lang) => lang.code === currentPathLang)
+    ? currentPathLang
+    : "es";
+
+  const [currentLanguage, setCurrentLanguage] = useState(defaultLang);
+
+  useEffect(() => {
+    setCurrentLanguage(defaultLang);
+  }, [defaultLang]);
 
   const handleLanguageChange = (lang: string) => {
     setCurrentLanguage(lang);
@@ -11,30 +28,19 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="inline-flex rounded-md shadow-sm" role="group">
-      <Button
-        asChild
-        variant={currentLanguage === "es" ? "default" : "outline"}
-        className="rounded-l-md hover:bg-main-400"
-        onClick={() => handleLanguageChange("es")}
-      >
-        <Link href="/es">ES</Link>
-      </Button>
-      <Button
-        asChild
-        variant={currentLanguage === "en" ? "default" : "outline"}
-        className="rounded-l-md hover:bg-main-400"
-        onClick={() => handleLanguageChange("en")}
-      >
-        <Link href="/en">EN</Link>
-      </Button>
-      <Button
-        asChild
-        variant={currentLanguage === "ua" ? "default" : "outline"}
-        className="rounded-l-md hover:bg-main-400"
-        onClick={() => handleLanguageChange("ua")}
-      >
-        <Link href="/ua">UA</Link>
-      </Button>
+      {languages.map(({ code, label }) => (
+        <Button
+          key={code}
+          asChild
+          variant={currentLanguage === code ? "default" : "outline"}
+          className={`rounded-${
+            code === "es" ? "l" : code === "ua" ? "r" : "none"
+          }-md hover:bg-main-400`}
+          onClick={() => handleLanguageChange(code)}
+        >
+          <Link href={`/${code}`}>{label}</Link>
+        </Button>
+      ))}
     </div>
   );
 }
