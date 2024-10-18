@@ -1,28 +1,60 @@
 {
-  "navigations": {},
-  "sections": {
-    "hero": {
-      "title": "Desarrollador web"
-    },
-    "about": {
-      "text": "Aquí debería haber un texto profundo sobre mi pasión por el código...",
-      "hiddenText": "...pero estoy ocupado resolviendo bugs y creando cosas geniales.",
-      "markText": "¡Explora y descubre más!"
-    },
-    "projects": {
-      "button": "Ver el proyecto"
-    },
-    "contact": {
-      "title": "Si quieres contactar conmigo",
-      "nameInput": "Nombre",
-      "lastNameInput": "Apellido",
-      "emailInput": "Dirección de correo electrónico",
-      "messageInput": "Mensaje",
-      "button": "Enviar mensaje"
-    }
+  "shuffleHero": {
+    "tagline": "Mejora cada día",
+    "title": "Tratamientos personalizados para realzar tu belleza interior y exterior",
+    "features": [
+      "Horarios flexibles",
+      "Resultados brillantes",
+      "Productos naturales"
+    ],
+    "satisfaction": "100% de clientes satisfechos"
+  },
+  "featuresSection": {
+    "title": "La Excelencia en Cuidado Estético",
+    "description": "En nuestro centro de estética, nos enorgullecemos de ofrecer tratamientos de alta calidad utilizando productos naturales y técnicas avanzadas. Nuestro objetivo es brindarte una experiencia de relajación total y rejuvenecimiento.",
+    "features": [
+      {
+        "title": "Productos Naturales",
+        "description": "Utilizamos productos naturales de la más alta calidad para asegurar que tu piel reciba el mejor cuidado posible."
+      },
+      {
+        "title": "Servicio Personalizado",
+        "description": "Ofrecemos un servicio personalizado para cada cliente, asegurándonos de que recibas el tratamiento perfecto para tus necesidades."
+      },
+      {
+        "title": "Equipo Profesional",
+        "description": "Nuestro equipo está compuesto por profesionales altamente capacitados y dedicados a brindarte el mejor servicio."
+      },
+      {
+        "title": "Ambiente Relajante",
+        "description": "Disfruta de un ambiente relajante y acogedor que te ayudará a desconectar y a rejuvenecer."
+      }
+    ]
+  },
+  "servicesSection": {
+    "sections": [
+      {
+        "title": "Tratamientos Faciales",
+        "content": "Descubre nuestros tratamientos faciales diseñados para rejuvenecer y revitalizar tu piel. Desde limpiezas profundas hasta tratamientos anti-envejecimiento, utilizamos productos de alta calidad y técnicas avanzadas para asegurar que tu piel luzca y se sienta increíble."
+      },
+      {
+        "title": "Tratamientos Corporales",
+        "content": "Nuestros tratamientos corporales están diseñados para relajar y revitalizar todo tu cuerpo. Ofrecemos masajes terapéuticos, exfoliaciones corporales y envolturas que ayudan a mejorar la circulación, reducir la celulitis y dejar tu piel suave y radiante."
+      },
+      {
+        "title": "Tratamientos Láser",
+        "content": "Experimenta la última tecnología en tratamientos láser para eliminar el vello no deseado, reducir manchas y mejorar la textura de la piel. Nuestros especialistas utilizan equipos de última generación para ofrecer resultados seguros y efectivos."
+      },
+      {
+        "title": "Tratamientos de Manicura",
+        "content": "Embellece tus manos y pies con nuestros tratamientos de manicura y pedicura. Desde un simple pulido hasta un diseño de uñas creativo, nuestro equipo de expertos está aquí para brindarte el mejor cuidado y mantener tus uñas saludables y hermosas."
+      }
+    ]
   },
 
-  "footer": {
-    "allRights": "Todos los derechos reservados (no realmente)"
+  "contactSection": {
+    "title": "Contáctanos",
+    "description": "Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible.",
+    "contactInfo": ["contacto@ejemplo.com", "+1 (555) 123-4567"]
   }
 }

@@ -1,15 +1,24 @@
 import ContactSection from "@/components/client/contact-section";
+import ServicesSection from "@/components/client/services-section";
 import ShuffleHero from "@/components/client/shuffle-hero";
-import { TransitionWrapper } from "@/components/client/transition-wrapper";
 import Features from "@/components/pages/Features";
+import { TransitionWrapper } from "@/components/client/transition-wrapper";
+import { getDictionary } from "./dictionaries";
 
-export default function Home() {
+type Props = {
+  params: { lang: string };
+};
+export default async function Home({ params }: Props) {
+  const { lang } = params;
+  const dict = await getDictionary(lang);
+
   return (
     <TransitionWrapper>
       <section className="w-full mx-auto rounded-md min-h-screen overflow-hidden">
-        <ShuffleHero />
-        <Features />
-        <ContactSection />
+        <ShuffleHero dict={dict.shuffleHero} />
+        <Features dict={dict.featuresSection} />
+        <ServicesSection dict={dict.servicesSection} />
+        <ContactSection dict={dict.contactSection} />
       </section>
     </TransitionWrapper>
   );

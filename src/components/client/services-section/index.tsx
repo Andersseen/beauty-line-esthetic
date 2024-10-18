@@ -2,31 +2,32 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function ServicesSection() {
+interface ServiceSectionProps {
+  dict: {
+    sections: {
+      title: string;
+      content: string;
+    }[];
+  };
+}
+
+export default function ServicesSection({ dict }: ServiceSectionProps) {
   const sections = [
     {
-      title: "Sección 1",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/placeholder.svg?height=400&width=600",
+      ...dict.sections[0],
+      imageUrl: "/06.webp",
     },
     {
-      title: "Sección 2",
-      content:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      imageUrl: "/placeholder.svg?height=400&width=600",
+      ...dict.sections[1],
+      imageUrl: "/10.webp",
     },
     {
-      title: "Sección 3",
-      content:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      imageUrl: "/placeholder.svg?height=400&width=600",
+      ...dict.sections[2],
+      imageUrl: "/17.webp",
     },
     {
-      title: "Sección 4",
-      content:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      imageUrl: "/placeholder.svg?height=400&width=600",
+      ...dict.sections[3],
+      imageUrl: "/11.webp",
     },
   ];
 
