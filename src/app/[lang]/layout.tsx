@@ -31,7 +31,6 @@ export default async function RootLayout({
   children,
   params: { lang },
 }: Readonly<Props>) {
-  // const dict = await getDictionary(lang);
   return (
     <html lang={lang}>
       <body

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "rm-all-local-branches": "git branch | %{ $_.Trim() } | ?{ $_ -ne 'master' } | ?{ $_ -ne 'main'} | %{ git branch -D $_ }"
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.8",
