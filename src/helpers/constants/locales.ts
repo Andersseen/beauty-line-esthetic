@@ -1,5 +1,5 @@
 const locales = [{ locale: "en" }, { locale: "es" }, { locale: "ua" }];
 
-const defaultLocale = "en";
+const defaultLocale = "es";
 
 export { defaultLocale, locales };

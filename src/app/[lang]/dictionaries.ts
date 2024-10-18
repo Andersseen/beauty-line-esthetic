@@ -6,4 +6,4 @@ const dictionaries: any = {
   ua: () => import("./dictionaries/ua.json").then((module) => module.default),
 };
 
-export const getDictionary = async (locale: string) => dictionaries[locale];
+export const getDictionary = async (locale: string) => dictionaries[locale]();

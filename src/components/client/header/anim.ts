@@ -75,3 +75,43 @@ export const translate = {
     transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1] },
   }),
 };
+
+export const lineVariants = {
+  closed: {
+    rotate: 0,
+    translateY: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+  open: {
+    rotate: 45,
+    translateY: 3,
+    transition: {
+      duration: 0.5,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+};
+
+export const lineVariantsBottom = {
+  closed: {
+    rotate: 0,
+    translateY: 0,
+    transition: {
+      type: "spring",
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+  open: {
+    rotate: -45,
+    translateY: -3,
+    transition: {
+      type: "spring",
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+};

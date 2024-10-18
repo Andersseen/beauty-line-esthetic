@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { background, opacity } from "./anim";
+import { background, lineVariants, lineVariantsBottom, opacity } from "./anim";
 import Nav from "./nav";
+import LanguageSwitcher from "../../server/language-switcher/index";
 
 const Index: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
     <div className="fixed w-full bg-main-500 box-border p-2 sm:p-5 z-50">
-      <div className="relative flex justify-center uppercase text-xs font-light">
-        <Link href="/" className="absolute left-0 text-black no-underline">
+      <div className="flex justify-between uppercase text-xs font-light">
+        <Link href="/" className="text-main-100 no-underline">
           Logo
         </Link>
         <div
@@ -24,8 +25,19 @@ const Index: React.FC = () => {
               isActive ? "burger-active" : ""
             }`}
           >
-            <span className="absolute top-[-4px] block h-[1px] w-full bg-main-100 transition-all duration-1000 ease-[cubic-bezier(0.76, 0, 0.24, 1)]" />
-            <span className="absolute top-[4px] block h-[1px] w-full bg-main-100 shadow-sm transition-all duration-1000 ease-[cubic-bezier(0.76, 0, 0.24, 1)]" />
+            <motion.span
+              className="absolute top-[-4px] left-1/2 transform -translate-x-1/2 block h-[1px] w-full bg-main-100"
+              variants={lineVariants}
+              initial="closed"
+              animate={isActive ? "open" : "closed"}
+            />
+            {/* Línea inferior */}
+            <motion.span
+              className="absolute top-[4px] left-1/2 transform -translate-x-1/2 block h-[1px] w-full bg-main-100 shadow-sm"
+              variants={lineVariantsBottom}
+              initial="closed"
+              animate={isActive ? "open" : "closed"}
+            />
           </div>
           <div className="relative flex items-center">
             <motion.p
@@ -49,6 +61,9 @@ const Index: React.FC = () => {
           animate={!isActive ? "open" : "closed"}
           className="absolute right-0 flex gap-7"
         ></motion.div>
+        <div>
+          <LanguageSwitcher />
+        </div>
       </div>
       <motion.div
         variants={background}

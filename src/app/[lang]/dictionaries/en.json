@@ -1,27 +1,55 @@
 {
-  "navigations": {},
-  "sections": {
-    "hero": {
-      "title": "Web developer"
-    },
-    "about": {
-      "text": "Here should be an in-depth text about my passion for coding...",
-      "hiddenText": "...but I'm busy working out bugs and creating cool stuff.",
-      "markText": "Explore and discover more!"
-    },
-    "projects": {
-      "button": "See the project"
-    },
-    "contact": {
-      "title": "If you want to contact me",
-      "nameInput": "First name",
-      "lastNameInput": "Last name",
-      "emailInput": "Email address",
-      "messageInput": "Message",
-      "button": "Send message"
-    }
+  "featuresSection": {
+    "title": "Excellence in Aesthetic Care",
+    "description": "At our aesthetic center, we take pride in offering high-quality treatments using natural products and advanced techniques. Our goal is to provide you with a complete relaxation and rejuvenation experience.",
+    "features": [
+      {
+        "title": "Natural Products",
+        "description": "We use the highest quality natural products to ensure your skin receives the best possible care."
+      },
+      {
+        "title": "Personalized Service",
+        "description": "We offer personalized service for each client, ensuring that you receive the perfect treatment for your needs."
+      },
+      {
+        "title": "Professional Team",
+        "description": "Our team consists of highly trained professionals dedicated to providing you with the best service."
+      },
+      {
+        "title": "Relaxing Environment",
+        "description": "Enjoy a relaxing and welcoming environment that helps you disconnect and rejuvenate."
+      }
+    ]
   },
-  "footer": {
-    "allRights": "All rights reserved (not really)"
+  "servicesSection": {
+    "sections": [
+      {
+        "title": "Facial Treatments",
+        "content": "Discover our facial treatments designed to rejuvenate and revitalize your skin. From deep cleanings to anti-aging treatments, we use high-quality products and advanced techniques to ensure your skin looks and feels incredible."
+      },
+      {
+        "title": "Body Treatments",
+        "content": "Our body treatments are designed to relax and revitalize your entire body. We offer therapeutic massages, body scrubs, and wraps that help improve circulation, reduce cellulite, and leave your skin soft and radiant."
+      },
+      {
+        "title": "Laser Treatments",
+        "content": "Experience the latest technology in laser treatments to remove unwanted hair, reduce spots, and improve skin texture. Our specialists use state-of-the-art equipment to provide safe and effective results."
+      },
+      {
+        "title": "Manicure Treatments",
+        "content": "Enhance your hands and feet with our manicure and pedicure treatments. From simple polishing to creative nail designs, our expert team is here to provide you with the best care and keep your nails healthy and beautiful."
+      }
+    ]
+  },
+  "shuffleHero": {
+    "tagline": "Better every day",
+    "title": "Personalized treatments to enhance your inner and outer beauty",
+    "features": ["Flexible schedules", "Brilliant results", "Natural products"],
+    "satisfaction": "100% customer satisfaction"
+  },
+  "contactSection": {
+    "title": "Get in touch",
+    "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "contactInfo": ["contact@example.com", "+1 (555) 123-4567"]
   }
 }

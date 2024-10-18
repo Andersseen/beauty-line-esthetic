@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "es" }, { lang: "ua" }];
+  return [{ lang: "es" }, { lang: "en" }, { lang: "ua" }];
 }
 type Props = {
   children: React.ReactNode;
