@@ -9,17 +9,21 @@ export const HEADER_LINKS = [
   {
     title: "Inicio",
     href: "/",
+    src: "09.webp",
   },
   {
     title: "Sobre mi",
     href: "/about",
+    src: "02.webp",
   },
   {
-    title: "Precios",
+    title: "Tratamientos",
     href: "/prices",
+    src: "13.webp",
   },
   {
     title: "Contacto",
     href: "/contact",
+    src: "15.webp",
   },
 ];

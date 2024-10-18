@@ -63,7 +63,7 @@ const Body: React.FC<BodyProps> = ({
                   ? "open"
                   : "closed"
               }
-              className="m-0 flex overflow-hidden text-[32px] pr-[30px] pt-[10px] font-light"
+              className="m-0 flex overflow-hidden text-[32px] pr-[30px] pt-[10px] font-light text-main-100"
             >
               {getChars(title)}
             </motion.p>

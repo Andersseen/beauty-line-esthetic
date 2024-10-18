@@ -67,67 +67,67 @@ const shuffle = (array: (typeof squareData)[0][]) => {
 const squareData = [
   {
     id: 1,
-    src: "/01.webp",
+    src: "/hero/01.webp",
   },
   {
     id: 2,
-    src: "/02.webp",
+    src: "/hero/02.webp",
   },
   {
     id: 3,
-    src: "/03.webp",
+    src: "/hero/03.webp",
   },
   {
     id: 4,
-    src: "/04.webp",
+    src: "/hero/04.webp",
   },
   {
     id: 5,
-    src: "/05.webp",
+    src: "/hero/05.webp",
   },
   {
     id: 6,
-    src: "/06.webp",
+    src: "/hero/06.webp",
   },
   {
     id: 7,
-    src: "/07.webp",
+    src: "/hero/07.webp",
   },
   {
     id: 8,
-    src: "/08.webp",
+    src: "/hero/08.webp",
   },
   {
     id: 9,
-    src: "/09.webp",
+    src: "/hero/09.webp",
   },
   {
     id: 10,
-    src: "/10.webp",
+    src: "/hero/10.webp",
   },
   {
     id: 11,
-    src: "/11.webp",
+    src: "/hero/11.webp",
   },
   {
     id: 12,
-    src: "/12.webp",
+    src: "/hero/12.webp",
   },
   {
     id: 13,
-    src: "/13.webp",
+    src: "/hero/13.webp",
   },
   {
     id: 14,
-    src: "/14.webp",
+    src: "/hero/14.webp",
   },
   {
     id: 15,
-    src: "/15.webp",
+    src: "/hero/15.webp",
   },
   {
     id: 16,
-    src: "/16.webp",
+    src: "/hero/16.webp",
   },
 ];
 
@@ -137,7 +137,7 @@ const generateSquares = () => {
       key={sq.id}
       layout
       transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full"
+      className="w-full h-full rounded-lg"
       style={{
         backgroundImage: `url(${sq.src})`,
         backgroundSize: "cover",

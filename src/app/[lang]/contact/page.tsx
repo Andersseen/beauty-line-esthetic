@@ -16,7 +16,7 @@ export default function Page() {
     <TransitionWrapper>
       <section className="w-full min-h-screen shadow-lg">
         <div className="pt-10 body-font relative min-h-screen flex justify-end">
-          <div className="absolute inset-0 saturate-50 contrast-50">
+          <div className="absolute inset-0 saturate-50 contrast-50 pt-12">
             <iframe
               width="100%"
               height="100%"
