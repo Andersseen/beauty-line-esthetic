@@ -4,6 +4,7 @@ import ShuffleHero from "@/components/client/shuffle-hero";
 import Features from "@/components/pages/Features";
 import { TransitionWrapper } from "@/components/client/transition-wrapper";
 import { getDictionary } from "./dictionaries";
+import { BentoGridDemo } from "@/components/client/bento-grid/demo";
 
 type Props = {
   params: { lang: string };
@@ -18,6 +19,7 @@ export default async function Home({ params }: Props) {
         <ShuffleHero dict={dict.shuffleHero} />
         <Features dict={dict.featuresSection} />
         <ServicesSection dict={dict.servicesSection} />
+        <BentoGridDemo />
         <ContactSection dict={dict.contactSection} />
       </section>
     </TransitionWrapper>
