@@ -65,5 +65,33 @@
     "title": "Contáctanos",
     "description": "Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible.",
     "contactInfo": ["contacto@ejemplo.com", "+1 (555) 123-4567"]
+  },
+  "about": {
+    "title": "Tu oasis de belleza y bienestar",
+    "description": "En nuestro centro de estética, nos dedicamos a realzar tu belleza natural y promover tu bienestar integral. Con años de experiencia y un equipo de profesionales altamente calificados, ofrecemos una amplia gama de tratamientos personalizados utilizando las técnicas más avanzadas y productos de primera calidad. Nuestro objetivo es que te sientas renovada, confiada y radiante en cada visita.",
+    "imageAlt": "Centro de Estética"
+  },
+  "footer": {
+    "title": "Centro de Estética",
+    "description": "Realzando tu belleza natural desde 2005",
+    "address": "123 Calle Belleza, Ciudad",
+    "phone": "+34 123 456 789",
+    "email": "info@centroestetica.com",
+    "servicesTitle": "Nuestros Servicios",
+    "servicesList": [
+      "Tratamientos Faciales",
+      "Depilación Láser",
+      "Masajes Relajantes",
+      "Tratamientos Corporales",
+      "Manicura y Pedicura",
+      "Maquillaje Profesional"
+    ],
+    "infoTitle": "Información Útil",
+    "infoList": [
+      { "text": "Lunes a Sábado: 9:00 - 20:00", "icon": "Clock" },
+      { "text": "Aceptamos todas las tarjetas", "icon": "CreditCard" },
+      { "text": "Personal certificado", "icon": "Award" }
+    ],
+    "copyright": "© 2024 Centro de Estética. Todos los derechos reservados."
   }
 }

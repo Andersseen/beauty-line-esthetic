@@ -6,12 +6,14 @@ import { height } from "../anim";
 import { HEADER_LINKS as links } from "@/data/links";
 import Body from "./body";
 import ImageBox from "./image";
+import { Locale } from "@/i18n-config";
 
 interface NavProps {
   setIsActive: (isActive: boolean) => void;
+  lang: Locale;
 }
 
-const Nav: React.FC<NavProps> = ({ setIsActive }) => {
+const Nav: React.FC<NavProps> = ({ setIsActive, lang }) => {
   const [selectedLink, setSelectedLink] = useState<{
     isActive: boolean;
     index: number;
@@ -35,6 +37,7 @@ const Nav: React.FC<NavProps> = ({ setIsActive }) => {
             selectedLink={selectedLink}
             setSelectedLink={setSelectedLink}
             setIsActive={setIsActive}
+            lang={lang}
           />
         </div>
         <ImageBox
