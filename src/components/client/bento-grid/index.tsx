@@ -37,7 +37,6 @@ export const BentoGridItem = ({
   className,
   title,
   description,
-  imageSrc,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -50,13 +49,13 @@ export const BentoGridItem = ({
     <LazyMotion features={domAnimation}>
       <m.div
         className={cn(
-          "flex items-center justify-center min-h-32 rounded-lg group/bento shadow-md hover:shadow-xl transition duration-200",
+          "flex items-center justify-center min-h-32 rounded-lg group/bento shadow-md hover:shadow-xl transition duration-200 bg-gradient-to-br from-main-100 to-main-300",
           className
         )}
-        style={{
-          backgroundImage: `url(${imageSrc})`,
-          backgroundSize: "cover",
-        }}
+        // style={{
+        //   backgroundImage: `url(${imageSrc})`,
+        //   backgroundSize: "cover",
+        // }}
         whileHover={{ scale: 1.05 }}
         animate={{
           scale: isHovered ? 0.95 : 1,

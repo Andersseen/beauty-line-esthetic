@@ -34,34 +34,39 @@ export function BentoGridDemo() {
 
 const items = [
   {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
-    imageSrc: "/logos/01.webp",
-  },
-  {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
-    imageSrc: "/logos/02.webp",
-  },
-  {
-    title: "The Art of Design",
-    description: "Discover the beauty of thoughtful and functional design.",
-    imageSrc: "/logos/03.webp",
-  },
-  {
-    title: "The Power of Communication",
+    title: "Casmara",
     description:
-      "Understand the impact of effective communication in our lives.",
-    imageSrc: "/logos/04.webp",
+      "Cosmética innovadora con tratamientos avanzados para el cuidado de la piel.",
+    imageSrc: "/logos/casmara.webp",
   },
   {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    imageSrc: "/logos/05.webp",
+    title: "Atache",
+    description:
+      "Soluciones dermocosméticas de alta calidad para la salud y belleza de la piel.",
+    imageSrc: "/logos/atache.webp",
   },
   {
-    title: "The Joy of Creation",
-    description: "Experience the thrill of bringing ideas to life.",
-    imageSrc: "/logos/06.webp",
+    title: "Skin Clinic",
+    description:
+      "Especialistas en tratamientos para la regeneración y rejuvenecimiento facial.",
+    imageSrc: "/logos/skin-clinic.webp",
+  },
+  {
+    title: "Utsukusy",
+    description:
+      "Cosmética japonesa profesional centrada en la estética y la eficacia.",
+    imageSrc: "/logos/utsukusy.webp",
+  },
+  {
+    title: "On Macabim",
+    description:
+      "Productos naturales basados en la medicina herbal para el cuidado integral.",
+    imageSrc: "/logos/on-macabim.webp",
+  },
+  {
+    title: "Karoma",
+    description:
+      "Aromaterapia y cuidado holístico con aceites esenciales de alta pureza.",
+    imageSrc: "/logos/karoma.webp",
   },
 ];

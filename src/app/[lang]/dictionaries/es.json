@@ -35,19 +35,28 @@
     "sections": [
       {
         "title": "Tratamientos Faciales",
-        "content": "Descubre nuestros tratamientos faciales diseñados para rejuvenecer y revitalizar tu piel. Desde limpiezas profundas hasta tratamientos anti-envejecimiento, utilizamos productos de alta calidad y técnicas avanzadas para asegurar que tu piel luzca y se sienta increíble."
+        "content": "Utilizamos aparatologia de última generación. Descubre nuestros tratamientos faciales diseñados para rejuvenecer y revitalizar tu piel. Desde limpiezas profundas hasta tratamientos anti-envejecimiento, utilizamos productos de alta calidad y técnicas avanzadas para asegurar que tu piel luzca y se sienta increíble."
       },
       {
         "title": "Tratamientos Corporales",
-        "content": "Nuestros tratamientos corporales están diseñados para relajar y revitalizar todo tu cuerpo. Ofrecemos masajes terapéuticos, exfoliaciones corporales y envolturas que ayudan a mejorar la circulación, reducir la celulitis y dejar tu piel suave y radiante."
+        "content": "Nuestros tratamientos están diseñados para una relajación profunda y oxigenación de la piel Ofrecemos masajes terapéuticos ,relajantes,anticelulíticos y ciculatorios que ayudan a quitar contracturas,relajar profundamente y también mejorar  circulacion  y aspecto de piel con con celulitis."
       },
       {
         "title": "Tratamientos Láser",
-        "content": "Experimenta la última tecnología en tratamientos láser para eliminar el vello no deseado, reducir manchas y mejorar la textura de la piel. Nuestros especialistas utilizan equipos de última generación para ofrecer resultados seguros y efectivos."
+        "content": "Experimenta la última tecnologia en tratamientos de laser de diodo,para eliminar el vello,foliculitis y mejorar la textura de la piel. Resultados garantizandos desde primera sesion .Tratamiento seguro y efectivo."
       },
       {
-        "title": "Tratamientos de Manicura",
-        "content": "Embellece tus manos y pies con nuestros tratamientos de manicura y pedicura. Desde un simple pulido hasta un diseño de uñas creativo, nuestro equipo de expertos está aquí para brindarte el mejor cuidado y mantener tus uñas saludables y hermosas."
+        "title": "Tratamientos Adelgazantes",
+        "content": "Ofrecemos tratamientos adelgazantes para que te sientas bien y segura con tu cuerpo. Utilizamos 3 fases: 1. Pérdida de volumen; 2. Eliminación de piel de naranja y grasa localizada; 3. Reafirmación de los tejidos después de bajar el peso. También ofrecemos tratamientos personalizados con seguimiento y pautas de alimentación saludable.",
+        "additionalInfo": [
+          "Presoterapia",
+          "Electroestimulación EMS slim",
+          "Masajes con aparatología"
+        ]
+      },
+      {
+        "title": "Otros Tratamientos",
+        "content": "Ofrecemos tratamientos de manicura y pedicura para cuidar y embellecer tus manos y pies, junto con extensiones de pestañas para realzar la belleza natural de tu mirada. Nuestro equipo utiliza productos de alta calidad para asegurar resultados duraderos y satisfactorios."
       }
     ]
   },
