@@ -1,6 +1,7 @@
 "use client";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
+
 export const Globe = ({ className }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -20,18 +21,17 @@ export const Globe = ({ className }: { className?: string }) => {
       mapSamples: 16000,
       mapBrightness: 6,
       baseColor: [0.3, 0.3, 0.3],
-      markerColor: [0.1, 0.8, 1],
+      markerColor: [0.9, 0.5, 0.6], // Color HSL convertido a RGB
       glowColor: [1, 1, 1],
       markers: [
         // longitude latitude
-        { location: [37.7595, -122.4367], size: 0.03 },
-        { location: [40.7128, -74.006], size: 0.1 },
+        { location: [40.345131, -3.835258], size: 0.1 }, // Alcorcón, Madrid
       ],
       onRender: (state) => {
         // Called on every animation frame.
         // `state` will be an empty object, return updated params.
         state.phi = phi;
-        phi += 0.01;
+        phi += 0.005;
       },
     });
 

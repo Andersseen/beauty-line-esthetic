@@ -29,15 +29,24 @@
       },
       {
         "title": "Body Treatments",
-        "content": "Our body treatments are designed to relax and revitalize your entire body. We offer therapeutic massages, body scrubs, and wraps that help improve circulation, reduce cellulite, and leave your skin soft and radiant."
+        "content": "Our treatments are designed for deep relaxation and oxygenation of the skin. We offer therapeutic, relaxing, anti-cellulite and ciculatory massages that help to remove contractures, relax deeply and also improve circulation and appearance of skin with cellulite."
       },
       {
         "title": "Laser Treatments",
-        "content": "Experience the latest technology in laser treatments to remove unwanted hair, reduce spots, and improve skin texture. Our specialists use state-of-the-art equipment to provide safe and effective results."
+        "content": "Experience the latest technology in diode laser treatments, to remove hair, folliculitis and improve skin texture. Guaranteed results from the first session, safe and effective treatment."
       },
       {
-        "title": "Manicure Treatments",
-        "content": "Enhance your hands and feet with our manicure and pedicure treatments. From simple polishing to creative nail designs, our expert team is here to provide you with the best care and keep your nails healthy and beautiful."
+        "title": "Slimming Treatments",
+        "content": "We offer slimming treatments to help you feel good and confident in your body. Our treatments include 3 phases: 1. Volume reduction; 2. Cellulite and localized fat reduction; 3. Tissue firming after weight loss. We also provide personalized treatments with follow-up and healthy eating guidelines.",
+        "additionalInfo": [
+          "Pressotherapy",
+          "EMS Slim electrostimulation",
+          "Massage with equipment"
+        ]
+      },
+      {
+        "title": "Other Treatments",
+        "content": "We offer manicure and pedicure treatments to care for and enhance the beauty of your hands and feet, along with eyelash extensions to elevate your natural look. Our team uses high-quality products to ensure long-lasting and satisfying results."
       }
     ]
   },

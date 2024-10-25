@@ -7,6 +7,7 @@ interface ServiceSectionProps {
     sections: {
       title: string;
       content: string;
+      additionalInfo?: string[];
     }[];
   };
 }
@@ -27,6 +28,10 @@ export default function ServicesSection({ dict }: ServiceSectionProps) {
     },
     {
       ...dict.sections[3],
+      imageUrl: "/16.webp",
+    },
+    {
+      ...dict.sections[4],
       imageUrl: "/11.webp",
     },
   ];
@@ -53,6 +58,13 @@ export default function ServicesSection({ dict }: ServiceSectionProps) {
           >
             <h2 className="text-3xl font-bold">{section.title}</h2>
             <p className="text-lg text-gray-600">{section.content}</p>
+            {section.additionalInfo && (
+              <ul className="mt-2 space-y-1 list-disc list-inside text-gray-500">
+                {section.additionalInfo.map((info, index) => (
+                  <li key={index}>{info}</li>
+                ))}
+              </ul>
+            )}
           </motion.div>
           <motion.div
             initial={{ y: 50, opacity: 0 }}

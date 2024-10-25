@@ -2,7 +2,7 @@ import { Award, Clock, CreditCard, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Content() {
   return (
-    <footer className="w-full h-full bg-gradient-to-br from-main-100 to-main-500 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <footer className="w-full h-full bg-gradient-to-br from-main-100 to-main-300 flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-7xl flex flex-col justify-between h-full py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-56">
           <div className="space-y-4">
