@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { blur, translate } from "../anim";
+import { Locale } from "@/i18n-config";
 
 interface LinkItem {
   title: string;
@@ -16,6 +17,7 @@ interface BodyProps {
     React.SetStateAction<{ isActive: boolean; index: number }>
   >;
   setIsActive: (isActive: boolean) => void;
+  lang: Locale;
 }
 
 const Body: React.FC<BodyProps> = ({
@@ -23,6 +25,7 @@ const Body: React.FC<BodyProps> = ({
   selectedLink,
   setSelectedLink,
   setIsActive,
+  lang,
 }) => {
   const getChars = (word: string) => {
     return word.split("").map((char, i) => (
@@ -46,7 +49,7 @@ const Body: React.FC<BodyProps> = ({
         return (
           <Link
             key={`l_${index}`}
-            href={href}
+            href={`/${lang}${href}`}
             className="text-black no-underline uppercase"
             onClick={() => setIsActive(false)}
           >

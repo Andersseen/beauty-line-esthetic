@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/client/footer";
 import Header from "@/components/client/header";
+import { Locale } from "@/i18n-config";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -25,7 +26,7 @@ export async function generateStaticParams() {
 }
 type Props = {
   children: React.ReactNode;
-  params: { lang: string };
+  params: { lang: Locale };
 };
 export default async function RootLayout({
   children,
@@ -38,9 +39,9 @@ export default async function RootLayout({
       >
         <noscript>You need to enable JavaScript to run this app.</noscript>
 
-        <Header />
+        <Header lang={lang} />
         <main>{children}</main>
-        <Footer />
+        <Footer lang={lang} />
       </body>
     </html>
   );

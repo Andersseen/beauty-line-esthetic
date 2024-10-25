@@ -3,10 +3,8 @@ import { createContext, useContext, useState } from "react";
 import { cn } from "@/lib/utils";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 
-// Contexto para manejar el estado de hover
 const HoverContext = createContext(false);
 
-// BentoGrid Component
 export const BentoGrid = ({
   className,
   children,
@@ -32,7 +30,6 @@ export const BentoGrid = ({
   );
 };
 
-// BentoGridItem Component
 export const BentoGridItem = ({
   className,
   title,
@@ -56,11 +53,10 @@ export const BentoGridItem = ({
         //   backgroundImage: `url(${imageSrc})`,
         //   backgroundSize: "cover",
         // }}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.01 }}
         animate={{
-          scale: isHovered ? 0.95 : 1,
+          scale: isHovered ? 0.99 : 1,
           transition: {
-            type: "spring",
             duration: 0.2,
           },
         }}

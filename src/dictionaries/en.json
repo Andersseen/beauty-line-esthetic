@@ -60,5 +60,33 @@
     "title": "Get in touch",
     "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
     "contactInfo": ["contact@example.com", "+1 (555) 123-4567"]
+  },
+  "about": {
+    "title": "Your oasis of beauty and wellness",
+    "description": "At our beauty center, we are dedicated to enhancing your natural beauty and promoting your overall well-being. With years of experience and a team of highly qualified professionals, we offer a wide range of personalized treatments using the most advanced techniques and high-quality products. Our goal is for you to feel renewed, confident, and radiant on every visit.",
+    "imageAlt": "Beauty Center"
+  },
+  "footer": {
+    "title": "Beauty Center",
+    "description": "Enhancing your natural beauty since 2005",
+    "address": "123 Beauty Street, City",
+    "phone": "+34 123 456 789",
+    "email": "info@beautycenter.com",
+    "servicesTitle": "Our Services",
+    "servicesList": [
+      "Facial Treatments",
+      "Laser Hair Removal",
+      "Relaxing Massages",
+      "Body Treatments",
+      "Manicure and Pedicure",
+      "Professional Makeup"
+    ],
+    "infoTitle": "Useful Information",
+    "infoList": [
+      { "text": "Monday to Saturday: 9:00 - 20:00", "icon": "Clock" },
+      { "text": "We accept all cards", "icon": "CreditCard" },
+      { "text": "Certified staff", "icon": "Award" }
+    ],
+    "copyright": "© 2024 Beauty Center. All rights reserved."
   }
 }
