@@ -28,26 +28,47 @@
         "content": "Discover our facial treatments designed to rejuvenate and revitalize your skin. From deep cleanings to anti-aging treatments, we use high-quality products and advanced techniques to ensure your skin looks and feels incredible."
       },
       {
-        "title": "Body Treatments",
+        "title": "Deep Facial Cleansing",
+        "content": "Deep facial cleansing with mechanical or combined peeling, steam, extraction, milium, personalized mask, technology according to assessment. Chemical peel with retinol: anti-blemish, acne, photoaged skin (with vitamin C, kojic acid, salicylic acid, mandelic acid, and retinol)."
+      },
+      {
+        "title": "Facial or Body Radiofrequency",
+        "content": "Facial or body radiofrequency (intensive anti-wrinkle lifting, firming of facial oval, cheekbones, eyelids, etc. Also body flaccidity and cellulite)."
+      },
+      {
+        "title": "Oxygen Therapy",
+        "content": "Oxygenating skin treatment with purifying and soothing effect. Treats sagging skin and reduces wrinkles, bags, and dark circles, providing the skin with vitamins, amino acids, and hyaluronic acid as needed."
+      },
+      {
+        "title": "Customized CASMARA Treatments",
+        "content": "Customized CASMARA treatments with flash effect, botox, seboregulating, oxygenating, with alginate masks containing gold extract, black pearl, goji berries, edelweiss flowers, and seaweed."
+      },
+      {
+        "title": "Deep Facial Hydration Treatment",
+        "content": "Deep facial hydration treatment with personalized mask and ampoule applied with technology. Dermapen treatment (wrinkle filling, expression lines, vitamins, firming, botox effect, melasma, acne scars)."
+      },
+      {
+        "title": "Body and facial massages",
         "content": "Our treatments are designed for deep relaxation and oxygenation of the skin. We offer therapeutic, relaxing, anti-cellulite and ciculatory massages that help to remove contractures, relax deeply and also improve circulation and appearance of skin with cellulite."
       },
       {
         "title": "Laser Treatments",
         "content": "Experience the latest technology in diode laser treatments, to remove hair, folliculitis and improve skin texture. Guaranteed results from the first session, safe and effective treatment."
       },
-      {
-        "title": "Slimming Treatments",
-        "content": "We offer slimming treatments to help you feel good and confident in your body. Our treatments include 3 phases: 1. Volume reduction; 2. Cellulite and localized fat reduction; 3. Tissue firming after weight loss. We also provide personalized treatments with follow-up and healthy eating guidelines.",
-        "additionalInfo": [
-          "Pressotherapy",
-          "EMS Slim electrostimulation",
-          "Massage with equipment"
-        ]
-      },
+
       {
         "title": "Other Treatments",
         "content": "We offer manicure and pedicure treatments to care for and enhance the beauty of your hands and feet, along with eyelash extensions to elevate your natural look. Our team uses high-quality products to ensure long-lasting and satisfying results."
       }
+    ]
+  },
+  "splitSectip": {
+    "title": "Slimming Treatments",
+    "content": "We offer slimming treatments to help you feel good and confident in your body. Our treatments include 3 phases: 1. Volume reduction; 2. Cellulite and localized fat reduction; 3. Tissue firming after weight loss. We also provide personalized treatments with follow-up and healthy eating guidelines.",
+    "additionalInfo": [
+      "Pressotherapy",
+      "EMS Slim electrostimulation",
+      "Massage with equipment"
     ]
   },
   "shuffleHero": {
@@ -77,7 +98,7 @@
       "Facial Treatments",
       "Laser Hair Removal",
       "Relaxing Massages",
-      "Body Treatments",
+      "Body and facial massages",
       "Manicure and Pedicure",
       "Professional Makeup"
     ],
