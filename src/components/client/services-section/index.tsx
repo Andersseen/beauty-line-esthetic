@@ -20,24 +20,41 @@ export default function ServicesSection({ dict }: ServiceSectionProps) {
     },
     {
       ...dict.sections[1],
-      imageUrl: "/10.webp",
+      imageUrl: "/07.webp",
     },
     {
       ...dict.sections[2],
-      imageUrl: "/17.webp",
+      imageUrl: "/08.webp",
+    },
+    {
+      ...dict.sections[2],
+      imageUrl: "/08.webp",
+    },
+    {
+      ...dict.sections[2],
+      imageUrl: "/08.webp",
+    },
+    {
+      ...dict.sections[2],
+      imageUrl: "/18.webp",
     },
     {
       ...dict.sections[3],
-      imageUrl: "/16.webp",
+      imageUrl: "/18.webp",
     },
     {
       ...dict.sections[4],
+      imageUrl: "/17.webp",
+    },
+
+    {
+      ...dict.sections[5],
       imageUrl: "/11.webp",
     },
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 lg:px-8 py-12">
       {sections.map((section, index) => (
         <motion.section
           key={index}
@@ -58,13 +75,6 @@ export default function ServicesSection({ dict }: ServiceSectionProps) {
           >
             <h2 className="text-3xl font-bold">{section.title}</h2>
             <p className="text-lg text-gray-600">{section.content}</p>
-            {section.additionalInfo && (
-              <ul className="mt-2 space-y-1 list-disc list-inside text-gray-500">
-                {section.additionalInfo.map((info, index) => (
-                  <li key={index}>{info}</li>
-                ))}
-              </ul>
-            )}
           </motion.div>
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -78,7 +88,7 @@ export default function ServicesSection({ dict }: ServiceSectionProps) {
               alt={`Imagen para ${section.title}`}
               width={600}
               height={400}
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg max-h-[400px] max-w-[600px] object-cover"
             />
           </motion.div>
         </motion.section>

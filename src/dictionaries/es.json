@@ -38,26 +38,47 @@
         "content": "Utilizamos aparatologia de última generación. Descubre nuestros tratamientos faciales diseñados para rejuvenecer y revitalizar tu piel. Desde limpiezas profundas hasta tratamientos anti-envejecimiento, utilizamos productos de alta calidad y técnicas avanzadas para asegurar que tu piel luzca y se sienta increíble."
       },
       {
-        "title": "Tratamientos Corporales",
-        "content": "Nuestros tratamientos están diseñados para una relajación profunda y oxigenación de la piel Ofrecemos masajes terapéuticos ,relajantes,anticelulíticos y ciculatorios que ayudan a quitar contracturas,relajar profundamente y también mejorar  circulacion  y aspecto de piel con con celulitis."
+        "title": "Limpieza Facial Profunda",
+        "content": "Limpieza facial profunda con peeling mecánico o combinado, vapor, extracción, milium, mascarilla personalizada, aparatología según valoración. Peeling químico con retinol: antimanchas, acné, pieles fotoenvejecidas (con vitamina C, ácido kójico, salicílico, mandélico y retinol)."
+      },
+      {
+        "title": "Radiofrecuencia Facial o Corporal",
+        "content": "Radiofrecuencia facial o corporal (lifting intensivo antiarrugas, reafirmante de óvalo facial, pómulos, párpados, etc. También flacidez corporal y celulitis)."
+      },
+      {
+        "title": "Oxigenoterapia",
+        "content": "Tratamiento oxigenante de piel con efecto purificante y calmante. Trata flacidez y atenúa las arrugas, bolsas y ojeras, aportando a la piel vitaminas, aminoácidos, ácido hialurónico según lo necesite."
+      },
+      {
+        "title": "Tratamientos Personalizados CASMARA",
+        "content": "Tratamientos personalizados CASMARA con efecto flash, botox, seboreguladores, oxigenantes, con mascarillas de alginato con extracto de oro, perla negra, bayas de goji, flores de nieve, algas marinas."
+      },
+      {
+        "title": "Tratamiento de Hidratación Facial Profunda",
+        "content": "Tratamiento de hidratación facial profunda, con mascarilla personalizada y ampolla aplicada con aparatología. Tratamiento con dermapen (relleno de arrugas, arrugas de expresión, vitaminas, reafirmante, efecto botox, melasma, marcas de acné)."
+      },
+      {
+        "title": "Masajes corporales y faciales",
+        "content": "Nuestros masajes están diseñados para una relajación profunda y oxigenación de la piel Ofrecemos masajes terapéuticos ,relajantes,anticelulíticos y ciculatorios que ayudan a quitar contracturas,relajar profundamente y también mejorar  circulacion  y aspecto de piel con con celulitis."
       },
       {
         "title": "Tratamientos Láser",
         "content": "Experimenta la última tecnologia en tratamientos de laser de diodo,para eliminar el vello,foliculitis y mejorar la textura de la piel. Resultados garantizandos desde primera sesion .Tratamiento seguro y efectivo."
       },
-      {
-        "title": "Tratamientos Adelgazantes",
-        "content": "Ofrecemos tratamientos adelgazantes para que te sientas bien y segura con tu cuerpo. Utilizamos 3 fases: 1. Pérdida de volumen; 2. Eliminación de piel de naranja y grasa localizada; 3. Reafirmación de los tejidos después de bajar el peso. También ofrecemos tratamientos personalizados con seguimiento y pautas de alimentación saludable.",
-        "additionalInfo": [
-          "Presoterapia",
-          "Electroestimulación EMS slim",
-          "Masajes con aparatología"
-        ]
-      },
+
       {
         "title": "Otros Tratamientos",
         "content": "Ofrecemos tratamientos de manicura y pedicura para cuidar y embellecer tus manos y pies, junto con extensiones de pestañas para realzar la belleza natural de tu mirada. Nuestro equipo utiliza productos de alta calidad para asegurar resultados duraderos y satisfactorios."
       }
+    ]
+  },
+  "splitSectip": {
+    "title": "Tratamientos Adelgazantes",
+    "content": "Ofrecemos tratamientos adelgazantes para que te sientas bien y segura con tu cuerpo. Utilizamos 3 fases: 1. Pérdida de volumen; 2. Eliminación de piel de naranja y grasa localizada; 3. Reafirmación de los tejidos después de bajar el peso. También ofrecemos tratamientos personalizados con seguimiento y pautas de alimentación saludable.",
+    "additionalInfo": [
+      "Presoterapia",
+      "Electroestimulación EMS slim",
+      "Masajes con aparatología"
     ]
   },
 
@@ -82,7 +103,7 @@
       "Tratamientos Faciales",
       "Depilación Láser",
       "Masajes Relajantes",
-      "Tratamientos Corporales",
+      "Masajes corporales y faciales",
       "Manicura y Pedicura",
       "Maquillaje Profesional"
     ],
