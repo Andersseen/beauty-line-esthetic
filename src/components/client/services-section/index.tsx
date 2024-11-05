@@ -24,31 +24,30 @@ export default function ServicesSection({ dict }: ServiceSectionProps) {
     },
     {
       ...dict.sections[2],
-      imageUrl: "/08.webp",
-    },
-    {
-      ...dict.sections[2],
-      imageUrl: "/08.webp",
-    },
-    {
-      ...dict.sections[2],
-      imageUrl: "/08.webp",
-    },
-    {
-      ...dict.sections[2],
-      imageUrl: "/18.webp",
+      imageUrl: "/24.webp",
     },
     {
       ...dict.sections[3],
-      imageUrl: "/18.webp",
+      imageUrl: "/08.webp",
     },
     {
       ...dict.sections[4],
-      imageUrl: "/17.webp",
+      imageUrl: "/23.webp",
     },
-
     {
       ...dict.sections[5],
+      imageUrl: "/13.webp",
+    },
+    {
+      ...dict.sections[6],
+      imageUrl: "/04.webp",
+    },
+    {
+      ...dict.sections[7],
+      imageUrl: "/17.webp",
+    },
+    {
+      ...dict.sections[8],
       imageUrl: "/11.webp",
     },
   ];
