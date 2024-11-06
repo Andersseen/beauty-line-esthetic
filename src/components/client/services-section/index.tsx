@@ -7,7 +7,6 @@ interface ServiceSectionProps {
     sections: {
       title: string;
       content: string;
-      additionalInfo?: string[];
     }[];
   };
 }

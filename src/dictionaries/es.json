@@ -74,7 +74,13 @@
   },
   "splitSectip": {
     "title": "Tratamientos Adelgazantes",
-    "content": "Ofrecemos tratamientos adelgazantes para que te sientas bien y segura con tu cuerpo. Utilizamos 3 fases: 1. Pérdida de volumen; 2. Eliminación de piel de naranja y grasa localizada; 3. Reafirmación de los tejidos después de bajar el peso. También ofrecemos tratamientos personalizados con seguimiento y pautas de alimentación saludable.",
+    "content": "Ofrecemos tratamientos adelgazantes para que te sientas bien y segura con tu cuerpo. También ofrecemos tratamientos personalizados con seguimiento y pautas de alimentación saludable.",
+    "phases": [
+      "Utilizamos 3 fases:",
+      "1. Pérdida de volumen;",
+      "2. Eliminación de piel de naranja y grasa localizada;",
+      "3. Reafirmación de los tejidos después de bajar el peso."
+    ],
     "additionalInfo": [
       "Presoterapia",
       "Electroestimulación EMS slim",

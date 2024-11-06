@@ -64,7 +64,13 @@
   },
   "splitSectip": {
     "title": "Slimming Treatments",
-    "content": "We offer slimming treatments to help you feel good and confident in your body. Our treatments include 3 phases: 1. Volume reduction; 2. Cellulite and localized fat reduction; 3. Tissue firming after weight loss. We also provide personalized treatments with follow-up and healthy eating guidelines.",
+    "content": "We offer slimming treatments to help you feel good and confident in your body.We also provide personalized treatments with follow-up and healthy eating guidelines.",
+    "phases": [
+      "Our treatments include 3 phases:",
+      "1. Volume reduction;",
+      "2. Cellulite and localized fat reduction;",
+      "3. Tissue firming after weight loss."
+    ],
     "additionalInfo": [
       "Pressotherapy",
       "EMS Slim electrostimulation",

@@ -6,7 +6,8 @@ interface SplitSectionProps {
   dict: {
     title: string;
     content: string;
-    additionalInfo: string[];
+    phases?: string[];
+    additionalInfo?: string[];
   };
 }
 
@@ -16,9 +17,9 @@ export default function SplitSection({ dict }: SplitSectionProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="w-full h-screen bg-gradient-to-br flex flex-col lg:flex-row"
+      className="w-full min-sh-screen bg-gradient-to-br flex flex-col lg:flex-row"
     >
-      <div className="w-full lg:w-1/2 h-1/2 lg:h-full p-4 lg:p-8 grid grid-cols-2 gap-4">
+      <div className="w-full lg:w-1/2 h-1/2 min-h-[500px] lg:h-full p-4 lg:p-8 grid grid-cols-2 gap-4">
         {["/19.webp", "/20.webp", "/21.webp", "/22.webp"].map((src, index) => (
           <motion.div
             key={index}
@@ -32,6 +33,7 @@ export default function SplitSection({ dict }: SplitSectionProps) {
               alt={`Image ${index + 1}`}
               layout="fill"
               objectFit="cover"
+              className="min-w-[250px] min-h-[150px]"
             />
           </motion.div>
         ))}
@@ -45,7 +47,12 @@ export default function SplitSection({ dict }: SplitSectionProps) {
         >
           <h2 className="text-3xl lg:text-4xl font-bold">{dict.title}</h2>
           <p className="text-lg">{dict.content}</p>
-          <ul className="mt-2 space-y-1 list-disc list-inside text-gray-500">
+          <ul className="mt-2 space-y-1">
+            {dict.phases.map((info, index) => (
+              <li key={index}>{info}</li>
+            ))}
+          </ul>
+          <ul className="mt-2 space-y-1 list-disc list-inside text-neutral-500">
             {dict.additionalInfo.map((info, index) => (
               <li key={index}>{info}</li>
             ))}
