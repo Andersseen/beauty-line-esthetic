@@ -7,6 +7,7 @@ import { background, lineVariants, lineVariantsBottom, opacity } from "./anim";
 import Nav from "./nav";
 import LanguageSwitcher from "../../server/language-switcher/index";
 import { Locale } from "@/i18n-config";
+import Logo from "@/components/server/logo";
 
 interface ClientHeaderProps {
   lang: Locale;
@@ -19,7 +20,7 @@ const ClientHeader: React.FC<ClientHeaderProps> = ({ lang }) => {
     <>
       <div className="flex justify-between uppercase text-xs font-light">
         <Link href="/" className="text-main-100 no-underline">
-          Logo
+          <Logo />
         </Link>
         <div
           onClick={() => setIsActive(!isActive)}
@@ -66,7 +67,7 @@ const ClientHeader: React.FC<ClientHeaderProps> = ({ lang }) => {
           animate={!isActive ? "open" : "closed"}
           className="absolute right-0 flex gap-7"
         ></motion.div>
-        <div>
+        <div className="relative flex items-center px-2">
           <LanguageSwitcher />
         </div>
       </div>

@@ -19,8 +19,9 @@ export default async function Home({ params }: Props) {
       <section className="w-full mx-auto rounded-md min-h-screen overflow-hidden">
         <ShuffleHero dict={dict.shuffleHero} />
         <Features dict={dict.featuresSection} />
-        <ServicesSection dict={dict.servicesSection} />
-        <SplitSection dict={dict.splitSectip} />
+        <ServicesSection dict={dict.servicesSection}>
+          <SplitSection dict={dict.splitSectip} />
+        </ServicesSection>
         <BentoGridDemo />
         <ContactSection dict={dict.contactSection} />
       </section>

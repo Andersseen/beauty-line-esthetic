@@ -45,7 +45,11 @@
       },
       {
         "title": "Dermapen or Microneedling Treatment",
-        "content": "Dermapen treatment (wrinkle filling, expression lines, vitamins, firming, botox effect, melasma, acne marks). Chemical peel with retinol: anti-blemish, acne, photoaged skin (with vitamin C, kojic acid, salicylic, mandelic, and retinol)."
+        "content": "Dermapen treatment (wrinkle filling, expression lines, vitamins, firming, botox effect, melasma, acne marks)."
+      },
+      {
+        "title": "Chemical peel with retinol",
+        "content": "Chemical peel with retinol: anti-blemish, acne, photoaged skin (with vitamin C, kojic acid, salicylic, mandelic, and retinol)."
       },
       {
         "title": "Body and facial massages",
@@ -55,7 +59,10 @@
         "title": "Diode laser depilation",
         "content": "Experience the latest technology in diode laser treatments, to remove hair, folliculitis and improve skin texture. Guaranteed results from the first session, safe and effective treatment."
       },
-
+      {
+        "title": "New!!! Treatment with exosomes",
+        "content": "Exosomes are small vesicles that come from cells, with a high content of proteins, lipids, messenger RNA, mitochondrial RNA, DNA, and various growth factors.\n\nMain benefits of exosomes:\n- Advanced skin care\n- Facial rejuvenation\n- Regenerative gynecology\n- Prevents/improves alopecia\n- Increases hair density and thickness\n- Enlarged pores\n- Improves stretch marks, scars, acne marks\n- Brightens the skin"
+      },
       {
         "title": "Other Treatments",
         "content": "We offer manicure and pedicure treatments to care for and enhance the beauty of your hands and feet, along with eyelash extensions to elevate your natural look. Our team uses high-quality products to ensure long-lasting and satisfying results."
@@ -86,7 +93,7 @@
   "contactSection": {
     "title": "Get in touch",
     "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "contactInfo": ["contact@example.com", "+1 (555) 123-4567"]
+    "contactInfo": ["contact@example.com", "+34 645 22 87 82"]
   },
   "about": {
     "title": "Your oasis of beauty and wellness",
@@ -96,8 +103,8 @@
   "footer": {
     "title": "Beauty Center",
     "description": "Enhancing your natural beauty since 2005",
-    "address": "123 Beauty Street, City",
-    "phone": "+34 123 456 789",
+    "address": "Paseo Castilla 11. Alcorcón",
+    "phone": "+34 645 22 87 82",
     "email": "info@beautycenter.com",
     "servicesTitle": "Our Services",
     "servicesList": [
@@ -110,10 +117,25 @@
     ],
     "infoTitle": "Useful Information",
     "infoList": [
-      { "text": "Monday to Saturday: 9:00 - 20:00", "icon": "Clock" },
+      { "text": "Monday to Friday: 10:00 - 20:00", "icon": "Clock" },
+      {
+        "text": "Saturday: 10:00 - 14:00",
+        "icon": "Clock"
+      },
       { "text": "We accept all cards", "icon": "CreditCard" },
       { "text": "Certified staff", "icon": "Award" }
     ],
     "copyright": "© 2024 Beauty Center. All rights reserved."
+  },
+  "contact": {
+    "buttonText": "Contact",
+    "contact": {
+      "address": "Paseo Castilla 11. Alcorcón",
+      "whatsapp": "WhatsApp: 645 22 87 82",
+      "schedule": "SCHEDULE",
+      "weekdayHours": "MONDAY TO FRIDAY FROM 10:00 AM TO 8:00 PM.",
+      "saturdayHours": "SATURDAYS FROM 10:00 AM TO 2:00 PM.",
+      "homeService": "Home service, check prices"
+    }
   }
 }
