@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Beauty Salon",
+  title: "Beauty Line",
   description: "Created by Andersseen",
 };
 
