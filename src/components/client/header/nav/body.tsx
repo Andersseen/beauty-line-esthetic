@@ -43,7 +43,7 @@ const Body: React.FC<BodyProps> = ({
   };
 
   return (
-    <div className="flex flex-wrap mt-10">
+    <div className="flex flex-col lg:flex-row items-center flex-wrap mt-10">
       {links.map((link, index) => {
         const { title, href } = link;
         return (

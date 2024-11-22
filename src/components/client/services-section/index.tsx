@@ -55,33 +55,29 @@ export default function ServicesSection({
     },
     {
       ...dict.sections[9],
-      imageUrl: "/03.webp",
-    },
-    {
-      ...dict.sections[10],
       imageUrl: "/11.webp",
     },
   ];
 
   return (
-    <div className="container mx-auto px-4 lg:px-8 py-12">
+    <section className="container mx-auto px-4 lg:px-8 py-12">
       {sections.map((section, index) => (
-        <div key={index}>
-          <motion.section
+        <div key={index} className="py-4">
+          <motion.article
             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, y: 50 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.3 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
-            className={`flex flex-col md:flex-row items-center gap-8 py-12 ${
+            className={`flex flex-col md:flex-row items-center gap-8 py-12 lg:max-h-[400px] ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
             <motion.div
               initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.3 }}
+              transition={{ duration: 0.3 }}
               viewport={{ once: true }}
-              className="w-full md:w-1/2 space-y-4"
+              className="w-full md:w-1/2 space-y-4 lg:p-8"
             >
               <h2 className="text-3xl font-bold">{section.title}</h2>
               <p className="text-lg text-gray-600">{section.content}</p>
@@ -89,22 +85,24 @@ export default function ServicesSection({
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.3 }}
+              transition={{ duration: 0.3 }}
               viewport={{ once: true }}
               className="w-full md:w-1/2"
             >
-              <Image
-                src={section.imageUrl}
-                alt={`Imagen para ${section.title}`}
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg max-h-[400px] max-w-[600px] object-cover"
-              />
+              <div className="w-full relative mx-auto h-auto overflow-hidden rounded-lg ">
+                <Image
+                  src={section.imageUrl}
+                  alt={`Imagen para ${section.title}`}
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-lg w-full h-fit lg:max-h-[400px] relative z-0 object-cover transition-all duration-300 hover:scale-105"
+                />
+              </div>
             </motion.div>
-          </motion.section>
+          </motion.article>
           {index === sections.length - 2 && children}
         </div>
       ))}
-    </div>
+    </section>
   );
 }

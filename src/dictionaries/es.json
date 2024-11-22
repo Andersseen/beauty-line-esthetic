@@ -11,7 +11,7 @@
   },
   "featuresSection": {
     "title": "La Excelencia en Cuidado Estético",
-    "description": "En nuestro centro de estética, nos enorgullecemos de ofrecer tratamientos de alta calidad utilizando productos naturales y técnicas avanzadas. Nuestro objetivo es brindarte una experiencia de relajación total y rejuvenecimiento.",
+    "description": "En nuestro centro de estética, estamos orgullosos de ofrecer tratamientos de alta calidad utilizando productos naturales y técnicas avanzadas. Nuestro objetivo es brindarte una experiencia de relajación total y rejuvenecimiento.",
     "features": [
       {
         "title": "Productos Naturales",
@@ -63,23 +63,21 @@
       },
       {
         "title": "Masajes corporales y faciales",
-        "content": "Nuestros masajes están diseñados para una relajación profunda y oxigenación de la piel Ofrecemos masajes terapéuticos ,relajantes,anticelulíticos y ciculatorios que ayudan a quitar contracturas,relajar profundamente y también mejorar  circulacion  y aspecto de piel con con celulitis."
+        "content": "Nuestros masajes están diseñados para una relajación profunda y oxigenación de la piel Ofrecemos masajes terapéuticos ,relajantes,anticelulíticos y ciculatorios que ayudan a quitar contracturas,relajar y también mejorar  circulacion  y aspecto de piel con con celulitis."
       },
 
       {
-        "title": "Depilacion laser diodo",
+        "title": "Última tecnologia en depilacion laser diodo",
         "content": "Experimenta la última tecnologia en tratamientos de laser de diodo,para eliminar el vello,foliculitis y mejorar la textura de la piel. Resultados garantizandos desde primera sesion .Tratamiento seguro y efectivo."
       },
-      {
-        "title": "Novedad!!! Tratamiento con exosomas",
-        "content": "Los Exosomas son pequeñas vesículas, que provienen de las células, con un alto contenido en proteínas, lípidos, ARN mensajero, ARN mitocondrial, ADN y distintos factores de crecimiento.\n\nPrincipales beneficios de los exosomas:\n- Cuidado avanzado de la piel\n- Rejuvenecimiento facial\n- Ginecología regenerativa\n- Evita/mejora la alopecia\n- Aumenta la densidad y grosor del cabello\n- Poros dilatados\n- Mejoran estrías, cicatrices, marcas de acné\n- Aclara la piel"
-      },
+
       {
         "title": "Otros Tratamientos",
         "content": "Ofrecemos tratamientos de manicura y pedicura para cuidar y embellecer tus manos y pies, junto con extensiones de pestañas para realzar la belleza natural de tu mirada. Nuestro equipo utiliza productos de alta calidad para asegurar resultados duraderos y satisfactorios."
       }
     ]
   },
+
   "splitSectip": {
     "title": "Tratamientos Adelgazantes",
     "content": "Ofrecemos tratamientos adelgazantes para que te sientas bien y segura con tu cuerpo. También ofrecemos tratamientos personalizados con seguimiento y pautas de alimentación saludable.",
@@ -92,10 +90,26 @@
     "additionalInfo": [
       "Presoterapia",
       "Electroestimulación EMS slim",
-      "Masajes con aparatología"
+      "Masajes con aparatología",
+      "Cavitacion",
+      "Vacuumterapia"
     ]
   },
 
+  "newTreatment": {
+    "title": "Novedad!!! Tratamiento con exosomas",
+    "content": "Los Exosomas son pequeñas vesículas, que provienen de las células, con un alto contenido en proteínas, lípidos, ARN mensajero, ARN mitocondrial, ADN y distintos factores de crecimiento.",
+
+    "additionalInfo": [
+      "Principales beneficios de los exosomas:",
+      "- Cuidado avanzado de la piel",
+      "- Rejuvenecimiento facial",
+      "- Evita/mejora la alopecia",
+      "- Poros dilatados",
+      "- Mejoran estrías, cicatrices, marcas de acné",
+      "- Aclara la piel"
+    ]
+  },
   "contactSection": {
     "title": "Contáctanos",
     "description": "Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible.",

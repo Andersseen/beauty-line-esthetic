@@ -59,10 +59,7 @@
         "title": "Diode laser depilation",
         "content": "Experience the latest technology in diode laser treatments, to remove hair, folliculitis and improve skin texture. Guaranteed results from the first session, safe and effective treatment."
       },
-      {
-        "title": "New!!! Treatment with exosomes",
-        "content": "Exosomes are small vesicles that come from cells, with a high content of proteins, lipids, messenger RNA, mitochondrial RNA, DNA, and various growth factors.\n\nMain benefits of exosomes:\n- Advanced skin care\n- Facial rejuvenation\n- Regenerative gynecology\n- Prevents/improves alopecia\n- Increases hair density and thickness\n- Enlarged pores\n- Improves stretch marks, scars, acne marks\n- Brightens the skin"
-      },
+
       {
         "title": "Other Treatments",
         "content": "We offer manicure and pedicure treatments to care for and enhance the beauty of your hands and feet, along with eyelash extensions to elevate your natural look. Our team uses high-quality products to ensure long-lasting and satisfying results."
@@ -82,6 +79,21 @@
       "Pressotherapy",
       "EMS Slim electrostimulation",
       "Massage with equipment"
+    ]
+  },
+
+  "newTreatment": {
+    "title": "New!!! Treatment with exosomes",
+    "content": "Exosomes are small vesicles that come from cells, with a high content of proteins, lipids, messenger RNA, mitochondrial RNA, DNA, and various growth factors.",
+
+    "additionalInfo": [
+      "Main benefits of exosomes:",
+      "- Advanced skin care",
+      "- Facial rejuvenation",
+      "- Prevents/improves ",
+      "- Enlarged pores",
+      "- Improve stretch marks, scars, acne marks",
+      "- Lightens the skin"
     ]
   },
   "shuffleHero": {

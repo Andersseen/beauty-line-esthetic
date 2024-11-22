@@ -6,6 +6,7 @@ import { TransitionWrapper } from "@/components/client/transition-wrapper";
 import { BentoGridDemo } from "@/components/client/bento-grid/demo";
 import { getDictionary } from "@/lib/dictionaries";
 import SplitSection from "@/components/client/split-section";
+import NewTreatment from "@/components/client/new-treatment";
 
 type Props = {
   params: { lang: string };
@@ -21,6 +22,7 @@ export default async function Home({ params }: Props) {
         <Features dict={dict.featuresSection} />
         <ServicesSection dict={dict.servicesSection}>
           <SplitSection dict={dict.splitSectip} />
+          <NewTreatment dict={dict.newTreatment} />
         </ServicesSection>
         <BentoGridDemo />
         <ContactSection dict={dict.contactSection} />
