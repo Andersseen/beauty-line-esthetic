@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { background, lineVariants, lineVariantsBottom, opacity } from "./anim";
+import { background, opacity } from "./anim";
 import Nav from "./nav";
 import LanguageSwitcher from "../../server/language-switcher/index";
 import { Locale } from "@/i18n-config";
 import Logo from "@/components/server/logo";
+import { MenuButton } from "./menu-button";
 
 interface ClientHeaderProps {
   lang: Locale;
@@ -30,37 +31,20 @@ const ClientHeader: React.FC<ClientHeaderProps> = ({ lang }) => {
             className={`relative w-[22.5px] pointer-events-none ${
               isActive ? "burger-active" : ""
             }`}
-          >
-            <motion.span
-              className="absolute top-[-4px] left-1/2 transform -translate-x-1/2 block h-[1px] w-full bg-main-100"
-              variants={lineVariants}
-              initial="closed"
-              animate={isActive ? "open" : "closed"}
-            />
-            {/* Línea inferior */}
-            <motion.span
-              className="absolute top-[4px] left-1/2 transform -translate-x-1/2 block h-[1px] w-full bg-main-100 shadow-sm"
-              variants={lineVariantsBottom}
-              initial="closed"
-              animate={isActive ? "open" : "closed"}
-            />
-          </div>
-          <div className="relative flex items-center px-2">
-            <motion.p
-              variants={opacity}
-              animate={!isActive ? "open" : "closed"}
-              className="text-main-100"
-            >
-              Menu
-            </motion.p>
-            <motion.p
-              variants={opacity}
-              animate={isActive ? "open" : "closed"}
-              className="absolute opacity-0 text-main-100"
-            >
-              Close
-            </motion.p>
-          </div>
+          ></div>
+
+          <MenuButton
+            isOpen={isActive}
+            strokeWidth="6"
+            color="#fdf2f8"
+            lineProps={{ strokeLinecap: "round" }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+              duration: 1,
+            }}
+          />
         </div>
         <motion.div
           variants={opacity}
