@@ -120,6 +120,92 @@
     "description": "En nuestro centro de estética, nos dedicamos a realzar tu belleza natural y promover tu bienestar integral. Con años de experiencia y un equipo de profesionales altamente calificados, ofrecemos una amplia gama de tratamientos personalizados utilizando las técnicas más avanzadas y productos de primera calidad. Nuestro objetivo es que te sientas renovada, confiada y radiante en cada visita.",
     "imageAlt": "Centro de Estética"
   },
+  "prices": {
+    "pageTitle": "Nuestros Tratamientos",
+    "tabs": {
+      "estetica": "Estética",
+      "depilacion": "Depilación Láser",
+      "corporal": "Tratamientos Corporales"
+    },
+    "treatments": {
+      "estetica": [
+        {
+          "title": "Limpieza facial profunda",
+          "description": "Con peeling mecánico o combinado, vapor, extracción, milium, mascarilla personalizada, aparatología según valoración."
+        },
+        {
+          "title": "Peeling químico con retinol",
+          "description": "Antimanchas, acné, pieles fotoenviejecidas (con vitamina C, ácido kójico, salicílico, mandélico y retinol)."
+        },
+        {
+          "title": "Oxigenoterapia",
+          "description": "Tratamiento antiarrugas, reafirmante, cuperosis, iluminador, efecto botox purificante."
+        },
+        {
+          "title": "Tratamiento BBGLOW",
+          "description": "Hidratación intensiva con dermapen y ácido hialurónico con un suave toque de maquillaje."
+        },
+        {
+          "title": "Radiofrecuencia facial o corporal",
+          "description": "Lifting intensivo antiarrugas, reafirmante de óvalo facial, pómulos, párpados, etc. También flacidez corporal y celulitis.",
+          "duration": "Sesión 60min"
+        },
+        {
+          "title": "Tratamiento de hidratación facial profunda",
+          "description": "Con mascarilla personalizada y ampolla aplicada con aparatología."
+        },
+        {
+          "title": "Tratamiento con dermapen",
+          "description": "Relleno de arrugas, arrugas de expresión, vitaminas, reafirmante, efecto botox, melasma, marcas de acné."
+        },
+        {
+          "title": "Tratamientos personalizados CASMARA",
+          "description": "Con efecto flash, botox, seboreguladores, oxigenantes, con mascarillas de alginato con extracto de oro, perla negra, bayas de goji, flores de nieve, algas marinas."
+        }
+      ],
+      "depilacion": [
+        { "title": "Zonas pequeñas" },
+        { "title": "Zonas medianas" },
+        { "title": "Zonas grandes" },
+        { "title": "Aplicación de crema anestésica" }
+      ],
+      "corporal": [
+        {
+          "title": "Sobrepeso y Celulitis",
+          "description": "Cavitación + presoterapia, dermapen + radiofrecuencia, masaje más presoterapia, cavitación + presoterapia, o combinado según valoración.",
+          "duration": "Duración una hora"
+        },
+        {
+          "title": "Tratamiento reductor y anticelulítico",
+          "description": "Dermapen (mesoterapia corporal) más presoterapia."
+        },
+        {
+          "title": "Tratamiento combinado",
+          "description": "Con aparatología y masaje manual de espalda."
+        },
+        {
+          "title": "Masaje reductor, anticelulítico, reafirmante, terapéutico, relajante",
+          "description": "Diferentes duraciones disponibles: 30min, 40min, 60min."
+        },
+        {
+          "title": "Masaje anticelulítico y moldeante",
+          "description": "Con aparato G5.",
+          "duration": "Media hora"
+        },
+        {
+          "title": "Masaje facial",
+          "duration": "Media hora"
+        },
+        {
+          "title": "Presoterapia médica"
+        }
+      ]
+    },
+    "contact": {
+      "interestedText": "¿Interesado en nuestros tratamientos?",
+      "callToAction": "Llámenos para obtener información detallada sobre precios y promociones actuales."
+    }
+  },
   "footer": {
     "title": "Centro de Estética",
     "description": "Realzando tu belleza natural desde 2020",

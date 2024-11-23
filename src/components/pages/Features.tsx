@@ -29,9 +29,7 @@ const FeatureItem: React.FC<Feature> = ({ title, description }) => {
           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
             {title}
           </h3>
-          <p className="text-gray-600 dark:text-gray-400 line-clamp-2">
-            {description}
-          </p>
+          <p className="text-gray-600">{description}</p>
         </div>
       </div>
     </div>
@@ -55,13 +53,11 @@ const Features: React.FC<FeaturesProps> = ({ dict }) => {
         <div className="flex flex-1 flex-col gap-5">
           <div className="flex flex-col gap-5">
             <div className="flex flex-col">
-              <h2 className="text-4xl lg:text-4xl font-bold text-gray-800 dark:text-white">
+              <h2 className="text-4xl lg:text-4xl font-bold text-gray-800">
                 {dict.title}
               </h2>
             </div>
-            <p className="text-gray-700 dark:text-gray-300">
-              {dict.description}
-            </p>
+            <p className="">{dict.description}</p>
           </div>
           <div className="space-y-3">
             {dict.features.map((feature, index) => (
