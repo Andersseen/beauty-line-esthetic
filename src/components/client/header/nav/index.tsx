@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { height } from "../anim";
 import { HEADER_LINKS as links } from "@/data/links";
 import Body from "./body";

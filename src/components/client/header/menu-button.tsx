@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Transition, SVGMotionProps, motion } from "framer-motion";
+import { Transition, SVGMotionProps, motion } from "motion/react";
 
 interface Props extends SVGMotionProps<any> {
   isOpen?: boolean;

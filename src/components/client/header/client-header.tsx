@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { background, opacity } from "./anim";
 import Nav from "./nav";
 import LanguageSwitcher from "../../server/language-switcher/index";
