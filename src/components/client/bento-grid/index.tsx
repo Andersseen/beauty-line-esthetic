@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 import { cn } from "@/lib/utils";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m, LazyMotion, domAnimation } from "motion/react";
 
 const HoverContext = createContext(false);
 
@@ -49,10 +49,6 @@ export const BentoGridItem = ({
           "flex items-center justify-center min-h-32 rounded-lg group/bento shadow-md hover:shadow-xl transition duration-200 bg-gradient-to-br from-main-100 to-main-300",
           className
         )}
-        // style={{
-        //   backgroundImage: `url(${imageSrc})`,
-        //   backgroundSize: "cover",
-        // }}
         whileHover={{ scale: 1.01 }}
         animate={{
           scale: isHovered ? 0.99 : 1,

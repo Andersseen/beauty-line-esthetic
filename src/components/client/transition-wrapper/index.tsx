@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence, useIsPresent } from "framer-motion";
+import { motion, AnimatePresence, useIsPresent } from "motion/react";
 
 export const TransitionWrapper = ({
   children,

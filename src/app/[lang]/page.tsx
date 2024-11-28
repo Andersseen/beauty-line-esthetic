@@ -21,8 +21,8 @@ export default async function Home({ params }: Props) {
         <ShuffleHero dict={dict.shuffleHero} />
         <Features dict={dict.featuresSection} />
         <ServicesSection dict={dict.servicesSection}>
-          <SplitSection dict={dict.splitSectip} />
           <NewTreatment dict={dict.newTreatment} />
+          <SplitSection dict={dict.splitSectip} />
         </ServicesSection>
         <BentoGridDemo />
         <ContactSection dict={dict.contactSection} />

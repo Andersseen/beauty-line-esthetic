@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { blur, translate } from "../anim";
 import { Locale } from "@/i18n-config";
