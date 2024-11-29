@@ -7,10 +7,17 @@ import { BentoGridDemo } from "@/components/client/bento-grid/demo";
 import { getDictionary } from "@/lib/dictionaries";
 import SplitSection from "@/components/client/split-section";
 import NewTreatment from "@/components/client/new-treatment";
+import { WhatsAppButton } from "@/components/whatsapp-button";
+import dynamic from "next/dynamic";
 
 type Props = {
   params: { lang: string };
 };
+
+const GiftCards = dynamic(() => import("@/components/client/gift-cards"), {
+  ssr: false,
+});
+
 export default async function Home({ params }: Props) {
   const { lang } = params;
   const dict = await getDictionary(lang);
@@ -25,7 +32,12 @@ export default async function Home({ params }: Props) {
           <SplitSection dict={dict.splitSectip} />
         </ServicesSection>
         <BentoGridDemo />
+        <GiftCards dict={dict.giftCards} />
         <ContactSection dict={dict.contactSection} />
+        <WhatsAppButton
+          phoneNumber="+34645228782"
+          message="¡Hola! Me gustaría obtener más información"
+        />
       </section>
     </TransitionWrapper>
   );

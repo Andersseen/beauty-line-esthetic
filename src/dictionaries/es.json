@@ -7,7 +7,9 @@
       "Resultados brillantes",
       "Productos naturales"
     ],
-    "satisfaction": "100% de clientes satisfechos"
+    "satisfaction": "100% de clientes satisfechos",
+    "callAction": "Pide tu cita ya",
+    "actionMessage": "¡Hola! Me gustaría obtener más información"
   },
   "featuresSection": {
     "title": "La Excelencia en Cuidado Estético",
@@ -205,6 +207,11 @@
       "interestedText": "¿Interesado en nuestros tratamientos?",
       "callToAction": "Llámenos para obtener información detallada sobre precios y promociones actuales."
     }
+  },
+
+  "giftCards": {
+    "title": "Tarjetas de Regalo",
+    "description": "Regala una experiencia única de bienestar y belleza con nuestras tarjetas de regalo. Perfectas para cualquier ocasión, nuestras tarjetas permiten a tus seres queridos disfrutar de una amplia variedad de tratamientos faciales, corporales y de relajación en nuestro centro de estética. Haz que se sientan especiales y cuidados con un regalo que promueve la salud y la belleza."
   },
   "footer": {
     "title": "Centro de Estética",
