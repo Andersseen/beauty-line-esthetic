@@ -21,7 +21,7 @@ export default function SplitSection({ dict }: SplitSectionProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-full min-sh-screen bg-gradient-to-br flex flex-col lg:flex-row"
+        className="w-full min-sh-screen bg-gradient-to-br flex flex-col-reverse lg:flex-row"
       >
         <div className="w-full lg:w-1/2 h-1/2 lg:min-h-[500px] lg:h-full p-4 lg:p-8 grid grid-cols-2 gap-4">
           {["/19.webp", "/20.webp", "/21.webp", "/22.webp"].map(
