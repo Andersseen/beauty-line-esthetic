@@ -3,7 +3,7 @@ import ServicesSection from "@/components/client/services-section";
 import ShuffleHero from "@/components/client/shuffle-hero";
 import Features from "@/components/pages/Features";
 import { TransitionWrapper } from "@/components/client/transition-wrapper";
-import { BentoGridDemo } from "@/components/client/bento-grid/demo";
+import BentoGridProducts from "@/components/client/bento-grid/products";
 import { getDictionary } from "@/lib/dictionaries";
 import SplitSection from "@/components/client/split-section";
 import NewTreatment from "@/components/client/new-treatment";
@@ -31,7 +31,7 @@ export default async function Home({ params }: Props) {
           <NewTreatment dict={dict.newTreatment} />
           <SplitSection dict={dict.splitSectip} />
         </ServicesSection>
-        <BentoGridDemo />
+        <BentoGridProducts dict={dict.products} />
         <GiftCards dict={dict.giftCards} />
         <ContactSection dict={dict.contactSection} />
         <WhatsAppButton

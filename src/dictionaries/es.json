@@ -244,6 +244,33 @@
     "copyright": "© 2024 Centro de Estética. Todos los derechos reservados."
   },
 
+  "products": [
+    {
+      "title": "Casmara",
+      "description": "Cosmética innovadora con tratamientos avanzados para el cuidado de la piel."
+    },
+    {
+      "title": "Atache",
+      "description": "Soluciones dermocosméticas de alta calidad para la salud y belleza de la piel."
+    },
+    {
+      "title": "Skin Clinic",
+      "description": "Especialistas en tratamientos para la regeneración y rejuvenecimiento facial."
+    },
+    {
+      "title": "Utsukusy",
+      "description": "Cosmética japonesa profesional centrada en la estética y la eficacia."
+    },
+    {
+      "title": "On Macabim",
+      "description": "Productos naturales basados en la medicina herbal para el cuidado integral."
+    },
+    {
+      "title": "Karoma",
+      "description": "Aromaterapia y cuidado holístico con aceites esenciales de alta pureza."
+    }
+  ],
+
   "contact": {
     "buttonText": "Contacto",
     "contact": {

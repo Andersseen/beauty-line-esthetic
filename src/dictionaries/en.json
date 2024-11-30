@@ -227,6 +227,36 @@
     ],
     "copyright": "© 2024 Beauty Center. All rights reserved."
   },
+  "products": [
+    {
+      "title": "Casmara",
+      "description": "Innovative cosmetics with advanced treatments for skin care."
+    },
+    {
+      "title": "Atache",
+      "description": "High-quality dermocosmetic solutions for skin health and beauty."
+    },
+    {
+      "title": "Skin Clinic",
+      "description": "Specialists in treatments for facial regeneration and rejuvenation."
+    },
+    {
+      "title": "Utsukusy",
+      "description": "Professional Japanese cosmetics focused on aesthetics and effectiveness."
+    },
+    {
+      "title": "On Macabim",
+      "description": "Natural products based on herbal medicine for comprehensive care."
+    },
+    {
+      "title": "Karoma",
+      "description": "Aromatherapy and holistic care with high-purity essential oils."
+    }
+  ],
+  "giftCards": {
+    "title": "Gift Cards",
+    "description": "Give the gift of a unique wellness and beauty experience with our gift cards. Perfect for any occasion, our cards allow your loved ones to enjoy a wide range of facial, body, and relaxation treatments at our aesthetic center. Make them feel special and pampered with a gift that promotes health and beauty."
+  },
   "contact": {
     "buttonText": "Contact",
     "contact": {
@@ -237,9 +267,5 @@
       "saturdayHours": "SATURDAYS FROM 10:00 AM TO 2:00 PM.",
       "homeService": "Home service, check prices"
     }
-  },
-  "giftCards": {
-    "title": "Gift Cards",
-    "description": "Give the gift of a unique wellness and beauty experience with our gift cards. Perfect for any occasion, our cards allow your loved ones to enjoy a wide range of facial, body, and relaxation treatments at our aesthetic center. Make them feel special and pampered with a gift that promotes health and beauty."
   }
 }

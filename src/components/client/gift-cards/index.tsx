@@ -27,7 +27,7 @@ const GiftCards: React.FC<GiftCardsProps> = ({ dict }) => {
   });
 
   return (
-    <div className="flex flex-col md:flex-row h-fit">
+    <div className="container mx-auto flex flex-col md:flex-row h-fit">
       <div className="flex-1 flex items-center justify-center">
         <div
           ref={animationContainer}
@@ -38,7 +38,9 @@ const GiftCards: React.FC<GiftCardsProps> = ({ dict }) => {
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           {dict.title}
         </h2>
-        <p className="text-gray-500 dark:text-gray-400">{dict.description}</p>
+        <p className="text-gray-500 dark:text-gray-400 p-4">
+          {dict.description}
+        </p>
       </div>
     </div>
   );
