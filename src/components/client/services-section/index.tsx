@@ -1,5 +1,6 @@
 "use client";
 import BoxReveal from "@/components/box-reveal";
+import { MagicCard } from "@/components/magic-card";
 import { m, LazyMotion, domAnimation } from "motion/react";
 import Image from "next/image";
 
@@ -76,20 +77,21 @@ export default function ServicesSection({
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
-              <m.div
-                initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
-                className="w-full md:w-1/2 space-y-4 lg:p-8"
-              >
-                <BoxReveal>
-                  <h2 className="text-3xl font-bold">{section.title}</h2>
-                </BoxReveal>
-                <BoxReveal>
-                  <p className="text-lg text-gray-600">{section.content}</p>
-                </BoxReveal>
-              </m.div>
+              <MagicCard className="w-full md:w-1/2 space-y-4 lg:p-8">
+                <m.div
+                  initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <BoxReveal>
+                    <h2 className="text-3xl font-bold">{section.title}</h2>
+                  </BoxReveal>
+                  <BoxReveal>
+                    <p className="text-lg">{section.content}</p>
+                  </BoxReveal>
+                </m.div>
+              </MagicCard>
               <m.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -115,7 +117,8 @@ export default function ServicesSection({
                 </div>
               </m.div>
             </m.article>
-            {index === 5 && children}
+
+            {index === 6 && children}
           </LazyMotion>
         </div>
       ))}

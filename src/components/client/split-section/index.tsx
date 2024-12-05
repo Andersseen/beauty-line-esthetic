@@ -1,5 +1,6 @@
 "use client";
 import BoxReveal from "@/components/box-reveal";
+import { MagicCard } from "@/components/magic-card";
 import { domAnimation, LazyMotion, m } from "motion/react";
 import Image from "next/image";
 
@@ -21,9 +22,43 @@ export default function SplitSection({ dict }: SplitSectionProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-full min-sh-screen bg-gradient-to-br flex flex-col-reverse lg:flex-row"
+        className="w-full min-sh-screen bg-gradient-to-br flex flex-col lg:flex-row items-center mb-8"
       >
-        <div className="w-full lg:w-1/2 h-1/2 lg:min-h-[500px] lg:h-full p-4 lg:p-8 grid grid-cols-2 gap-4">
+        <div className="w-full lg:w-1/2 h-1/2 lg:h-full flex items-center justify-center lg:p-16">
+          <MagicCard>
+            <m.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-lg space-y-6"
+            >
+              <BoxReveal>
+                <h2 className="text-3xl lg:text-4xl font-bold">{dict.title}</h2>
+              </BoxReveal>
+
+              <BoxReveal>
+                <p className="text-lg">{dict.content}</p>
+              </BoxReveal>
+              <ul className="mt-2 space-y-1">
+                {dict.phases.map((info, index) => (
+                  <li key={index}>
+                    <BoxReveal>
+                      <span>{info}</span>
+                    </BoxReveal>
+                  </li>
+                ))}
+              </ul>
+              <ul className="mt-2 space-y-1 list-disc list-inside text-neutral-500">
+                {dict.additionalInfo.map((info, index) => (
+                  <BoxReveal key={index}>
+                    <li>{info}</li>
+                  </BoxReveal>
+                ))}
+              </ul>
+            </m.div>
+          </MagicCard>
+        </div>
+        <div className="w-full lg:w-1/2 h-1/2 lg:min-h-[500px] lg:h-full lg:p-8 grid grid-cols-2 gap-4">
           {["/19.webp", "/20.webp", "/21.webp", "/22.webp"].map(
             (src, index) => (
               <m.div
@@ -50,38 +85,6 @@ export default function SplitSection({ dict }: SplitSectionProps) {
               </m.div>
             )
           )}
-        </div>
-        <div className="w-full lg:w-1/2 h-1/2 lg:h-full flex items-center justify-center p-8 lg:p-16">
-          <m.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-lg space-y-6"
-          >
-            <BoxReveal>
-              <h2 className="text-3xl lg:text-4xl font-bold">{dict.title}</h2>
-            </BoxReveal>
-
-            <BoxReveal>
-              <p className="text-lg">{dict.content}</p>
-            </BoxReveal>
-            <ul className="mt-2 space-y-1">
-              {dict.phases.map((info, index) => (
-                <li key={index}>
-                  <BoxReveal>
-                    <span>{info}</span>
-                  </BoxReveal>
-                </li>
-              ))}
-            </ul>
-            <ul className="mt-2 space-y-1 list-disc list-inside text-neutral-500">
-              {dict.additionalInfo.map((info, index) => (
-                <BoxReveal key={index}>
-                  <li>{info}</li>
-                </BoxReveal>
-              ))}
-            </ul>
-          </m.div>
         </div>
       </m.section>
     </LazyMotion>
