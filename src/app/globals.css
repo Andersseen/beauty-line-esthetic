@@ -9,6 +9,10 @@ body {
 :root {
   --nextui-primary: 346, 58%, 16%;
 }
+::selection {
+  color: #fae9e9;
+  background-color: #40111c;
+}
 
 @layer utilities {
   .text-balance {
