@@ -30,14 +30,14 @@ export default function SplitSection({ dict }: SplitSectionProps) {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="max-w-lg space-y-6"
+              className="w-full"
             >
               <BoxReveal>
-                <h2 className="text-3xl lg:text-4xl font-bold">{dict.title}</h2>
+                <h2 className="text-xl sm:text-1xl md:text-2xl lg:text-3xl font-bold">{dict.title}</h2>
               </BoxReveal>
 
               <BoxReveal>
-                <p className="text-lg">{dict.content}</p>
+                <p className="text-md md:text-lg text-wrap">{dict.content}</p>
               </BoxReveal>
               <ul className="mt-2 space-y-1">
                 {dict.phases.map((info, index) => (

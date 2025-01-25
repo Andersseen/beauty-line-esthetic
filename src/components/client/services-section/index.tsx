@@ -85,10 +85,10 @@ export default function ServicesSection({
                   viewport={{ once: true }}
                 >
                   <BoxReveal>
-                    <h2 className="text-3xl font-bold">{section.title}</h2>
+                    <h2 className="text-xl sm:text-1xl md:text-2xl lg:text-3xl font-bold">{section.title}</h2>
                   </BoxReveal>
                   <BoxReveal>
-                    <p className="text-lg">{section.content}</p>
+                    <p className="text-md md:text-lg text-wrap">{section.content}</p>
                   </BoxReveal>
                 </m.div>
               </MagicCard>
@@ -112,7 +112,7 @@ export default function ServicesSection({
                         duration: 0.5,
                       },
                     }}
-                    className="rounded-lg shadow-lg w-full h-fit lg:max-h-[400px] relative z-0 object-cover"
+                    className="rounded-lg shadow-lg w-full h-fit lg:max-h-[400px] relative z-0 aspect-square sm:aspect-3/2 object-cover"
                   />
                 </div>
               </m.div>

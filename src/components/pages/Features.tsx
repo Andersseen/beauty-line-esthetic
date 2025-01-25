@@ -39,8 +39,8 @@ const FeatureItem: React.FC<Feature> = ({ title, description }) => {
 const Features: React.FC<FeaturesProps> = ({ dict }) => {
   return (
     <section className="py-20">
-      <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 flex flex-col md:flex-row gap-10 xl:gap-14">
-        <div className="w-full md:h-auto object-cover flex md:items-end justify-center md:w-1/2 xl:w-[45%] relative">
+      <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 flex flex-col lg:flex-row gap-10 xl:gap-14">
+        <div className="w-full lg:h-auto object-cover flex lg:items-end justify-center lg:w-1/2 xl:w-[45%] relative">
           <div className="absolute inset-x-0 bottom-0 h-1/4" />
           <Image
             src="/09.webp"
