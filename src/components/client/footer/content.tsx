@@ -28,7 +28,7 @@ const Content: React.FC<ContentProps> = ({ dict }) => {
         return null;
     }
   };
-
+  const year = new Date().getFullYear();
   return (
     <footer className="w-full h-full bg-gradient-to-br from-main-100 to-main-300 flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-7xl flex flex-col justify-between h-full py-12">
@@ -76,7 +76,9 @@ const Content: React.FC<ContentProps> = ({ dict }) => {
           </div>
         </div>
         <div className="border-t border-gray-200 pt-8">
-          <p className="text-center text-gray-600">{dict.copyright}</p>
+          <p className="text-center text-gray-600">
+            © {year} {dict.copyright}
+          </p>
         </div>
       </div>
     </footer>
