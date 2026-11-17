@@ -1,0 +1,31 @@
+{
+  "packs": [
+    "technical",
+    "typescript",
+    "angular",
+    "ui-ux",
+    "accessibility",
+    "performance",
+    "efficiency",
+    "agentic",
+    "creative-web",
+    "testing",
+    "git",
+    "refactoring"
+  ],
+  "enable": [
+    "playwright"
+  ],
+  "targets": [
+    "claude"
+  ],
+  "exclude": {
+    "skills": [
+      "query-performance"
+    ],
+    "mcpServers": [],
+    "tools": [],
+    "hooks": [],
+    "agents": []
+  }
+}

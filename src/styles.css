@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+/* Volt UI: token bridge + the "soft" shape style. The colour tokens are the brand's own (below),
+   so no Volt colour preset is imported. `core.css` also registers Volt's bundle as a source. */
+@import '@voltui/components/themes/core.css';
+@import '@voltui/components/themes/styles/soft.css';
+
+/* Lumen icons ship their own template classes; let Tailwind see them. */
+@source '../node_modules/lumen-icons/fesm2022';
+
+@theme {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand palette, unchanged from the original site. */
+  --color-main-50: #fdf3f4;
+  --color-main-100: #fae9e9;
+  --color-main-200: #f6d5d7;
+  --color-main-300: #eeb3b7;
+  --color-main-400: #e48891;
+  --color-main-500: #d86674;
+  --color-main-600: #c03e54;
+  --color-main-700: #a12f45;
+  --color-main-800: #872a3f;
+  --color-main-900: #74273b;
+  --color-main-950: #40111c;
+}
+
+/* Volt tokens mapped onto the brand palette (light only, like the original site). */
+:root {
+  --primary: #d86674;
+  --primary-foreground: #ffffff;
+  --secondary: #fae9e9;
+  --secondary-foreground: #40111c;
+  --background: #ffffff;
+  --foreground: #1f1013;
+  --surface: #ffffff;
+  --surface-foreground: #1f1013;
+  --muted: #fdf3f4;
+  --muted-foreground: #6b4b52;
+  --border: #f6d5d7;
+  --input: #eeb3b7;
+  --ring: #c03e54;
+  --destructive: #c03e54;
+  --destructive-foreground: #ffffff;
+  --success: oklch(0.537 0.18 150);
+  --success-foreground: #ffffff;
+  --warning: oklch(0.7 0.18 55);
+  --warning-foreground: #1f1013;
+  --error: #c03e54;
+  --error-foreground: #ffffff;
+  --info: oklch(0.539 0.15 240);
+  --info-foreground: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-neutral-900 antialiased;
+  }
+
+  ::selection {
+    color: var(--color-main-100);
+    background-color: var(--color-main-950);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
