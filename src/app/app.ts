@@ -12,7 +12,8 @@ import { injectBusinessSchema } from './seo/business-schema';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <app-header />
-    <main>
+    <!-- At least one screen tall, so the curtain footer is always uncovered by scrolling. -->
+    <main class="block min-h-svh">
       <router-outlet />
     </main>
     <app-footer />

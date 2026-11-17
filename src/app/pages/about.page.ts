@@ -31,7 +31,7 @@ import { PageEnter } from '../ui/page-enter';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <app-page-enter>
-      <section class="relative isolate overflow-hidden bg-muted px-4 pt-32 pb-20 md:px-8 md:pt-40 md:pb-28">
+      <section class="relative isolate flex min-h-svh items-center overflow-hidden bg-muted px-4 pt-32 pb-20 md:px-8 md:pt-40 md:pb-28">
         <!-- Soft brand glow behind the content. -->
         <div
           aria-hidden="true"
@@ -42,7 +42,7 @@ import { PageEnter } from '../ui/page-enter';
           class="absolute -bottom-48 -left-32 -z-10 size-[420px] rounded-full bg-main-100 blur-3xl dark:bg-main-950/60"
         ></div>
 
-        <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
+        <div class="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
           <div
             class="relative"
             [moveInView]="{ opacity: [0, 1], y: [32, 0], blur: [8, 0] }"
