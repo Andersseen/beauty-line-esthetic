@@ -1,46 +1,69 @@
 {
-  "name": "web-landing-boilerplate",
-  "version": "0.1.0",
+  "name": "beauty-line-esthetic",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "description": "Beauty Line Esthetic website, built with AnalogJS, Angular, Etyma, Volt UI, Angular Movement and Lumen Icons.",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "packageManager": "pnpm@10.18.3",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "rm-all-local-branches": "git branch | %{ $_.Trim() } | ?{ $_ -ne 'master' } | ?{ $_ -ne 'main'} | %{ git branch -D $_ }"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "ngc --project tsconfig.app.json --noEmit",
+    "i18n:check": "etyma validate src/app/i18n --source es",
+    "agents:sync": "agentyx sync"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.4.8",
-    "@radix-ui/react-icons": "^1.3.0",
-    "@radix-ui/react-label": "^2.1.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "@radix-ui/react-tabs": "^1.1.1",
-    "@react-three/drei": "^9.114.0",
-    "@react-three/fiber": "^8.17.8",
-    "@types/three": "^0.169.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "cobe": "^0.6.3",
-    "lottie-web": "^5.12.2",
-    "lucide-react": "^0.446.0",
-    "motion": "^11.12.0",
-    "next": "14.2.13",
-    "react": "^18",
-    "react-dom": "^18",
-    "resend": "^4.0.0",
-    "simplex-noise": "^4.0.3",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7",
-    "three": "^0.169.0"
+    "@analogjs/router": "2.9.7",
+    "@angular/cdk": "22.2.7",
+    "@angular/common": "22.2.6",
+    "@angular/compiler": "22.2.6",
+    "@angular/core": "22.2.6",
+    "@angular/forms": "22.2.6",
+    "@angular/platform-browser": "22.2.6",
+    "@angular/platform-server": "22.2.6",
+    "@angular/router": "22.2.6",
+    "@etyma/analog": "1.0.0",
+    "@etyma/angular": "1.0.0",
+    "@etyma/core": "1.0.0",
+    "@quartz-headless/core": "0.16.0",
+    "@quartz-headless/primitives": "0.16.0",
+    "@voltui/components": "1.3.3",
+    "angular-movement": "1.2.0",
+    "cobe": "0.6.3",
+    "lottie-web": "5.12.2",
+    "lumen-icons": "0.2.0",
+    "rxjs": "7.8.2",
+    "tslib": "2.9.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.13",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@agentyx/cli": "0.24.0",
+    "@analogjs/platform": "2.9.7",
+    "@analogjs/vite-plugin-angular": "2.9.7",
+    "@angular/build": "22.2.7",
+    "@angular/compiler-cli": "22.2.6",
+    "@etyma/cli": "1.0.0",
+    "@tailwindcss/vite": "4.3.5",
+    "@types/node": "22.20.5",
+    "tailwindcss": "4.3.5",
+    "typescript": "6.0.3",
+    "vite": "8.3.8"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "lumen-icons>@angular/core": "22",
+        "lumen-icons>@angular/common": "22"
+      }
+    },
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "lmdb",
+      "msgpackr-extract"
+    ]
   }
 }

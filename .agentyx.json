@@ -1,0 +1,15 @@
+{
+  "packs": [
+    "technical",
+    "typescript",
+    "angular",
+    "ui-ux",
+    "accessibility",
+    "performance",
+    "efficiency"
+  ],
+  "enable": [],
+  "targets": [
+    "claude"
+  ]
+}

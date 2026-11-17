@@ -1,0 +1,302 @@
+{
+  "seo": {
+    "title": "Beauty Line · Centro de estética en Alcorcón",
+    "description": "Tratamientos faciales y corporales personalizados, depilación láser y productos naturales en Alcorcón, Madrid."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "treatments": "Tratamientos",
+    "contact": "Contacto",
+    "menu": "Menú",
+    "language": "Idioma",
+    "whatsapp": "Contactar por WhatsApp"
+  },
+  "shuffleHero": {
+    "tagline": "Mejora cada día",
+    "title": "Tratamientos personalizados para realzar tu belleza interior y exterior",
+    "features": [
+      "Horarios flexibles",
+      "Resultados brillantes",
+      "Productos naturales"
+    ],
+    "satisfaction": "100% de clientes satisfechos",
+    "callAction": "Pide tu cita ya",
+    "actionMessage": "¡Hola! Me gustaría obtener más información"
+  },
+  "featuresSection": {
+    "title": "La Excelencia en Cuidado Estético",
+    "description": "En nuestro centro de estética, estamos orgullosos de ofrecer tratamientos de alta calidad utilizando productos naturales y técnicas avanzadas. Nuestro objetivo es brindarte una experiencia de relajación total y rejuvenecimiento.",
+    "features": {
+      "0": {
+        "title": "Productos Naturales",
+        "description": "Utilizamos productos naturales de la más alta calidad para asegurar que tu piel reciba el mejor cuidado posible."
+      },
+      "1": {
+        "title": "Servicio Personalizado",
+        "description": "Ofrecemos un servicio personalizado para cada cliente, asegurándonos de que recibas el tratamiento perfecto para tus necesidades."
+      },
+      "2": {
+        "title": "Equipo Profesional",
+        "description": "Nuestro equipo está compuesto por profesionales altamente capacitados y dedicados a brindarte el mejor servicio."
+      },
+      "3": {
+        "title": "Ambiente Relajante",
+        "description": "Disfruta de un ambiente relajante y acogedor que te ayudará a desconectar y a rejuvenecer."
+      }
+    }
+  },
+  "servicesSection": {
+    "sections": {
+      "0": {
+        "title": "Tratamientos Faciales",
+        "content": "Utilizamos aparatologia de última generación. Descubre nuestros tratamientos faciales diseñados para rejuvenecer y revitalizar tu piel. Desde limpiezas profundas hasta tratamientos anti-envejecimiento, utilizamos productos de alta calidad y técnicas avanzadas para asegurar que tu piel luzca y se sienta increíble."
+      },
+      "1": {
+        "title": "Limpieza Facial Profunda",
+        "content": "Higiene facial profunda con peeling mecánico o quimico ,extracción,mascarilla personalizada, aparatologia según corresponda y masaje facial También extracción de milium."
+      },
+      "2": {
+        "title": "Radiofrecuencia Facial o Corporal",
+        "content": "Radiofrecuencia facial o corporal (lifting intensivo antiarrugas, reafirmante de óvalo facial, pómulos, párpados, etc. También flacidez corporal y celulitis)."
+      },
+      "3": {
+        "title": "Oxigenoterapia",
+        "content": "Tratamiento oxigenante de piel con efecto purificante y calmante. Trata flacidez y atenúa las arrugas, bolsas y ojeras, aportando a la piel vitaminas, aminoácidos, ácido hialurónico según lo necesite."
+      },
+      "4": {
+        "title": "Tratamientos Personalizados CASMARA",
+        "content": "Tratamientos personalizados CASMARA con efecto flash, botox, seboreguladores, oxigenantes, con mascarillas de alginato con extracto de oro, perla negra, bayas de goji, flores de nieve, algas marinas."
+      },
+      "5": {
+        "title": "Tratamiento con dermapen o microneedling",
+        "content": "Tratamiento con dermapen (relleno de arrugas, arrugas de expresión, vitaminas, reafirmante, efecto botox, melasma, marcas de acné)."
+      },
+      "6": {
+        "title": "Peeling químico con retinol",
+        "content": "Peeling químico con retinol: antimanchas, acné, pieles fotoenvejecidas (con vitamina C, ácido kójico, salicílico, mandélico y retinol)."
+      },
+      "7": {
+        "title": "Masajes corporales y faciales",
+        "content": "Nuestros masajes están diseñados para una relajación profunda y oxigenación de la piel Ofrecemos masajes terapéuticos ,relajantes,anticelulíticos y ciculatorios que ayudan a quitar contracturas,relajar y también mejorar  circulacion  y aspecto de piel con con celulitis."
+      },
+      "8": {
+        "title": "Última tecnologia en depilacion laser diodo",
+        "content": "Experimenta la última tecnologia en tratamientos de laser de diodo,para eliminar el vello,foliculitis y mejorar la textura de la piel. Resultados garantizandos desde primera sesion .Tratamiento seguro y efectivo."
+      },
+      "9": {
+        "title": "Otros Tratamientos",
+        "content": "Ofrecemos tratamientos de manicura y pedicura para cuidar y embellecer tus manos y pies, junto con extensiones de pestañas para realzar la belleza natural de tu mirada. Nuestro equipo utiliza productos de alta calidad para asegurar resultados duraderos y satisfactorios."
+      }
+    }
+  },
+  "splitSection": {
+    "title": "Tratamientos Adelgazantes",
+    "content": "Ofrecemos tratamientos adelgazantes para que te sientas bien y segura con tu cuerpo. También ofrecemos tratamientos personalizados con seguimiento y pautas de alimentación saludable.",
+    "phases": [
+      "Utilizamos 3 fases:",
+      "1. Pérdida de volumen;",
+      "2. Eliminación de la celulitis, reducción de los depósitos de grasa locales;",
+      "3. Reafirmación de los tejidos después de bajar el peso."
+    ],
+    "additionalInfo": [
+      "Presoterapia",
+      "Electroestimulación EMS slim",
+      "Masajes con aparatología",
+      "Cavitacion",
+      "Vacuumterapia",
+      "Eliminar la celulitis"
+    ]
+  },
+  "newTreatment": {
+    "title": "Novedad!!! Tratamiento con exosomas",
+    "content": "Los Exosomas son pequeñas vesículas, que provienen de las células, con un alto contenido en proteínas, lípidos, ARN mensajero, ARN mitocondrial, ADN y distintos factores de crecimiento.",
+    "additionalInfo": [
+      "Principales beneficios de los exosomas:",
+      "- Cuidado avanzado de la piel",
+      "- Rejuvenecimiento facial",
+      "- Evita/mejora la alopecia",
+      "- Poros dilatados",
+      "- Mejoran estrías, cicatrices, marcas de acné",
+      "- Aclara la piel"
+    ]
+  },
+  "contactSection": {
+    "title": "Contáctanos",
+    "description": "Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible.",
+    "contactInfo": [
+      "contacto@ejemplo.com",
+      "+34 645 22 87 82"
+    ]
+  },
+  "about": {
+    "title": "Tu oasis de belleza y bienestar",
+    "description": "En nuestro centro de estética, nos dedicamos a realzar tu belleza natural y promover tu bienestar integral. Con años de experiencia y un equipo de profesionales altamente calificados, ofrecemos una amplia gama de tratamientos personalizados utilizando las técnicas más avanzadas y productos de primera calidad. Nuestro objetivo es que te sientas renovada, confiada y radiante en cada visita.",
+    "imageAlt": "Centro de Estética"
+  },
+  "prices": {
+    "pageTitle": "Nuestros Tratamientos",
+    "tabs": {
+      "estetica": "Estética",
+      "depilacion": "Depilación Láser",
+      "corporal": "Tratamientos Corporales"
+    },
+    "treatments": {
+      "estetica": {
+        "0": {
+          "title": "Limpieza facial profunda",
+          "description": "Con peeling mecánico o combinado, vapor, extracción, milium, mascarilla personalizada, aparatología según valoración."
+        },
+        "1": {
+          "title": "Peeling químico con retinol",
+          "description": "Antimanchas, acné, pieles fotoenviejecidas (con vitamina C, ácido kójico, salicílico, mandélico y retinol)."
+        },
+        "2": {
+          "title": "Oxigenoterapia",
+          "description": "Tratamiento antiarrugas, reafirmante, cuperosis, iluminador, efecto botox purificante."
+        },
+        "3": {
+          "title": "Tratamiento BBGLOW",
+          "description": "Hidratación intensiva con dermapen y ácido hialurónico con un suave toque de maquillaje."
+        },
+        "4": {
+          "title": "Radiofrecuencia facial o corporal",
+          "description": "Lifting intensivo antiarrugas, reafirmante de óvalo facial, pómulos, párpados, etc. También flacidez corporal y celulitis.",
+          "duration": "Sesión 60min"
+        },
+        "5": {
+          "title": "Tratamiento de hidratación facial profunda",
+          "description": "Con mascarilla personalizada y ampolla aplicada con aparatología."
+        },
+        "6": {
+          "title": "Tratamiento con dermapen",
+          "description": "Relleno de arrugas, arrugas de expresión, vitaminas, reafirmante, efecto botox, melasma, marcas de acné."
+        },
+        "7": {
+          "title": "Tratamientos personalizados CASMARA",
+          "description": "Con efecto flash, botox, seboreguladores, oxigenantes, con mascarillas de alginato con extracto de oro, perla negra, bayas de goji, flores de nieve, algas marinas."
+        }
+      },
+      "depilacion": {
+        "0": {
+          "title": "Zonas pequeñas"
+        },
+        "1": {
+          "title": "Zonas medianas"
+        },
+        "2": {
+          "title": "Zonas grandes"
+        },
+        "3": {
+          "title": "Aplicación de crema anestésica"
+        }
+      },
+      "corporal": {
+        "0": {
+          "title": "Sobrepeso y Celulitis",
+          "description": "Cavitación + presoterapia, dermapen + radiofrecuencia, masaje más presoterapia, cavitación + presoterapia, o combinado según valoración.",
+          "duration": "Duración una hora"
+        },
+        "1": {
+          "title": "Tratamiento reductor y anticelulítico",
+          "description": "Dermapen (mesoterapia corporal) más presoterapia."
+        },
+        "2": {
+          "title": "Tratamiento combinado",
+          "description": "Con aparatología y masaje manual de espalda."
+        },
+        "3": {
+          "title": "Masaje reductor, anticelulítico, reafirmante, terapéutico, relajante",
+          "description": "Diferentes duraciones disponibles: 30min, 40min, 60min."
+        },
+        "4": {
+          "title": "Masaje anticelulítico y moldeante",
+          "description": "Con aparato G5.",
+          "duration": "Media hora"
+        },
+        "5": {
+          "title": "Masaje facial",
+          "duration": "Media hora"
+        },
+        "6": {
+          "title": "Presoterapia médica"
+        }
+      }
+    },
+    "contact": {
+      "interestedText": "¿Interesado en nuestros tratamientos?",
+      "callToAction": "Llámenos para obtener información detallada sobre precios y promociones actuales."
+    },
+    "durationLabel": "Duración"
+  },
+  "giftCards": {
+    "title": "Tarjetas de Regalo",
+    "description": "Regala una experiencia única de bienestar y belleza con nuestras tarjetas de regalo. Perfectas para cualquier ocasión, nuestras tarjetas permiten a tus seres queridos disfrutar de una amplia variedad de tratamientos faciales, corporales y de relajación en nuestro centro de estética. Haz que se sientan especiales y cuidados con un regalo que promueve la salud y la belleza."
+  },
+  "footer": {
+    "title": "Centro de Estética",
+    "description": "Realzando tu belleza natural desde 2020",
+    "address": "Paseo Castilla 11. Alcorcón",
+    "phone": "+34 645 22 87 82",
+    "email": "info@centroestetica.com",
+    "servicesTitle": "Nuestros Servicios",
+    "servicesList": [
+      "Tratamientos Faciales",
+      "Depilación Láser",
+      "Masajes Relajantes",
+      "Masajes corporales y faciales",
+      "Manicura y Pedicura",
+      "Maquillaje Profesional"
+    ],
+    "infoTitle": "Información Útil",
+    "infoList": [
+      "Lunes a Viernes: 10:00 - 20:00",
+      "Sábado: 10:00 - 14:00",
+      "Aceptamos todas las tarjetas",
+      "Personal certificado"
+    ],
+    "copyright": "Centro de Estética. Todos los derechos reservados."
+  },
+  "products": {
+    "0": {
+      "title": "Casmara",
+      "description": "Cosmética innovadora con tratamientos avanzados para el cuidado de la piel."
+    },
+    "1": {
+      "title": "Atache",
+      "description": "Soluciones dermocosméticas de alta calidad para la salud y belleza de la piel."
+    },
+    "2": {
+      "title": "Skin Clinic",
+      "description": "Especialistas en tratamientos para la regeneración y rejuvenecimiento facial."
+    },
+    "3": {
+      "title": "Utsukusy",
+      "description": "Cosmética japonesa profesional centrada en la estética y la eficacia."
+    },
+    "4": {
+      "title": "On Macabim",
+      "description": "Productos naturales basados en la medicina herbal para el cuidado integral."
+    },
+    "5": {
+      "title": "Karoma cosmetics",
+      "description": "Exclusividad en alta cosmética  con amplia gama de productos diseñados para todo tipo de piel"
+    }
+  },
+  "contact": {
+    "buttonText": "Contacto",
+    "contact": {
+      "address": "Paseo Castilla 11. Alcorcón",
+      "whatsapp": "WhatsApp: 645 22 87 82",
+      "schedule": "HORARIO",
+      "weekdayHours": "DE LUNES A VIERNES DE 10:00 A 20:00 H.",
+      "saturdayHours": "SÁBADOS DE 10:00 A 14:00 H.",
+      "homeService": "Servicio a domicilio, consultar precios"
+    }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o ha cambiado de dirección.",
+    "back": "Volver al inicio"
+  }
+}
