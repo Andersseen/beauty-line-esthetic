@@ -72,7 +72,7 @@ const LINKS: readonly NavLink[] = [
           variant="ghost"
           size="icon"
           type="button"
-          class="size-[50px] rounded-full shadow-md ring-pink-100/30 transition-all duration-200 hover:bg-main-400 hover:ring-8"
+          class="size-[50px] rounded-full shadow-md ring-pink-100/30 transition-all duration-200 hover:bg-main-400 hover:ring-8 data-[hover]:bg-main-400 data-[hover]:text-white focus-visible:bg-main-400"
           [attr.aria-label]="i18n.t('nav.menu')"
         >
           <app-menu-button [open]="open()" />

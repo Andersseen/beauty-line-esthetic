@@ -1,5 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LmnHeartIcon } from 'lumen-icons/heart';
+import { NgComponentOutlet } from '@angular/common';
+import type { Type } from '@angular/core';
+import { LmnBeakerIcon } from 'lumen-icons/beaker';
+import { LmnCheckBadgeIcon } from 'lumen-icons/check-badge';
+import { LmnFaceSmileIcon } from 'lumen-icons/face-smile';
+import { LmnUserCircleIcon } from 'lumen-icons/user-circle';
 import { VoltCard, VoltCardContent } from '@voltui/components';
 import { MoveInViewDirective } from 'angular-movement';
 
@@ -7,9 +12,12 @@ import { sourceCatalog } from '../i18n/i18n';
 import { injectAppI18n, listKey } from '../i18n/inject';
 import { indicesOf } from '../shared/business';
 
+/** One icon per feature, in catalog order: products, service, team, ambience. */
+const ICONS: readonly Type<unknown>[] = [LmnBeakerIcon, LmnUserCircleIcon, LmnCheckBadgeIcon, LmnFaceSmileIcon];
+
 @Component({
   selector: 'app-features',
-  imports: [VoltCard, VoltCardContent, LmnHeartIcon, MoveInViewDirective],
+  imports: [NgComponentOutlet, VoltCard, VoltCardContent, MoveInViewDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="py-20">
@@ -35,7 +43,9 @@ import { indicesOf } from '../shared/business';
                 [moveDelay]="i * 80"
               >
                 <volt-card-content class="flex gap-4 p-4">
-                  <lmn-heart class="shrink-0 text-main-600" [size]="24" background="soft" backgroundColor="color-mix(in srgb, var(--color-main-600) 10%, transparent)" [padding]="12" radius="0.5rem" />
+                  <span class="flex shrink-0 self-start rounded-lg bg-main-600/10 p-3 text-main-600">
+                    <ng-container *ngComponentOutlet="icons[i]!; inputs: { size: 24 }" />
+                  </span>
                   <div class="space-y-0.5">
                     <h3 class="text-lg font-semibold text-gray-900">{{ t(key('featuresSection.features', i, 'title')) }}</h3>
                     <p class="text-gray-600">{{ t(key('featuresSection.features', i, 'description')) }}</p>
@@ -52,5 +62,6 @@ import { indicesOf } from '../shared/business';
 export class Features {
   protected readonly t = injectAppI18n().t;
   protected readonly key = listKey;
+  protected readonly icons = ICONS;
   protected readonly features = indicesOf(sourceCatalog.featuresSection.features);
 }

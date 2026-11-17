@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { LmnCheckIcon } from 'lumen-icons/check';
 import { MoveInViewDirective } from 'angular-movement';
 
 import { sourceCatalog } from '../i18n/i18n';
@@ -13,7 +14,7 @@ const GALLERY = ['/19.webp', '/20.webp', '/21.webp', '/22.webp'];
 /** Slimming treatments: text with phases on one side, a staggered 2×2 gallery on the other. */
 @Component({
   selector: 'app-split-section',
-  imports: [MoveInViewDirective, BoxReveal, MagicCard, ServiceImage],
+  imports: [LmnCheckIcon, MoveInViewDirective, BoxReveal, MagicCard, ServiceImage],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="mb-8 flex w-full flex-col items-center lg:flex-row" [moveInView]="{ opacity: [0, 1] }" [moveDuration]="500">
@@ -26,14 +27,17 @@ const GALLERY = ['/19.webp', '/20.webp', '/21.webp', '/22.webp'];
             <app-box-reveal>
               <p class="text-base text-wrap text-gray-700 md:text-lg">{{ t('splitSection.content') }}</p>
             </app-box-reveal>
-            <ul class="mt-2 space-y-1">
+            <ul class="mt-3 space-y-1 text-gray-800" role="list">
               @for (i of phases; track i) {
                 <li><app-box-reveal><span>{{ t(key('splitSection.phases', i)) }}</span></app-box-reveal></li>
               }
             </ul>
-            <ul class="mt-2 list-inside list-disc space-y-1 text-neutral-500">
+            <ul class="mt-4 grid gap-2 text-gray-700 sm:grid-cols-2" role="list">
               @for (i of info; track i) {
-                <li><app-box-reveal><span>{{ t(key('splitSection.additionalInfo', i)) }}</span></app-box-reveal></li>
+                <li class="flex items-center gap-2">
+                  <lmn-check class="shrink-0 text-main-500" [size]="16" [strokeWidth]="2.5" />
+                  <app-box-reveal><span>{{ t(key('splitSection.additionalInfo', i)) }}</span></app-box-reveal>
+                </li>
               }
             </ul>
           </div>

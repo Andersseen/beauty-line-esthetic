@@ -5,7 +5,7 @@ import { LmnMessageCircleIcon } from 'lumen-icons/message-circle';
 import { LmnSparklesIcon } from 'lumen-icons/sparkles';
 import { LmnSunIcon } from 'lumen-icons/sun';
 import { RouterLink } from '@angular/router';
-import { VoltBadge, VoltCard, VoltNativeButton } from '@voltui/components';
+import { VoltBadge, VoltNativeButton } from '@voltui/components';
 import { MoveLayoutDirective } from 'angular-movement';
 
 import { injectAppI18n } from '../i18n/inject';
@@ -36,7 +36,7 @@ function shuffled(items: readonly Square[]): Square[] {
  */
 @Component({
   selector: 'app-shuffle-hero',
-  imports: [RouterLink, VoltBadge, VoltCard, VoltNativeButton, LmnCalendarIcon, LmnSparklesIcon, LmnSunIcon, LmnHeartIcon, LmnMessageCircleIcon, MoveLayoutDirective],
+  imports: [RouterLink, VoltBadge, VoltNativeButton, LmnCalendarIcon, LmnSparklesIcon, LmnSunIcon, LmnHeartIcon, LmnMessageCircleIcon, MoveLayoutDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="mx-auto grid min-h-screen w-full max-w-6xl grid-cols-1 items-center gap-8 px-8 pt-28 pb-12 md:grid-cols-2">
@@ -60,10 +60,10 @@ function shuffled(items: readonly Square[]): Square[] {
         </div>
 
         <div class="flex flex-col items-start gap-4">
-          <volt-card class="mt-6 flex w-fit flex-row items-center gap-3 border-main-200 bg-main-50 px-4 py-3">
-            <lmn-heart class="text-main-500" [size]="24" />
-            <span class="font-medium text-neutral-900">{{ t('shuffleHero.satisfaction') }}</span>
-          </volt-card>
+          <p class="mt-6 flex items-center gap-2 text-sm font-medium text-gray-700">
+            <lmn-heart class="text-main-500" [size]="20" variant="filled" />
+            {{ t('shuffleHero.satisfaction') }}
+          </p>
           <div class="flex flex-wrap gap-3">
             <a voltButton size="lg" class="gap-2" [href]="whatsapp()" target="_blank" rel="noopener">
               <lmn-message-circle [size]="20" /> {{ t('shuffleHero.callAction') }}
