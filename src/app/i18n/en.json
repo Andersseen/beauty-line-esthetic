@@ -35,6 +35,8 @@
     }
   },
   "servicesSection": {
+    "title": "Our services",
+    "description": "Facial and body treatments and hair removal with professional equipment.",
     "sections": {
       "0": {
         "title": "Facial Treatments",
@@ -119,7 +121,8 @@
     ],
     "satisfaction": "100% customer satisfaction",
     "callAction": "Make an appointment now",
-    "actionMessage": "Hello! I would like to get more information"
+    "actionMessage": "Hello! I would like to get more information",
+    "secondaryAction": "See treatments"
   },
   "contactSection": {
     "title": "Get in touch",
@@ -127,7 +130,9 @@
     "contactInfo": [
       "contact@example.com",
       "+34 645 22 87 82"
-    ]
+    ],
+    "whatsapp": "Message us on WhatsApp",
+    "call": "Call us"
   },
   "about": {
     "title": "Your oasis of beauty and wellness",
@@ -281,7 +286,9 @@
   },
   "giftCards": {
     "title": "Gift Cards",
-    "description": "Give the gift of a unique wellness and beauty experience with our gift cards. Perfect for any occasion, our cards allow your loved ones to enjoy a wide range of facial, body, and relaxation treatments at our aesthetic center. Make them feel special and pampered with a gift that promotes health and beauty."
+    "description": "Give the gift of a unique wellness and beauty experience with our gift cards. Perfect for any occasion, our cards allow your loved ones to enjoy a wide range of facial, body, and relaxation treatments at our aesthetic center. Make them feel special and pampered with a gift that promotes health and beauty.",
+    "callAction": "Give a gift card",
+    "actionMessage": "Hi! I would like to buy a gift card"
   },
   "contact": {
     "buttonText": "Contact",
@@ -298,5 +305,9 @@
     "title": "Page not found",
     "description": "The page you are looking for does not exist or has moved.",
     "back": "Back to home"
+  },
+  "productsSection": {
+    "title": "Brands we work with",
+    "description": "Professional cosmetics chosen for every treatment."
   }
 }

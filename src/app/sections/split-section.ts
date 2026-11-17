@@ -20,11 +20,11 @@ const GALLERY = ['/19.webp', '/20.webp', '/21.webp', '/22.webp'];
       <div class="flex h-1/2 w-full items-center justify-center lg:h-full lg:w-1/2 lg:p-16">
         <app-magic-card>
           <div class="w-full" [moveInView]="{ opacity: [0, 1], y: [50, 0] }" [moveDuration]="500">
-            <app-box-reveal>
+            <app-box-reveal class="mb-3">
               <h2 class="text-xl font-bold sm:text-2xl lg:text-3xl">{{ t('splitSection.title') }}</h2>
             </app-box-reveal>
             <app-box-reveal>
-              <p class="text-base text-wrap md:text-lg">{{ t('splitSection.content') }}</p>
+              <p class="text-base text-wrap text-gray-700 md:text-lg">{{ t('splitSection.content') }}</p>
             </app-box-reveal>
             <ul class="mt-2 space-y-1">
               @for (i of phases; track i) {

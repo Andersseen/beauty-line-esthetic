@@ -5,6 +5,7 @@ import {
   NavbarMenuDirective,
   NavbarTriggerDirective,
 } from '@quartz-headless/primitives';
+import { VoltNativeButton } from '@voltui/components';
 import {
   MoveAnimateDirective,
   MovePresenceDirective,
@@ -44,6 +45,7 @@ const LINKS: readonly NavLink[] = [
     NavbarDirective,
     NavbarMenuDirective,
     NavbarTriggerDirective,
+    VoltNativeButton,
     MoveAnimateDirective,
     MovePresenceDirective,
     MoveTextDirective,
@@ -66,8 +68,11 @@ const LINKS: readonly NavLink[] = [
 
         <button
           qzNavbarTrigger
+          voltButton
+          variant="ghost"
+          size="icon"
           type="button"
-          class="flex cursor-pointer items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-main-100"
+          class="size-[50px] rounded-full shadow-md ring-pink-100/30 transition-all duration-200 hover:bg-main-400 hover:ring-8"
           [attr.aria-label]="i18n.t('nav.menu')"
         >
           <app-menu-button [open]="open()" />

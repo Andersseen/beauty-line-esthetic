@@ -1,30 +1,44 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { VoltNativeButton } from '@voltui/components';
 import { LmnEnvelopeIcon } from 'lumen-icons/envelope';
+import { LmnMessageCircleIcon } from 'lumen-icons/message-circle';
 import { LmnPhoneIcon } from 'lumen-icons/phone';
+import { MoveInViewDirective } from 'angular-movement';
 
 import { injectAppI18n } from '../i18n/inject';
+import { BUSINESS, whatsappUrl } from '../shared/business';
 import { Globe } from './globe';
 
-/** Desktop-only contact teaser with the globe peeking from the bottom right. */
+/** Contact teaser with direct actions; the globe peeks from the bottom right on large screens. */
 @Component({
   selector: 'app-contact-section',
-  imports: [LmnEnvelopeIcon, LmnPhoneIcon, Globe],
+  imports: [VoltNativeButton, LmnEnvelopeIcon, LmnMessageCircleIcon, LmnPhoneIcon, MoveInViewDirective, Globe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <section id="contact" class="flex w-full justify-center bg-background py-12 md:py-24 lg:py-32">
-      <div class="w-full px-4 md:px-6">
-        <div class="relative hidden h-full w-full space-y-4 lg:block">
-          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{{ t('contactSection.title') }}</h2>
-          <p class="text-gray-500">{{ t('contactSection.description') }}</p>
-          <ul class="space-y-2">
-            <li class="flex items-center"><lmn-envelope class="mr-2 text-main-600" [size]="20" />{{ t('contactSection.contactInfo.0') }}</li>
-            <li class="flex items-center"><lmn-phone class="mr-2 text-main-600" [size]="20" />{{ t('contactSection.contactInfo.1') }}</li>
+    <section id="contact" class="flex w-full justify-center bg-background py-16 md:py-24 lg:py-32">
+      <div class="container mx-auto w-full px-4 lg:px-8">
+        <div class="relative h-full w-full space-y-4" moveInView="fade-up">
+          <h2 class="text-3xl font-bold tracking-tight text-main-950 sm:text-4xl md:text-5xl">{{ t('contactSection.title') }}</h2>
+          <p class="max-w-xl text-gray-600">{{ t('contactSection.description') }}</p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center gap-2"><lmn-envelope class="text-main-600" [size]="20" />{{ t('contactSection.contactInfo.0') }}</li>
+            <li class="flex items-center gap-2"><lmn-phone class="text-main-600" [size]="20" />{{ t('contactSection.contactInfo.1') }}</li>
           </ul>
-          @defer (on viewport) {
-            <app-globe class="absolute right-0 -bottom-80 md:-right-10 md:-bottom-96" />
-          } @placeholder {
-            <div class="h-px"></div>
-          }
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a voltButton size="lg" class="gap-2" [href]="whatsapp()" target="_blank" rel="noopener">
+              <lmn-message-circle [size]="20" /> {{ t('contactSection.whatsapp') }}
+            </a>
+            <a voltButton size="lg" variant="outline" class="gap-2" [href]="'tel:' + phone">
+              <lmn-phone [size]="20" /> {{ t('contactSection.call') }}
+            </a>
+          </div>
+          <div class="hidden lg:block">
+            @defer (on viewport) {
+              <app-globe class="pointer-events-none absolute right-0 -bottom-80 md:-right-10 md:-bottom-96" />
+            } @placeholder {
+              <div class="h-px"></div>
+            }
+          </div>
         </div>
       </div>
     </section>
@@ -32,4 +46,9 @@ import { Globe } from './globe';
 })
 export class ContactSection {
   protected readonly t = injectAppI18n().t;
+  protected readonly phone = BUSINESS.phone;
+
+  protected whatsapp(): string {
+    return whatsappUrl(this.t('shuffleHero.actionMessage'));
+  }
 }

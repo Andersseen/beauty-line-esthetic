@@ -21,10 +21,7 @@ const BOTTOM: Record<string, MoveVariant> = {
   selector: 'app-menu-button',
   imports: [MoveVariantsDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class:
-      'relative flex size-[50px] items-center justify-center rounded-full shadow-md ring-0 ring-pink-100/30 transition-all duration-200 hover:ring-8',
-  },
+  host: { class: 'flex items-center justify-center' },
   template: `
     <span class="flex w-6 flex-col gap-[5px]" aria-hidden="true">
       <span class="line" [moveVariants]="top" [moveVariant]="state()"></span>

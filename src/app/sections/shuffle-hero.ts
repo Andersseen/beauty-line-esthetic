@@ -4,6 +4,8 @@ import { LmnHeartIcon } from 'lumen-icons/heart';
 import { LmnMessageCircleIcon } from 'lumen-icons/message-circle';
 import { LmnSparklesIcon } from 'lumen-icons/sparkles';
 import { LmnSunIcon } from 'lumen-icons/sun';
+import { RouterLink } from '@angular/router';
+import { VoltBadge, VoltCard, VoltNativeButton } from '@voltui/components';
 import { MoveLayoutDirective } from 'angular-movement';
 
 import { injectAppI18n } from '../i18n/inject';
@@ -34,15 +36,15 @@ function shuffled(items: readonly Square[]): Square[] {
  */
 @Component({
   selector: 'app-shuffle-hero',
-  imports: [LmnCalendarIcon, LmnSparklesIcon, LmnSunIcon, LmnHeartIcon, LmnMessageCircleIcon, MoveLayoutDirective],
+  imports: [RouterLink, VoltBadge, VoltCard, VoltNativeButton, LmnCalendarIcon, LmnSparklesIcon, LmnSunIcon, LmnHeartIcon, LmnMessageCircleIcon, MoveLayoutDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="mx-auto grid min-h-screen w-full max-w-6xl grid-cols-1 items-center gap-8 px-8 pt-28 pb-12 md:grid-cols-2">
       <div>
-        <span class="mb-4 block text-xs font-medium text-main-500 md:text-sm">{{ t('shuffleHero.tagline') }}</span>
-        <h1 class="text-xl font-semibold md:text-4xl">{{ t('shuffleHero.title') }}</h1>
+        <volt-badge variant="secondary" class="mb-4 text-main-700">{{ t('shuffleHero.tagline') }}</volt-badge>
+        <h1 class="text-3xl font-semibold tracking-tight text-balance text-main-950 md:text-4xl lg:text-5xl">{{ t('shuffleHero.title') }}</h1>
 
-        <div class="flex justify-center space-x-8 pt-4 lg:justify-start">
+        <div class="flex justify-center gap-8 pt-6 lg:justify-start">
           <div class="flex flex-col items-center">
             <lmn-calendar class="text-main-600" [size]="32" />
             <span class="mt-2 text-sm text-gray-600">{{ t('shuffleHero.features.0') }}</span>
@@ -58,18 +60,16 @@ function shuffled(items: readonly Square[]): Square[] {
         </div>
 
         <div class="flex flex-col items-start gap-4">
-          <div class="mt-4 flex w-fit items-center space-x-2 rounded-lg bg-main-100 p-4 shadow-lg">
+          <volt-card class="mt-6 flex w-fit flex-row items-center gap-3 border-main-200 bg-main-50 px-4 py-3">
             <lmn-heart class="text-main-500" [size]="24" />
             <span class="font-medium text-neutral-900">{{ t('shuffleHero.satisfaction') }}</span>
+          </volt-card>
+          <div class="flex flex-wrap gap-3">
+            <a voltButton size="lg" class="gap-2" [href]="whatsapp()" target="_blank" rel="noopener">
+              <lmn-message-circle [size]="20" /> {{ t('shuffleHero.callAction') }}
+            </a>
+            <a voltButton size="lg" variant="outline" [routerLink]="i18n.path('/prices')">{{ t('shuffleHero.secondaryAction') }}</a>
           </div>
-          <a
-            [href]="whatsapp()"
-            target="_blank"
-            rel="noopener"
-            class="flex h-10 items-center gap-2 rounded-lg bg-main-500 px-6 py-2 font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-main-600"
-          >
-            <lmn-message-circle [size]="24" /> {{ t('shuffleHero.callAction') }}
-          </a>
         </div>
       </div>
 
@@ -87,7 +87,8 @@ function shuffled(items: readonly Square[]): Square[] {
   `,
 })
 export class ShuffleHero {
-  protected readonly t = injectAppI18n().t;
+  protected readonly i18n = injectAppI18n();
+  protected readonly t = this.i18n.t;
   // Server render and hydration use the stable order; shuffling starts in the browser.
   protected readonly squares = signal<Square[]>([...SQUARES]);
 

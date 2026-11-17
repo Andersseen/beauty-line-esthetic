@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { VoltCard } from '@voltui/components';
 import { MoveHoverDirective, MoveVariantsDirective, type MoveVariant } from 'angular-movement';
 
 import { sourceCatalog } from '../i18n/i18n';
 import { injectAppI18n, listKey } from '../i18n/inject';
 import { indicesOf } from '../shared/business';
+import { SectionHeading } from '../ui/section-heading';
 
 /** Bento placement per product, in catalog order (mobile: every tile spans the full width). */
 const SPANS = [
@@ -23,33 +25,36 @@ const TILE: Record<string, MoveVariant> = {
 
 @Component({
   selector: 'app-products-bento',
-  imports: [MoveHoverDirective, MoveVariantsDirective],
+  imports: [VoltCard, SectionHeading, MoveHoverDirective, MoveVariantsDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+    <section class="py-16">
+    <app-section-heading [title]="t('productsSection.title')" [description]="t('productsSection.description')" />
     <div
-      class="group container mx-auto grid h-full w-full grid-cols-2 gap-4 rounded-lg p-2 md:grid-cols-4 md:grid-rows-4"
+      class="group container mx-auto grid h-full w-full grid-cols-2 gap-4 rounded-lg px-4 py-2 lg:px-8 md:grid-cols-4 md:grid-rows-4"
       (pointerenter)="hovered.set(true)"
       (pointerleave)="hovered.set(false)"
     >
       @for (i of products; track i) {
         <div [class]="'col-span-2 md:col-span-1 ' + spans[i]" [moveVariants]="tile" [moveVariant]="hovered() ? 'dimmed' : 'rest'">
-          <div
-            class="group/bento flex size-full min-h-32 items-center justify-center rounded-lg bg-gradient-to-br from-main-100 to-main-300 shadow-md transition duration-200 hover:shadow-xl"
+          <volt-card
+            class="group/bento flex size-full min-h-32 items-center justify-center border-main-200 bg-gradient-to-br from-main-50 to-main-200 transition-shadow duration-200 hover:shadow-xl"
             [moveWhileHover]="{ scale: [1, 1.02] }"
             [moveDuration]="200"
           >
-            <div class="p-4">
-              <div class="mt-2 text-center font-bold transition duration-200 group-hover/bento:-translate-x-2">
+            <div class="p-5">
+              <div class="text-center text-lg font-semibold text-main-950 transition duration-200 group-hover/bento:-translate-x-2">
                 {{ t(key('products', i, 'title')) }}
               </div>
-              <div class="mt-1 text-center text-sm transition duration-200 group-hover/bento:translate-x-2">
+              <div class="mt-1 text-center text-sm text-gray-700 transition duration-200 group-hover/bento:translate-x-2">
                 {{ t(key('products', i, 'description')) }}
               </div>
             </div>
-          </div>
+          </volt-card>
         </div>
       }
     </div>
+    </section>
   `,
 })
 export class ProductsBento {

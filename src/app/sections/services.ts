@@ -6,6 +6,7 @@ import { injectAppI18n, listKey } from '../i18n/inject';
 import { indicesOf } from '../shared/business';
 import { BoxReveal } from '../ui/box-reveal';
 import { MagicCard } from '../ui/magic-card';
+import { SectionHeading } from '../ui/section-heading';
 import { NewTreatment } from './new-treatment';
 import { ServiceImage } from './service-image';
 import { SplitSection } from './split-section';
@@ -16,10 +17,11 @@ const IMAGES = ['/06.webp', '/07.webp', '/24.webp', '/08.webp', '/23.webp', '/13
 /** Alternating service blocks; the two feature treatments sit after the seventh one. */
 @Component({
   selector: 'app-services',
-  imports: [MoveInViewDirective, BoxReveal, MagicCard, ServiceImage, NewTreatment, SplitSection],
+  imports: [MoveInViewDirective, SectionHeading, BoxReveal, MagicCard, ServiceImage, NewTreatment, SplitSection],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section id="services" class="container mx-auto px-4 py-12 lg:px-8">
+      <app-section-heading [title]="t('servicesSection.title')" [description]="t('servicesSection.description')" />
       @for (i of sections; track i) {
         <div class="py-4">
           <article
@@ -30,11 +32,11 @@ const IMAGES = ['/06.webp', '/07.webp', '/24.webp', '/08.webp', '/23.webp', '/13
             [moveDuration]="300"
           >
             <app-magic-card class="w-full space-y-4 md:w-1/2 lg:p-8">
-              <app-box-reveal>
+              <app-box-reveal class="mb-3">
                 <h2 class="text-xl font-bold sm:text-2xl lg:text-3xl">{{ t(key('servicesSection.sections', i, 'title')) }}</h2>
               </app-box-reveal>
               <app-box-reveal>
-                <p class="text-base text-wrap md:text-lg">{{ t(key('servicesSection.sections', i, 'content')) }}</p>
+                <p class="text-base text-wrap text-gray-700 md:text-lg">{{ t(key('servicesSection.sections', i, 'content')) }}</p>
               </app-box-reveal>
             </app-magic-card>
             <div class="w-full md:w-1/2" [moveInView]="{ opacity: [0, 1], y: [50, 0] }" [moveDuration]="300">

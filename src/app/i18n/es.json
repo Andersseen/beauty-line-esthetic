@@ -22,7 +22,8 @@
     ],
     "satisfaction": "100% de clientes satisfechos",
     "callAction": "Pide tu cita ya",
-    "actionMessage": "¡Hola! Me gustaría obtener más información"
+    "actionMessage": "¡Hola! Me gustaría obtener más información",
+    "secondaryAction": "Ver tratamientos"
   },
   "featuresSection": {
     "title": "La Excelencia en Cuidado Estético",
@@ -47,6 +48,8 @@
     }
   },
   "servicesSection": {
+    "title": "Nuestros servicios",
+    "description": "Tratamientos faciales, corporales y depilación con aparatología profesional.",
     "sections": {
       "0": {
         "title": "Tratamientos Faciales",
@@ -127,7 +130,9 @@
     "contactInfo": [
       "contacto@ejemplo.com",
       "+34 645 22 87 82"
-    ]
+    ],
+    "whatsapp": "Escríbenos por WhatsApp",
+    "call": "Llámanos"
   },
   "about": {
     "title": "Tu oasis de belleza y bienestar",
@@ -231,7 +236,9 @@
   },
   "giftCards": {
     "title": "Tarjetas de Regalo",
-    "description": "Regala una experiencia única de bienestar y belleza con nuestras tarjetas de regalo. Perfectas para cualquier ocasión, nuestras tarjetas permiten a tus seres queridos disfrutar de una amplia variedad de tratamientos faciales, corporales y de relajación en nuestro centro de estética. Haz que se sientan especiales y cuidados con un regalo que promueve la salud y la belleza."
+    "description": "Regala una experiencia única de bienestar y belleza con nuestras tarjetas de regalo. Perfectas para cualquier ocasión, nuestras tarjetas permiten a tus seres queridos disfrutar de una amplia variedad de tratamientos faciales, corporales y de relajación en nuestro centro de estética. Haz que se sientan especiales y cuidados con un regalo que promueve la salud y la belleza.",
+    "callAction": "Regala una tarjeta",
+    "actionMessage": "¡Hola! Me gustaría regalar una tarjeta regalo"
   },
   "footer": {
     "title": "Centro de Estética",
@@ -298,5 +305,9 @@
     "title": "Página no encontrada",
     "description": "La página que buscas no existe o ha cambiado de dirección.",
     "back": "Volver al inicio"
+  },
+  "productsSection": {
+    "title": "Marcas con las que trabajamos",
+    "description": "Cosmética profesional seleccionada para cada tratamiento."
   }
 }
