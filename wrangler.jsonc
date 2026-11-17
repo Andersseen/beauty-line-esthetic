@@ -13,4 +13,9 @@
     "binding": "ASSETS",
   },
   "observability": { "enabled": true },
+  // Production is served on www.beauty-line-esthetic.es (custom domains, set in the dashboard;
+  // the root domain redirects to www via a Redirect Rule). No public *.workers.dev copy, but
+  // per-PR preview URLs (pr-<n>-beauty-line-esthetic.andriipap01.workers.dev) stay on.
+  "workers_dev": false,
+  "preview_urls": true,
 }
