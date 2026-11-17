@@ -6,10 +6,26 @@
     "ui-ux",
     "accessibility",
     "performance",
-    "efficiency"
+    "efficiency",
+    "agentic",
+    "creative-web",
+    "testing",
+    "git",
+    "refactoring"
   ],
-  "enable": [],
+  "enable": [
+    "playwright"
+  ],
   "targets": [
     "claude"
-  ]
+  ],
+  "exclude": {
+    "skills": [
+      "query-performance"
+    ],
+    "mcpServers": [],
+    "tools": [],
+    "hooks": [],
+    "agents": []
+  }
 }

@@ -4,6 +4,19 @@ Client website and **dogfooding project** for the Andersseen libraries (Etyma, V
 Angular Movement, Lumen Icons). Prefer those libraries as the building blocks for everything; reach
 for anything else only when none of them covers the need, and log the gap in `DOGFOODING.md`.
 
+## UI atoms: Volt UI first
+
+Every button, card, badge, tab, popover, separator and similar atom must be a Volt UI component
+(`@voltui/components`), not hand-built markup with Tailwind. Before building UI:
+
+1. Load the `volt-ui` skills (`.claude/skills/volt-ui*`) for which component fits and how to compose it.
+2. Ask the `volt-ui` MCP server (`https://voltui.dev/api/mcp`, in `.mcp.json`) for exact selectors,
+   inputs and examples — never guess an API.
+3. Only if Volt has no fitting component, use Quartz primitives for the behaviour; log the gap in
+   `DOGFOODING.md`.
+
+Brand styling goes through Volt's `class` input (merged by Volt) and the tokens in `src/styles.css`.
+
 ## Commands
 
 - `pnpm dev` — Analog dev server with SSR (port 5173)
