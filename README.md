@@ -87,14 +87,23 @@ VITE_SITE_URL=http://localhost:8787 pnpm build:cloudflare
 pnpm preview:cloudflare
 ```
 
-CI (`.github/workflows/ci.yml`) type-checks, validates the catalogs and builds every pull request,
-and deploys `master` with `wrangler deploy`. It needs two repository secrets, under *Settings →
-Secrets and variables → Actions*: `CLOUDFLARE_API_TOKEN` (an API token from the "Edit Cloudflare
-Workers" template) and `CLOUDFLARE_ACCOUNT_ID`.
+CI (`.github/workflows/ci.yml`), shown in GitHub under *Deployments*:
 
-The domain and DNS are managed in Cloudflare: add `www.beauty-line-esthetic.es` (and the apex, if
-it should redirect) in the Worker's *Settings → Domains & Routes*, then set `"workers_dev": false`
-in `wrangler.jsonc` so the `*.workers.dev` copy goes away.
+- **Every run:** type check, catalog validation and the prerendered build.
+- **Pull requests:** `wrangler versions upload --preview-alias pr-<n>` uploads a preview version
+  without touching production, at `https://pr-<n>-beauty-line-esthetic.andriipap01.workers.dev`
+  (the `preview` environment).
+- **`master`:** `wrangler deploy` to production (the `production` environment,
+  `https://www.beauty-line-esthetic.es`).
+
+It needs two repository secrets: `CLOUDFLARE_API_TOKEN` (Account → Workers Scripts → Edit only)
+and `CLOUDFLARE_ACCOUNT_ID`.
+
+**Domain.** DNS lives in Cloudflare (the registrar, DonDominio, only points the nameservers
+there). `www.beauty-line-esthetic.es` and `beauty-line-esthetic.es` are custom domains of the
+Worker (*Workers & Pages → beauty-line-esthetic → Domains*); a Redirect Rule sends the root
+domain to `www` (301, path and query kept) and *Always Use HTTPS* is on. `wrangler.jsonc` turns
+the public `*.workers.dev` URL off but keeps preview URLs.
 
 ## Deploy (Vercel)
 

@@ -1,10 +1,12 @@
 name: CI
 
-# Pull requests: type check, catalog validation and the Cloudflare build.
-# Pushes to master: the same, then deploy to Cloudflare Workers.
+# Every run: type check, catalog validation and the prerendered Cloudflare build.
+# Pull requests: upload a preview version of the Worker (production untouched) at a stable
+#   per-PR URL, recorded as a "preview" deployment in GitHub.
+# Pushes to master: deploy to production, recorded as a "production" deployment.
 #
 # Repository secrets this needs (Settings → Secrets and variables → Actions):
-#   CLOUDFLARE_API_TOKEN   token with the "Edit Cloudflare Workers" template
+#   CLOUDFLARE_API_TOKEN   token with Account → Workers Scripts → Edit
 #   CLOUDFLARE_ACCOUNT_ID  the account that owns the Worker
 # The public site URL is set in package.json (build:cloudflare).
 
@@ -14,27 +16,28 @@ on:
     branches: [master]
   workflow_dispatch:
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 permissions:
   contents: read
 
+env:
+  WORKER: beauty-line-esthetic
+  WORKERS_SUBDOMAIN: andriipap01.workers.dev
+  PRODUCTION_URL: https://www.beauty-line-esthetic.es
+
 jobs:
-  build:
+  checks:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    concurrency:
+      group: checks-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
-
       - uses: pnpm/action-setup@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: pnpm
-
       - run: pnpm install --frozen-lockfile
 
       - name: Type check
@@ -49,10 +52,75 @@ jobs:
       - name: Check the deploy bundle
         run: pnpm exec wrangler deploy --dry-run
 
-      - name: Deploy to Cloudflare
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 3
+
+  preview:
+    # Same-repo pull requests only: forks do not get the deploy secrets.
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: preview-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+    environment:
+      name: preview
+      url: ${{ steps.url.outputs.url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Upload preview version
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
+          command: versions upload --preview-alias pr-${{ github.event.pull_request.number }} --message "PR #${{ github.event.pull_request.number }} ${{ github.event.pull_request.head.sha }}"
+
+      - id: url
+        run: echo "url=https://pr-${{ github.event.pull_request.number }}-${WORKER}.${WORKERS_SUBDOMAIN}" >> "$GITHUB_OUTPUT"
+
+  production:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Never cancel a production deploy half-way; queue the next one instead.
+    concurrency:
+      group: production
+      cancel-in-progress: false
+    environment:
+      name: production
+      url: ${{ env.PRODUCTION_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --message "${{ github.sha }}"
