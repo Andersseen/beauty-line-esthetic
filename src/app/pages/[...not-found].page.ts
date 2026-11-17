@@ -4,6 +4,7 @@ import { injectResponse } from '@analogjs/router/tokens';
 import { VoltNativeButton } from '@voltui/components';
 
 import { injectAppI18n } from '../i18n/inject';
+import { injectPageSeo } from '../seo/page-seo';
 import { PageEnter } from '../ui/page-enter';
 
 @Component({
@@ -25,6 +26,7 @@ export default class NotFoundPage {
   protected readonly i18n = injectAppI18n();
 
   constructor() {
+    injectPageSeo('notFound');
     // On the server, answer with a real 404 so the URL is not indexed as a page.
     const response = injectResponse();
     if (response) {

@@ -12,6 +12,7 @@ import {
 
 import { injectAppI18n } from '../i18n/inject';
 import { BUSINESS } from '../shared/business';
+import { injectPageSeo } from '../seo/page-seo';
 import { PageEnter } from '../ui/page-enter';
 
 @Component({
@@ -21,6 +22,7 @@ import { PageEnter } from '../ui/page-enter';
   template: `
     <app-page-enter>
       <section class="min-h-screen w-full shadow-lg">
+        <h1 class="sr-only">{{ t('seo.contact.title') }}</h1>
         <div class="relative flex min-h-screen justify-end pt-10">
           <div class="absolute inset-0 pt-20 contrast-50 saturate-50">
             <iframe class="size-full" title="map" loading="lazy" [src]="map"></iframe>
@@ -57,4 +59,8 @@ export default class ContactPage {
   protected readonly t = injectAppI18n().t;
   // A fixed, trusted Google Maps embed URL.
   protected readonly map = inject(DomSanitizer).bypassSecurityTrustResourceUrl(BUSINESS.mapEmbedUrl);
+
+  constructor() {
+    injectPageSeo('contact');
+  }
 }

@@ -59,6 +59,9 @@ importers:
       cobe:
         specifier: 0.6.3
         version: 0.6.3
+      h3:
+        specifier: 1.15.11
+        version: 1.15.11
       lottie-web:
         specifier: 5.12.2
         version: 5.12.2

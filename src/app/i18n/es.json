@@ -1,7 +1,27 @@
 {
   "seo": {
-    "title": "Beauty Line · Centro de estética en Alcorcón",
-    "description": "Tratamientos faciales y corporales personalizados, depilación láser y productos naturales en Alcorcón, Madrid."
+    "siteName": "Beauty Line",
+    "imageAlt": "Clienta relajándose en una camilla de Beauty Line",
+    "home": {
+      "title": "Beauty Line · Centro de estética en Alcorcón",
+      "description": "Tratamientos faciales y corporales personalizados, depilación láser y productos naturales en Alcorcón, Madrid. Pide tu cita por WhatsApp."
+    },
+    "about": {
+      "title": "Sobre Beauty Line · Centro de estética en Alcorcón",
+      "description": "Conoce Beauty Line, tu centro de estética en Alcorcón: profesionales dedicados a realzar tu belleza natural con tratamientos personalizados."
+    },
+    "prices": {
+      "title": "Tratamientos y precios · Beauty Line Alcorcón",
+      "description": "Limpieza facial, peelings, oxigenoterapia, radiofrecuencia, depilación láser, presoterapia y masajes en Alcorcón. Consulta tratamientos, bonos y precios."
+    },
+    "contact": {
+      "title": "Contacto y horario · Beauty Line Alcorcón",
+      "description": "Visítanos en Paseo Castilla 11, Alcorcón. De lunes a viernes de 10:00 a 20:00 y sábados de 10:00 a 14:00. Pide cita por WhatsApp o teléfono."
+    },
+    "notFound": {
+      "title": "Página no encontrada · Beauty Line",
+      "description": "La página que buscas no existe o ha cambiado de dirección."
+    }
   },
   "nav": {
     "home": "Inicio",

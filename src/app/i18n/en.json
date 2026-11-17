@@ -1,7 +1,27 @@
 {
   "seo": {
-    "title": "Beauty Line · Aesthetic centre in Alcorcón",
-    "description": "Personalised facial and body treatments, laser hair removal and natural products in Alcorcón, Madrid."
+    "siteName": "Beauty Line",
+    "imageAlt": "Client relaxing on a treatment bed at Beauty Line",
+    "home": {
+      "title": "Beauty Line · Aesthetic centre in Alcorcón",
+      "description": "Personalised facial and body treatments, laser hair removal and natural products in Alcorcón, Madrid. Book on WhatsApp."
+    },
+    "about": {
+      "title": "About Beauty Line · Aesthetic centre in Alcorcón",
+      "description": "Meet Beauty Line, your aesthetic centre in Alcorcón: professionals dedicated to enhancing your natural beauty with personalised treatments."
+    },
+    "prices": {
+      "title": "Treatments and prices · Beauty Line Alcorcón",
+      "description": "Facial cleansing, peels, oxygen therapy, radiofrequency, laser hair removal, pressotherapy and massages in Alcorcón. See treatments, packages and prices."
+    },
+    "contact": {
+      "title": "Contact and opening hours · Beauty Line Alcorcón",
+      "description": "Visit us at Paseo Castilla 11, Alcorcón. Monday to Friday 10:00–20:00, Saturday 10:00–14:00. Book on WhatsApp or by phone."
+    },
+    "notFound": {
+      "title": "Page not found · Beauty Line",
+      "description": "The page you are looking for does not exist or has moved."
+    }
   },
   "nav": {
     "home": "Home",

@@ -1,10 +1,9 @@
-import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { injectAppI18n } from './i18n/inject';
 import { Footer } from './layout/footer';
 import { Header } from './layout/header';
+import { injectBusinessSchema } from './seo/business-schema';
 
 @Component({
   selector: 'app-root',
@@ -19,15 +18,8 @@ import { Header } from './layout/header';
   `,
 })
 export class App {
-  private readonly i18n = injectAppI18n();
-
   constructor() {
-    const title = inject(Title);
-    const meta = inject(Meta);
-    // Title and description follow the active locale (Etyma owns lang, canonical and hreflang).
-    effect(() => {
-      title.setTitle(this.i18n.t('seo.title'));
-      meta.updateTag({ name: 'description', content: this.i18n.t('seo.description') });
-    });
+    // Page-level tags come from each page (injectPageSeo); the business is described once.
+    injectBusinessSchema();
   }
 }

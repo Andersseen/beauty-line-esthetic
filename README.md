@@ -41,6 +41,16 @@ language on the server and writes `lang`, canonical and `hreflang` links.
 The old Ukrainian prefix `/ua/**` and the duplicate `/es` redirect permanently (301), see
 `vite.config.ts`. Unknown URLs render a localized page with a real 404 status.
 
+## SEO
+
+- Per page and language: `<title>`, description, robots, Open Graph (with `og:locale` alternates)
+  and Twitter card (`src/app/seo/page-seo.ts`); Etyma adds `lang`, canonical and `hreflang`.
+- `BeautySalon` JSON-LD with address, geo, opening hours and phone (`src/app/seo/business-schema.ts`).
+- `/sitemap.xml` lists every page in every language with its alternates; `/robots.txt` points to it
+  and blocks `*.vercel.app` preview hosts so only the real domain is indexed.
+- All absolute URLs come from the request host, so no domain is hard-coded.
+- Social image: `public/og-image.jpg` (1200×630).
+
 ## Content
 
 All copy lives in `src/app/i18n/{es,en,uk}.json`. Lists (services, products, prices…) are objects

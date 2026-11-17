@@ -8,6 +8,7 @@ import { GiftCards } from '../sections/gift-cards';
 import { ProductsBento } from '../sections/products-bento';
 import { Services } from '../sections/services';
 import { ShuffleHero } from '../sections/shuffle-hero';
+import { injectPageSeo } from '../seo/page-seo';
 import { PageEnter } from '../ui/page-enter';
 
 @Component({
@@ -34,4 +35,8 @@ import { PageEnter } from '../ui/page-enter';
 })
 export default class HomePage {
   protected readonly t = injectAppI18n().t;
+
+  constructor() {
+    injectPageSeo('home');
+  }
 }

@@ -32,7 +32,9 @@ Brand styling goes through Volt's `class` input (merged by Volt) and the tokens 
 - `src/app/sections/` — home page sections
 - `src/app/ui/` — reusable blocks (box reveal, magic card, page entrance)
 - `src/app/i18n/` — catalogs and the typed `injectAppI18n()` / `listKey()` helpers
-- `src/app/shared/business.ts` — phone, map, location: non-translatable facts
+- `src/app/shared/business.ts` — phone, address, map, location: non-translatable facts
+- `src/app/seo/` — page meta (title, description, Open Graph, Twitter, robots) and JSON-LD
+- `src/server/routes/` — Nitro routes: `robots.txt`, `sitemap.xml`
 
 ## Rules
 
@@ -44,5 +46,8 @@ Brand styling goes through Volt's `class` input (merged by Volt) and the tokens 
   timers, observers) runs in `afterNextRender`; server render must not touch `window`.
 - Angular Movement animates the individual `translate`/`scale`/`rotate` CSS properties: an initial
   state written in CSS must use those properties, not `transform`.
+- Every page calls `injectPageSeo('<page>')` (`src/app/seo/page-seo.ts`) with its own
+  `seo.<page>.title/description` in all three catalogs; a new indexable page also goes in `PAGES`
+  in `src/server/utils/site.ts` (sitemap). Etyma owns lang, canonical and hreflang.
 - Brand colours are `main-50 … main-950` (Tailwind) and are mapped onto Volt's tokens in
   `src/styles.css`.

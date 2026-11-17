@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MoveInViewDirective } from 'angular-movement';
 
 import { injectAppI18n } from '../i18n/inject';
+import { injectPageSeo } from '../seo/page-seo';
 import { PageEnter } from '../ui/page-enter';
 
 @Component({
@@ -28,4 +29,8 @@ import { PageEnter } from '../ui/page-enter';
 })
 export default class AboutPage {
   protected readonly t = injectAppI18n().t;
+
+  constructor() {
+    injectPageSeo('about');
+  }
 }

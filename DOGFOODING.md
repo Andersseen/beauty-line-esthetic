@@ -58,5 +58,10 @@ Each entry: what happened, the workaround used here, and what the library could 
    was arrays of objects; it became index-keyed objects plus a small `listKey()` helper whose cast
    bridges the numeric index into the literal key type. A typed helper for "list of records" keys
    (or support for arrays of objects) would remove the cast.
-2. Everything else worked first time: SSR in the right language, `hreflang`/canonical, navigation
+2. **Canonical/hreflang origin ignores `x-forwarded-host`** (it uses `host` plus
+   `x-forwarded-proto`). Fine on Vercel, where both carry the public domain, but behind a proxy
+   that rewrites `host` the canonical would point at the internal host. The site's own `og:url`,
+   JSON-LD and sitemap follow the same rule so they never disagree (`src/app/seo/origin.ts`).
+   Suggestion: honour `x-forwarded-host`, or document the `origin` option for that case.
+3. Everything else worked first time: SSR in the right language, `hreflang`/canonical, navigation
    based locale switching that keeps the page and component state.

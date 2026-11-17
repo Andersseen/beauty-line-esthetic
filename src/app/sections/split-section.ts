@@ -51,7 +51,7 @@ const GALLERY = ['/19.webp', '/20.webp', '/21.webp', '/22.webp'];
             [moveDuration]="500"
             [moveDelay]="index * 300"
           >
-            <app-service-image [src]="src" [width]="300" [height]="300" imageClass="aspect-square max-h-[300px]" />
+            <app-service-image [src]="src" [alt]="t('splitSection.title')" [width]="300" [height]="300" imageClass="aspect-square max-h-[300px]" />
           </div>
         }
       </div>

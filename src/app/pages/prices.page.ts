@@ -17,6 +17,7 @@ import { MoveInViewDirective } from 'angular-movement';
 import { sourceCatalog } from '../i18n/i18n';
 import { injectAppI18n, listKey } from '../i18n/inject';
 import { BUSINESS } from '../shared/business';
+import { injectPageSeo } from '../seo/page-seo';
 import { PageEnter } from '../ui/page-enter';
 
 type Category = keyof typeof sourceCatalog.prices.treatments;
@@ -136,5 +137,9 @@ export default class PricesPage {
 
   protected asEntries(items: unknown): TreatmentEntry[] {
     return items as TreatmentEntry[];
+  }
+
+  constructor() {
+    injectPageSeo('prices');
   }
 }
