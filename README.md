@@ -60,11 +60,24 @@ the Spanish catalog's shape, so adding an entry to all three files is enough to 
 
 ## Deploy (Cloudflare Workers, free plan)
 
-`pnpm build:cloudflare` builds with Nitro's `cloudflare-module` preset and, because `VITE_SITE_URL`
-is set, **prerenders every page in every language** plus `sitemap.xml` and `robots.txt` into
-`dist/analog/public`. Cloudflare serves those as static assets (free and unmetered); the Worker only
-answers what no file matches, such as the localized 404 page, so the free plan's 10 ms CPU limit is
-never spent on rendering pages. Redirects for `/ua` and `/es` live in `public/_redirects`.
+`pnpm build:cloudflare` builds with Nitro's `cloudflare-module` preset and **prerenders every page
+in every language** plus `sitemap.xml` and `robots.txt` into `dist/analog/public`, using the public
+site URL set in that script (`https://www.beauty-line-esthetic.es`; override it with
+`VITE_SITE_URL`). Cloudflare serves those files as static assets (free and unmetered); the Worker
+only answers what no file matches, such as the localized 404 page, so the free plan's 10 ms CPU
+limit is never spent on rendering pages. Redirects for `/ua` and `/es` live in `public/_redirects`,
+cache and security headers in `public/_headers`.
+
+Deploy from your machine (or from VS Code's *NPM Scripts* panel). Sign in once with
+`pnpm exec wrangler login`, then:
+
+```bash
+pnpm run deploy:cloudflare
+```
+
+Use `pnpm run …`: a bare `pnpm deploy` is pnpm's own workspace command, not this script.
+
+Try the production build locally first:
 
 ```bash
 VITE_SITE_URL=http://localhost:8787 pnpm build:cloudflare
@@ -75,16 +88,13 @@ pnpm preview:cloudflare
 ```
 
 CI (`.github/workflows/ci.yml`) type-checks, validates the catalogs and builds every pull request,
-and deploys `master` with `wrangler deploy`. It needs, under *Settings → Secrets and variables →
-Actions*:
+and deploys `master` with `wrangler deploy`. It needs two repository secrets, under *Settings →
+Secrets and variables → Actions*: `CLOUDFLARE_API_TOKEN` (an API token from the "Edit Cloudflare
+Workers" template) and `CLOUDFLARE_ACCOUNT_ID`.
 
-- `CLOUDFLARE_API_TOKEN` (secret): an API token from the "Edit Cloudflare Workers" template.
-- `CLOUDFLARE_ACCOUNT_ID` (secret).
-- `SITE_URL` (variable): the public URL, e.g. `https://beautyline.es`, with no trailing slash.
-
-To serve the custom domain, add it in the Worker's *Settings → Domains & Routes* (or as a `routes`
-entry with `custom_domain: true` in `wrangler.jsonc`), then set `"workers_dev": false` so the
-`*.workers.dev` copy goes away.
+The domain and DNS are managed in Cloudflare: add `www.beauty-line-esthetic.es` (and the apex, if
+it should redirect) in the Worker's *Settings → Domains & Routes*, then set `"workers_dev": false`
+in `wrangler.jsonc` so the `*.workers.dev` copy goes away.
 
 ## Deploy (Vercel)
 

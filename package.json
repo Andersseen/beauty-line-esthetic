@@ -11,9 +11,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:cloudflare": "NITRO_PRESET=cloudflare-module vite build",
+    "build:cloudflare": "NITRO_PRESET=cloudflare-module VITE_SITE_URL=${VITE_SITE_URL:-https://www.beauty-line-esthetic.es} vite build",
     "preview:cloudflare": "wrangler dev",
-    "deploy": "wrangler deploy",
+    "deploy:cloudflare": "pnpm build:cloudflare && wrangler deploy",
     "preview": "vite preview",
     "typecheck": "ngc --project tsconfig.app.json --noEmit",
     "i18n:check": "etyma validate src/app/i18n --source es",

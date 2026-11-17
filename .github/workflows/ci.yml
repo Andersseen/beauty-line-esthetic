@@ -3,10 +3,10 @@ name: CI
 # Pull requests: type check, catalog validation and the Cloudflare build.
 # Pushes to master: the same, then deploy to Cloudflare Workers.
 #
-# Repository settings this needs (Settings → Secrets and variables → Actions):
-#   secrets.CLOUDFLARE_API_TOKEN   token with the "Edit Cloudflare Workers" template
-#   secrets.CLOUDFLARE_ACCOUNT_ID  the account that owns the Worker
-#   vars.SITE_URL                  public URL, e.g. https://beautyline.es (no trailing slash)
+# Repository secrets this needs (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN   token with the "Edit Cloudflare Workers" template
+#   CLOUDFLARE_ACCOUNT_ID  the account that owns the Worker
+# The public site URL is set in package.json (build:cloudflare).
 
 on:
   pull_request:
@@ -25,9 +25,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    env:
-      # Pages are prerendered with this origin (canonical, hreflang, Open Graph, sitemap).
-      VITE_SITE_URL: ${{ vars.SITE_URL || 'https://beauty-line-esthetic.workers.dev' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -51,12 +48,6 @@ jobs:
 
       - name: Check the deploy bundle
         run: pnpm exec wrangler deploy --dry-run
-
-      - name: Require SITE_URL before deploying
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master' && vars.SITE_URL == ''
-        run: |
-          echo "::error::Set the repository variable SITE_URL (the public site URL) before deploying."
-          exit 1
 
       - name: Deploy to Cloudflare
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
