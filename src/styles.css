@@ -7,8 +7,40 @@
 /* Lumen icons ship their own template classes; let Tailwind see them. */
 @source '../node_modules/lumen-icons/fesm2022';
 
+/* Geist, self-hosted variable font (OFL, from @fontsource-variable/geist 5.3.0). Latin for es/en,
+   Cyrillic for uk; each file is only fetched when the page uses its characters. */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/geist-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308,
+    U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/geist-cyrillic-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Metric-matched fallback for Geist (measured in the browser: Geist is 2.5% wider than Arial,
+   ascent 1.01em, descent 0.29em). Until the web font is ready, text wraps the same way, so
+   swapping fonts does not shift the layout. */
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local('Arial'), local('ArialMT'), local('Liberation Sans');
+  size-adjust: 102.5%;
+  ascent-override: 98.5%;
+  descent-override: 28.3%;
+  line-gap-override: 0%;
+}
+
 @theme {
-  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
 
   /* Brand palette, unchanged from the original site. */
   --color-main-50: #fdf3f4;
@@ -36,7 +68,8 @@
   color-scheme: light;
   --heading: var(--color-main-950);
   --spotlight: #f8e6e8;
-  --primary: #d86674;
+  /* main-600, not main-500: white text on it passes WCAG AA (≈5:1; main-500 is 3.4:1). */
+  --primary: #c03e54;
   --primary-foreground: #ffffff;
   --secondary: #fae9e9;
   --secondary-foreground: #40111c;
@@ -66,7 +99,7 @@
   color-scheme: dark;
   --heading: var(--color-main-200);
   --spotlight: rgb(216 102 116 / 0.14);
-  --primary: #d86674;
+  --primary: #c03e54;
   --primary-foreground: #ffffff;
   --secondary: #2a141a;
   --secondary-foreground: #fae9e9;
@@ -130,6 +163,13 @@
   to {
     clip-path: circle(150% at 50% 40px);
   }
+}
+
+/* Volt buttons re-apply their classes on hydration, leaving a frame with no padding; with
+   padding in the transition the width then visibly grows back, which wraps and shifts the
+   hero's buttons (CLS). Only paint properties transition. See DOGFOODING.md (Volt UI). */
+[voltbutton] {
+  transition-property: color, background-color, border-color, box-shadow, opacity, scale, translate;
 }
 
 @utility text-balance {

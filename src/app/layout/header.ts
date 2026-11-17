@@ -101,7 +101,7 @@ const LINKS: readonly NavLink[] = [
                 <li>
                   <a
                     [routerLink]="i18n.path(link.path)"
-                    class="block pt-[10px] pr-[30px] text-[32px] font-light text-main-100 uppercase no-underline"
+                    class="block pt-[10px] pr-[30px] text-[32px] font-light text-white uppercase no-underline"
                     (pointerenter)="hovered.set(index)"
                     (pointerleave)="hovered.set(null)"
                     (click)="open.set(false)"

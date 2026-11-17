@@ -22,7 +22,13 @@ Each entry: what happened, the workaround used here, and what the library could 
    rendered`. Workaround: keep both icons mounted and cross-fade with CSS
    (`src/app/layout/theme-toggle.ts`). Suggestion: skip `commitStyles` when `!el.isConnected`, or
    cancel running animations on destroy.
-5. `blur` in keyframes works well for soft entrances (`src/app/ui/text-reveal.ts`) — worth a
+5. **`moveLayout` (FLIP) after a DOM reorder counts as layout shift.** The hero shuffled 16 tiles
+   every 3 s by reordering them; the browser records each reorder as an unexpected layout shift
+   (Lighthouse CLS 0.19 on the home page, and it would keep adding up for real visitors).
+   Workaround: tiles keep their DOM order and slide with `translate` only
+   (`src/app/sections/shuffle-hero.ts`). Suggestion: a transform-only "slot" mode, or a docs note
+   that FLIP is for user-initiated reorders.
+6. `blur` in keyframes works well for soft entrances (`src/app/ui/text-reveal.ts`) — worth a
    "blur-fade" example in the docs next to the `blur-in` preset.
 
 ## Quartz (`@quartz-headless/primitives` 0.16.0)
@@ -53,7 +59,13 @@ Each entry: what happened, the workaround used here, and what the library could 
 5. **Ghost button hover is `data-[hover]:bg-accent`**, so an app's `hover:bg-*` in `class` does not
    replace it (tailwind-merge only dedupes the same variant). Passing `data-[hover]:bg-*` works;
    worth a line in the styling docs.
-6. **Dark mode with a brand palette:** `applyVoltTheme({ dark })` toggles `.dark` and
+6. **`voltButton` loses its classes for a frame on hydration.** On a prerendered page the button
+   briefly renders with no padding, then its classes come back; because the soft style also
+   transitions `padding`, the width animates from 131 px to 195 px, which re-wrapped the hero's two
+   buttons and cost a 0.25 CLS on the Spanish home page (Lighthouse). Workaround: limit
+   `[voltbutton]` transitions to paint properties (`src/styles.css`). Suggestion: keep the SSR
+   class list through hydration, and do not transition layout properties.
+7. **Dark mode with a brand palette:** `applyVoltTheme({ dark })` toggles `.dark` and
    `color-scheme` nicely, but an app's own `:root { --primary… }` (same specificity as Volt's
    `.dark`, and loaded later) silently wins over the dark set; the app's dark tokens need
    `:root.dark`. There is also no helper for persisting the choice / avoiding the flash before

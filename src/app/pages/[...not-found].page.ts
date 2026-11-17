@@ -17,7 +17,7 @@ import { PageEnter } from '../ui/page-enter';
         <p class="text-7xl font-bold text-main-500">404</p>
         <h1 class="text-3xl font-semibold">{{ i18n.t('notFound.title') }}</h1>
         <p class="max-w-md text-muted-foreground">{{ i18n.t('notFound.description') }}</p>
-        <a voltButton size="lg" class="bg-main-500 hover:bg-main-600" [routerLink]="i18n.path('/')">{{ i18n.t('notFound.back') }}</a>
+        <a voltButton size="lg" [routerLink]="i18n.path('/')">{{ i18n.t('notFound.back') }}</a>
       </section>
     </app-page-enter>
   `,
