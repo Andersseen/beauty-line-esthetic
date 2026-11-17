@@ -11,6 +11,7 @@ import { provideEtyma } from '@etyma/angular';
 import { provideMovement } from 'angular-movement';
 
 import { i18n } from './i18n/i18n';
+import { SITE_URL } from './shared/site-url';
 import { onPageTransition } from './shared/view-transitions';
 
 export const appConfig: ApplicationConfig = {
@@ -24,7 +25,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideClientHydration(withEventReplay()),
     provideEtyma(i18n),
-    provideEtymaAnalog(),
+    provideEtymaAnalog(SITE_URL ? { origin: SITE_URL } : {}),
     provideMovement({ duration: 500, easing: 'cubic-bezier(0.76, 0, 0.24, 1)' }),
   ],
 };

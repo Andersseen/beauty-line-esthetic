@@ -1,0 +1,67 @@
+name: CI
+
+# Pull requests: type check, catalog validation and the Cloudflare build.
+# Pushes to master: the same, then deploy to Cloudflare Workers.
+#
+# Repository settings this needs (Settings → Secrets and variables → Actions):
+#   secrets.CLOUDFLARE_API_TOKEN   token with the "Edit Cloudflare Workers" template
+#   secrets.CLOUDFLARE_ACCOUNT_ID  the account that owns the Worker
+#   vars.SITE_URL                  public URL, e.g. https://beautyline.es (no trailing slash)
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # Pages are prerendered with this origin (canonical, hreflang, Open Graph, sitemap).
+      VITE_SITE_URL: ${{ vars.SITE_URL || 'https://beauty-line-esthetic.workers.dev' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm typecheck
+
+      - name: Validate translations
+        run: pnpm i18n:check
+
+      - name: Build (prerendered, Cloudflare Workers)
+        run: pnpm build:cloudflare
+
+      - name: Check the deploy bundle
+        run: pnpm exec wrangler deploy --dry-run
+
+      - name: Require SITE_URL before deploying
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master' && vars.SITE_URL == ''
+        run: |
+          echo "::error::Set the repository variable SITE_URL (the public site URL) before deploying."
+          exit 1
+
+      - name: Deploy to Cloudflare
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy

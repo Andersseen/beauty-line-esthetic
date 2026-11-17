@@ -1,6 +1,8 @@
 import { DOCUMENT, inject } from '@angular/core';
 import { injectRequest } from '@analogjs/router/tokens';
 
+import { SITE_URL } from '../shared/site-url';
+
 function firstHeader(value: string | string[] | undefined): string | undefined {
   const raw = Array.isArray(value) ? value[0] : value;
   return raw?.split(',')[0]?.trim() || undefined;
@@ -14,6 +16,8 @@ function firstHeader(value: string | string[] | undefined): string | undefined {
  * `location.origin`.
  */
 export function injectOrigin(): string {
+  // A configured site URL wins (prerendered builds); Etyma is given the same value.
+  if (SITE_URL) return SITE_URL;
   const request = injectRequest();
   if (request) {
     // `host` first, like Etyma's canonical/hreflang links, so og:url and canonical always agree.

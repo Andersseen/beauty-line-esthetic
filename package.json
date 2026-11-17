@@ -11,6 +11,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:cloudflare": "NITRO_PRESET=cloudflare-module vite build",
+    "preview:cloudflare": "wrangler dev",
+    "deploy": "wrangler deploy",
     "preview": "vite preview",
     "typecheck": "ngc --project tsconfig.app.json --noEmit",
     "i18n:check": "etyma validate src/app/i18n --source es",
@@ -51,7 +54,8 @@
     "@types/node": "22.20.5",
     "tailwindcss": "4.3.5",
     "typescript": "6.0.3",
-    "vite": "8.3.8"
+    "vite": "8.3.8",
+    "wrangler": "4.164.0"
   },
   "pnpm": {
     "peerDependencyRules": {
