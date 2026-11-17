@@ -38,15 +38,15 @@ const TILE: Record<string, MoveVariant> = {
       @for (i of products; track i) {
         <div [class]="'col-span-2 md:col-span-1 ' + spans[i]" [moveVariants]="tile" [moveVariant]="hovered() ? 'dimmed' : 'rest'">
           <volt-card
-            class="group/bento flex size-full min-h-32 items-center justify-center border-main-200 bg-gradient-to-br from-main-50 to-main-200 transition-shadow duration-200 hover:shadow-xl"
+            class="group/bento flex size-full min-h-32 items-center justify-center border-main-200 bg-gradient-to-br from-main-50 to-main-200 dark:border-main-900/60 dark:from-main-950/70 dark:to-main-900/40 transition-shadow duration-200 hover:shadow-xl"
             [moveWhileHover]="{ scale: [1, 1.02] }"
             [moveDuration]="200"
           >
             <div class="p-5">
-              <div class="text-center text-lg font-semibold text-main-950 transition duration-200 group-hover/bento:-translate-x-2">
+              <div class="text-center text-lg font-semibold text-heading transition duration-200 group-hover/bento:-translate-x-2">
                 {{ t(key('products', i, 'title')) }}
               </div>
-              <div class="mt-1 text-center text-sm text-gray-700 transition duration-200 group-hover/bento:translate-x-2">
+              <div class="mt-1 text-center text-sm text-muted-foreground transition duration-200 group-hover/bento:translate-x-2">
                 {{ t(key('products', i, 'description')) }}
               </div>
             </div>

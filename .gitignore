@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # agent tooling output
 /.playwright-mcp
+
+# wrangler local state
+/.wrangler

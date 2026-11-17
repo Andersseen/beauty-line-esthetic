@@ -101,10 +101,10 @@ function entries(category: Category): TreatmentEntry[] {
                   </volt-card-header>
                   <volt-card-content>
                     @if (item.hasDescription) {
-                      <p class="mb-4 text-sm text-gray-600">{{ t(key(list, item.index, 'description')) }}</p>
+                      <p class="mb-4 text-sm text-muted-foreground">{{ t(key(list, item.index, 'description')) }}</p>
                     }
                     @if (item.hasDuration) {
-                      <p class="mt-2 text-sm text-gray-600">
+                      <p class="mt-2 text-sm text-muted-foreground">
                         {{ t('prices.durationLabel') }}: {{ t(key(list, item.index, 'duration')) }}
                       </p>
                     }
@@ -117,7 +117,7 @@ function entries(category: Category): TreatmentEntry[] {
           <div class="mt-12 text-center">
             <h2 class="mb-4 text-2xl font-semibold">{{ t('prices.contact.interestedText') }}</h2>
             <p class="mb-6">{{ t('prices.contact.callToAction') }}</p>
-            <a voltButton size="lg" class="gap-2 bg-main-500 hover:bg-main-900" [href]="'tel:' + phone">
+            <a voltButton size="lg" class="gap-2" [href]="'tel:' + phone">
               <lmn-phone [size]="20" />
               {{ t('prices.contact.callToAction') }}
             </a>

@@ -30,7 +30,9 @@
     "contact": "Contact",
     "menu": "Menu",
     "language": "Language",
-    "whatsapp": "Contact on WhatsApp"
+    "whatsapp": "Contact on WhatsApp",
+    "darkMode": "Dark mode",
+    "scrollTop": "Back to top"
   },
   "featuresSection": {
     "title": "Excellence in Aesthetic Care",
@@ -147,10 +149,6 @@
   "contactSection": {
     "title": "Get in touch",
     "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "contactInfo": [
-      "contact@example.com",
-      "+34 645 22 87 82"
-    ],
     "whatsapp": "Message us on WhatsApp",
     "call": "Call us"
   },
@@ -258,8 +256,6 @@
     "title": "Beauty Center",
     "description": "Enhancing your natural beauty since 2005",
     "address": "Paseo Castilla 11. Alcorcón",
-    "phone": "+34 645 22 87 82",
-    "email": "info@beautycenter.com",
     "servicesTitle": "Our Services",
     "servicesList": [
       "Facial Treatments",

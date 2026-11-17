@@ -30,7 +30,9 @@
     "contact": "Контакти",
     "menu": "Меню",
     "language": "Мова",
-    "whatsapp": "Написати у WhatsApp"
+    "whatsapp": "Написати у WhatsApp",
+    "darkMode": "Темна тема",
+    "scrollTop": "Нагору"
   },
   "featuresSection": {
     "title": "Відмінність у естетичному догляді",
@@ -147,10 +149,6 @@
   "contactSection": {
     "title": "Зв'яжіться з нами",
     "description": "Ми будемо раді почути від вас. Надішліть нам повідомлення, і ми відповімо якнайшвидше.",
-    "contactInfo": [
-      "contact@example.com",
-      "+34 645 22 87 82"
-    ],
     "whatsapp": "Напишіть нам у WhatsApp",
     "call": "Зателефонуйте нам"
   },
@@ -264,8 +262,6 @@
     "title": "Центр Естетики",
     "description": "Підкреслюємо вашу природну красу з 2005 року",
     "address": "вул. Paseo Castilla 11. Alcorcón",
-    "phone": "+34 645 22 87 82",
-    "email": "info@estetica.com",
     "servicesTitle": "Наші Послуги",
     "servicesList": [
       "Догляд за обличчям",

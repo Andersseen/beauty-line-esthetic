@@ -9,9 +9,9 @@ import { MoveInViewDirective } from 'angular-movement';
   host: { class: 'mx-auto mb-10 block max-w-2xl px-4 text-center' },
   template: `
     <div moveInView="fade-up">
-      <h2 class="text-3xl font-bold tracking-tight text-balance text-main-950 md:text-4xl">{{ title() }}</h2>
+      <h2 class="text-3xl font-bold tracking-tight text-balance text-heading md:text-4xl">{{ title() }}</h2>
       @if (description()) {
-        <p class="mt-3 text-base text-balance text-gray-600 md:text-lg">{{ description() }}</p>
+        <p class="mt-3 text-base text-balance text-muted-foreground md:text-lg">{{ description() }}</p>
       }
     </div>
   `,

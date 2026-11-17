@@ -23,7 +23,7 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
 })
 export class MagicCard {
   readonly gradientSize = input(200);
-  readonly gradientColor = input('#f3f3f3');
+  readonly gradientColor = input('var(--spotlight)');
 
   private readonly x = signal(-200);
   private readonly y = signal(-200);

@@ -1,12 +1,18 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MoveHoverDirective } from 'angular-movement';
 
-/** Rounded photo that tilts and grows slightly on hover (spring), shared by the service blocks. */
+/**
+ * Rounded photo shared by the service blocks. On hover the picture zooms slowly inside its frame
+ * (the frame itself stays put) and a soft brand tint rises from the bottom.
+ */
 @Component({
   selector: 'app-service-image',
   imports: [MoveHoverDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'relative mx-auto block h-auto w-full overflow-hidden rounded-lg' },
+  host: {
+    class:
+      'group/photo relative mx-auto block h-auto w-full overflow-hidden rounded-2xl shadow-lg shadow-main-900/10 transition-shadow duration-700 hover:shadow-xl hover:shadow-main-900/20 dark:shadow-black/40',
+  },
   template: `
     <img
       [src]="src()"
@@ -14,10 +20,14 @@ import { MoveHoverDirective } from 'angular-movement';
       [attr.width]="width()"
       [attr.height]="height()"
       loading="lazy"
-      [class]="'relative z-0 w-full rounded-lg object-cover shadow-lg ' + imageClass()"
-      [moveWhileHover]="{ scale: [1, 1.05], rotate: [0, 1] }"
-      [moveSpring]="{ stiffness: 300, damping: 20 }"
+      [class]="'relative z-0 w-full object-cover ' + imageClass()"
+      [moveWhileHover]="{ scale: [1, 1.04] }"
+      [moveSpring]="{ stiffness: 90, damping: 20 }"
     />
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-main-900/25 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover/photo:opacity-100"
+    ></div>
   `,
 })
 export class ServiceImage {

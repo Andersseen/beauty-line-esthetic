@@ -5,7 +5,8 @@ import { MoveInViewDirective } from 'angular-movement';
 import { sourceCatalog } from '../i18n/i18n';
 import { injectAppI18n, listKey } from '../i18n/inject';
 import { indicesOf } from '../shared/business';
-import { BoxReveal } from '../ui/box-reveal';
+import { EASE_OUT, ENTER_MS } from '../shared/motion';
+import { TextReveal } from '../ui/text-reveal';
 import { MagicCard } from '../ui/magic-card';
 import { ServiceImage } from './service-image';
 
@@ -14,29 +15,29 @@ const GALLERY = ['/19.webp', '/20.webp', '/21.webp', '/22.webp'];
 /** Slimming treatments: text with phases on one side, a staggered 2×2 gallery on the other. */
 @Component({
   selector: 'app-split-section',
-  imports: [LmnCheckIcon, MoveInViewDirective, BoxReveal, MagicCard, ServiceImage],
+  imports: [LmnCheckIcon, MoveInViewDirective, TextReveal, MagicCard, ServiceImage],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <section class="mb-8 flex w-full flex-col items-center lg:flex-row" [moveInView]="{ opacity: [0, 1] }" [moveDuration]="500">
+    <section class="mb-8 flex w-full flex-col items-center lg:flex-row">
       <div class="flex h-1/2 w-full items-center justify-center lg:h-full lg:w-1/2 lg:p-16">
         <app-magic-card>
-          <div class="w-full" [moveInView]="{ opacity: [0, 1], y: [50, 0] }" [moveDuration]="500">
-            <app-box-reveal class="mb-3">
-              <h2 class="text-xl font-bold sm:text-2xl lg:text-3xl">{{ t('splitSection.title') }}</h2>
-            </app-box-reveal>
-            <app-box-reveal>
-              <p class="text-base text-wrap text-gray-700 md:text-lg">{{ t('splitSection.content') }}</p>
-            </app-box-reveal>
-            <ul class="mt-3 space-y-1 text-gray-800" role="list">
-              @for (i of phases; track i) {
-                <li><app-box-reveal><span>{{ t(key('splitSection.phases', i)) }}</span></app-box-reveal></li>
+          <div class="w-full">
+            <app-text-reveal class="mb-3">
+              <h2 class="text-xl font-bold text-heading sm:text-2xl lg:text-3xl">{{ t('splitSection.title') }}</h2>
+            </app-text-reveal>
+            <app-text-reveal [delay]="120">
+              <p class="text-base text-wrap text-muted-foreground md:text-lg">{{ t('splitSection.content') }}</p>
+            </app-text-reveal>
+            <ul class="mt-3 space-y-1 text-foreground/85" role="list">
+              @for (i of phases; track i; let index = $index) {
+                <li><app-text-reveal [delay]="200 + index * 60"><span>{{ t(key('splitSection.phases', i)) }}</span></app-text-reveal></li>
               }
             </ul>
-            <ul class="mt-4 grid gap-2 text-gray-700 sm:grid-cols-2" role="list">
-              @for (i of info; track i) {
+            <ul class="mt-4 grid gap-2 text-muted-foreground sm:grid-cols-2" role="list">
+              @for (i of info; track i; let index = $index) {
                 <li class="flex items-center gap-2">
                   <lmn-check class="shrink-0 text-main-500" [size]="16" [strokeWidth]="2.5" />
-                  <app-box-reveal><span>{{ t(key('splitSection.additionalInfo', i)) }}</span></app-box-reveal>
+                  <app-text-reveal [delay]="index * 60"><span>{{ t(key('splitSection.additionalInfo', i)) }}</span></app-text-reveal>
                 </li>
               }
             </ul>
@@ -46,10 +47,11 @@ const GALLERY = ['/19.webp', '/20.webp', '/21.webp', '/22.webp'];
       <div class="grid h-1/2 w-full grid-cols-2 gap-4 lg:h-full lg:min-h-[500px] lg:w-1/2 lg:p-8">
         @for (src of gallery; track src; let index = $index) {
           <div
-            class="relative h-fit overflow-hidden rounded-lg"
-            [moveInView]="{ opacity: [0, 1], scale: [0.8, 1] }"
-            [moveDuration]="500"
-            [moveDelay]="index * 300"
+            class="relative h-fit"
+            [moveInView]="{ opacity: [0, 1], y: [32, 0], scale: [0.96, 1], blur: [8, 0] }"
+            [moveDuration]="enterMs"
+            [moveEasing]="ease"
+            [moveDelay]="index * 120"
           >
             <app-service-image [src]="src" [alt]="t('splitSection.title')" [width]="300" [height]="300" imageClass="aspect-square max-h-[300px]" />
           </div>
@@ -64,4 +66,6 @@ export class SplitSection {
   protected readonly phases = indicesOf(sourceCatalog.splitSection.phases);
   protected readonly info = indicesOf(sourceCatalog.splitSection.additionalInfo);
   protected readonly gallery = GALLERY;
+  protected readonly ease = EASE_OUT;
+  protected readonly enterMs = ENTER_MS;
 }

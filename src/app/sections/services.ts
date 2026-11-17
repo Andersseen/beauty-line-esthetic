@@ -4,7 +4,8 @@ import { MoveInViewDirective } from 'angular-movement';
 import { sourceCatalog } from '../i18n/i18n';
 import { injectAppI18n, listKey } from '../i18n/inject';
 import { indicesOf } from '../shared/business';
-import { BoxReveal } from '../ui/box-reveal';
+import { EASE_OUT, ENTER_MS } from '../shared/motion';
+import { TextReveal } from '../ui/text-reveal';
 import { MagicCard } from '../ui/magic-card';
 import { SectionHeading } from '../ui/section-heading';
 import { NewTreatment } from './new-treatment';
@@ -17,7 +18,7 @@ const IMAGES = ['/06.webp', '/07.webp', '/24.webp', '/08.webp', '/23.webp', '/13
 /** Alternating service blocks; the two feature treatments sit after the seventh one. */
 @Component({
   selector: 'app-services',
-  imports: [MoveInViewDirective, SectionHeading, BoxReveal, MagicCard, ServiceImage, NewTreatment, SplitSection],
+  imports: [MoveInViewDirective, SectionHeading, TextReveal, MagicCard, ServiceImage, NewTreatment, SplitSection],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section id="services" class="container mx-auto px-4 py-12 lg:px-8">
@@ -28,18 +29,21 @@ const IMAGES = ['/06.webp', '/07.webp', '/24.webp', '/08.webp', '/23.webp', '/13
             class="flex flex-col items-center gap-8 py-12 lg:max-h-[400px]"
             [class.md:flex-row]="i % 2 === 0"
             [class.md:flex-row-reverse]="i % 2 === 1"
-            [moveInView]="{ opacity: [0, 1], x: [i % 2 === 0 ? -100 : 100, 0], y: [50, 0] }"
-            [moveDuration]="300"
           >
-            <app-magic-card class="w-full space-y-4 md:w-1/2 lg:p-8">
-              <app-box-reveal class="mb-3">
-                <h2 class="text-xl font-bold sm:text-2xl lg:text-3xl">{{ t(key('servicesSection.sections', i, 'title')) }}</h2>
-              </app-box-reveal>
-              <app-box-reveal>
-                <p class="text-base text-wrap text-gray-700 md:text-lg">{{ t(key('servicesSection.sections', i, 'content')) }}</p>
-              </app-box-reveal>
+            <app-magic-card class="w-full space-y-4 px-1 md:w-1/2 lg:p-8">
+              <app-text-reveal class="mb-3">
+                <h2 class="text-xl font-bold text-heading sm:text-2xl lg:text-3xl">{{ t(key('servicesSection.sections', i, 'title')) }}</h2>
+              </app-text-reveal>
+              <app-text-reveal [delay]="120">
+                <p class="text-base text-wrap text-muted-foreground md:text-lg">{{ t(key('servicesSection.sections', i, 'content')) }}</p>
+              </app-text-reveal>
             </app-magic-card>
-            <div class="w-full md:w-1/2" [moveInView]="{ opacity: [0, 1], y: [50, 0] }" [moveDuration]="300">
+            <div
+              class="w-full md:w-1/2"
+              [moveInView]="{ opacity: [0, 1], y: [40, 0], scale: [0.97, 1], blur: [8, 0] }"
+              [moveDuration]="enterMs"
+              [moveEasing]="ease"
+            >
               <app-service-image
                 [src]="images[i]!"
                 [alt]="t(key('servicesSection.sections', i, 'title'))"
@@ -62,4 +66,6 @@ export class Services {
   protected readonly key = listKey;
   protected readonly sections = indicesOf(sourceCatalog.servicesSection.sections);
   protected readonly images = IMAGES;
+  protected readonly ease = EASE_OUT;
+  protected readonly enterMs = ENTER_MS;
 }

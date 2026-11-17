@@ -1,0 +1,58 @@
+name: CI
+
+# Pull requests: type check, catalog validation and the Cloudflare build.
+# Pushes to master: the same, then deploy to Cloudflare Workers.
+#
+# Repository secrets this needs (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN   token with the "Edit Cloudflare Workers" template
+#   CLOUDFLARE_ACCOUNT_ID  the account that owns the Worker
+# The public site URL is set in package.json (build:cloudflare).
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm typecheck
+
+      - name: Validate translations
+        run: pnpm i18n:check
+
+      - name: Build (prerendered, Cloudflare Workers)
+        run: pnpm build:cloudflare
+
+      - name: Check the deploy bundle
+        run: pnpm exec wrangler deploy --dry-run
+
+      - name: Deploy to Cloudflare
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy

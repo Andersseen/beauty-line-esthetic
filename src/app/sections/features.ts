@@ -25,15 +25,15 @@ const ICONS: readonly Type<unknown>[] = [LmnBeakerIcon, LmnUserCircleIcon, LmnCh
         <div class="relative flex w-full justify-center lg:w-1/2 lg:items-end xl:w-[45%]">
           <img
             src="/09.webp"
-            width="1001"
-            height="1001"
+            width="800"
+            height="1067"
             [alt]="t('featuresSection.title')"
             loading="lazy"
             class="relative h-auto w-full rounded-3xl lg:w-[86%]"
           />
         </div>
         <div class="flex flex-1 flex-col gap-5">
-          <h2 class="text-3xl font-bold tracking-tight text-balance text-main-950 md:text-4xl">{{ t('featuresSection.title') }}</h2>
+          <h2 class="text-3xl font-bold tracking-tight text-balance text-heading md:text-4xl">{{ t('featuresSection.title') }}</h2>
           <p>{{ t('featuresSection.description') }}</p>
           <div class="space-y-3">
             @for (i of features; track i) {
@@ -43,12 +43,12 @@ const ICONS: readonly Type<unknown>[] = [LmnBeakerIcon, LmnUserCircleIcon, LmnCh
                 [moveDelay]="i * 80"
               >
                 <volt-card-content class="flex gap-4 p-4">
-                  <span class="flex shrink-0 self-start rounded-lg bg-main-600/10 p-3 text-main-600">
+                  <span class="flex shrink-0 self-start rounded-lg bg-main-600/10 p-3 text-main-600 dark:text-main-400">
                     <ng-container *ngComponentOutlet="icons[i]!; inputs: { size: 24 }" />
                   </span>
                   <div class="space-y-0.5">
-                    <h3 class="text-lg font-semibold text-gray-900">{{ t(key('featuresSection.features', i, 'title')) }}</h3>
-                    <p class="text-gray-600">{{ t(key('featuresSection.features', i, 'description')) }}</p>
+                    <h3 class="text-lg font-semibold text-foreground">{{ t(key('featuresSection.features', i, 'title')) }}</h3>
+                    <p class="text-muted-foreground">{{ t(key('featuresSection.features', i, 'description')) }}</p>
                   </div>
                 </volt-card-content>
               </volt-card>

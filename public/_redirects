@@ -1,0 +1,5 @@
+# Cloudflare static-asset redirects (keep in sync with REDIRECTS in vite.config.ts).
+/ua      /uk         301
+/ua/*    /uk/:splat  301
+/es      /           301
+/es/*    /:splat     301

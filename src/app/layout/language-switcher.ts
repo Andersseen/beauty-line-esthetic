@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, ViewEncapsulation } from '@angular/core';
 import type { Locale } from '@etyma/core';
 import { VoltToggleGroup, VoltToggleGroupItem } from '@voltui/components';
 
@@ -18,13 +18,16 @@ const NAMES: Readonly<Record<string, string>> = { es: 'Español', en: 'English',
   selector: 'app-language-switcher',
   imports: [VoltToggleGroup, VoltToggleGroupItem],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  // Unencapsulated: the rules below must reach the <button> rendered inside Volt's item, which
+  // emulated encapsulation never matches. Everything is scoped under `.lang-switch`.
+  encapsulation: ViewEncapsulation.None,
   template: `
     <volt-toggle-group
       type="single"
       [allowDeselection]="false"
       [value]="selected()"
       (valueChange)="switchTo($event)"
-      class="switcher gap-0 rounded-full border-0 bg-white/90 p-0.5 shadow-sm"
+      class="lang-switch gap-0 rounded-full border-0 bg-white/90 p-0.5 shadow-sm"
       [attr.aria-label]="i18n.t('nav.language')"
     >
       @for (locale of i18n.locales; track locale) {
@@ -43,8 +46,8 @@ const NAMES: Readonly<Record<string, string>> = { es: 'Español', en: 'English',
     /* Volt's styling contract: re-scope its tokens instead of overriding component classes.
        (The item's \`class\` input styles its host, not the inner button that carries
        data-selected, so tokens are the way to restyle the selected state.) */
-    .switcher {
-      --primary: var(--color-main-950);
+    .lang-switch {
+      --primary: var(--color-main-700);
       --primary-foreground: var(--color-main-50);
       --muted: var(--color-main-100);
       --muted-foreground: var(--color-main-950);
@@ -52,19 +55,19 @@ const NAMES: Readonly<Record<string, string>> = { es: 'Español', en: 'English',
       --radius: 9999px;
     }
     /* Compact pills: the item's own size scale has no step below "sm". */
-    .switcher button {
+    .lang-switch button {
       height: 1.625rem;
-      min-width: 2.25rem;
-      padding-inline: 0.625rem;
+      min-width: 2rem;
+      padding-inline: 0.5rem;
       font-size: 0.75rem;
       line-height: 1;
     }
     /* The selected pill is already high-contrast; keep keyboard focus as a tight inner ring. */
-    .switcher button:focus-visible {
+    .lang-switch button:focus-visible {
       --tw-ring-offset-width: 0px;
       --tw-ring-color: var(--color-main-400);
     }
-    .switcher button:not([data-selected]):hover {
+    .lang-switch button:not([data-selected]):hover {
       background: var(--color-main-100);
     }
   `,
