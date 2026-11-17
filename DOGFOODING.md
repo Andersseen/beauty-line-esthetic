@@ -16,6 +16,14 @@ Each entry: what happened, the workaround used here, and what the library could 
 3. **CSS initial states must use individual transform properties.** A pre-hydration hidden state
    written as `transform: translateY(75px)` stacks with the library's `translate`, leaving content
    permanently offset. Worth a line in the docs (SSR / "avoid a flash" section).
+4. **`commitStyles` throws when the element leaves mid-animation.** A `[moveInitial]`/`[moveAnimate]`
+   icon inside an `@if` that flips right after hydration (stored dark theme) logs
+   `InvalidStateError: Failed to execute 'commitStyles' on 'Animation': Target element is not
+   rendered`. Workaround: keep both icons mounted and cross-fade with CSS
+   (`src/app/layout/theme-toggle.ts`). Suggestion: skip `commitStyles` when `!el.isConnected`, or
+   cancel running animations on destroy.
+5. `blur` in keyframes works well for soft entrances (`src/app/ui/text-reveal.ts`) — worth a
+   "blur-fade" example in the docs next to the `blur-in` preset.
 
 ## Quartz (`@quartz-headless/primitives` 0.16.0)
 
@@ -43,6 +51,12 @@ Each entry: what happened, the workaround used here, and what the library could 
 5. **Ghost button hover is `data-[hover]:bg-accent`**, so an app's `hover:bg-*` in `class` does not
    replace it (tailwind-merge only dedupes the same variant). Passing `data-[hover]:bg-*` works;
    worth a line in the styling docs.
+6. **Dark mode with a brand palette:** `applyVoltTheme({ dark })` toggles `.dark` and
+   `color-scheme` nicely, but an app's own `:root { --primary… }` (same specificity as Volt's
+   `.dark`, and loaded later) silently wins over the dark set; the app's dark tokens need
+   `:root.dark`. There is also no helper for persisting the choice / avoiding the flash before
+   hydration, so the site ships a small inline script in `index.html`. A documented recipe (or a
+   `provideVoltTheme({ persist: 'localStorage' })`) would cover both.
 
 ## Lumen Icons (0.2.0)
 
