@@ -5,7 +5,7 @@ import {
   NavbarMenuDirective,
   NavbarTriggerDirective,
 } from '@quartz-headless/primitives';
-import { VoltNativeButton } from '@voltui/components';
+import { VoltNativeButton, VoltSeparator } from '@voltui/components';
 import {
   MoveAnimateDirective,
   MovePresenceDirective,
@@ -47,6 +47,7 @@ const LINKS: readonly NavLink[] = [
     NavbarMenuDirective,
     NavbarTriggerDirective,
     VoltNativeButton,
+    VoltSeparator,
     MoveAnimateDirective,
     MovePresenceDirective,
     MoveTextDirective,
@@ -63,7 +64,7 @@ const LINKS: readonly NavLink[] = [
       [closeMenuOnDesktop]="false"
       class="fixed z-50 box-border w-full bg-main-500 transition-colors duration-300 dark:bg-main-800"
     >
-      <div class="relative flex items-center justify-between px-2 text-xs font-light uppercase">
+      <div class="relative mx-auto flex max-w-6xl items-center justify-between px-3 text-xs font-light uppercase md:px-8">
         <a [routerLink]="i18n.path('/')" class="text-main-100 no-underline" aria-label="Beauty Line">
           <app-logo />
         </a>
@@ -74,19 +75,20 @@ const LINKS: readonly NavLink[] = [
           variant="ghost"
           size="icon"
           type="button"
-          class="absolute top-1/2 left-1/2 size-[50px] -translate-x-1/2 -translate-y-1/2 rounded-full shadow-md ring-pink-100/30 transition-all duration-200 hover:bg-main-400 hover:ring-8 data-[hover]:bg-main-400 data-[hover]:text-white focus-visible:bg-main-400"
+          class="size-[50px] rounded-full sm:absolute sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 shadow-md ring-pink-100/30 transition-all duration-200 hover:bg-main-400 hover:ring-8 data-[hover]:bg-main-400 data-[hover]:text-white focus-visible:bg-main-400"
           [attr.aria-label]="i18n.t('nav.menu')"
         >
           <app-menu-button [open]="open()" />
         </button>
 
-        <div class="flex items-center gap-0.5 sm:gap-1">
-          <app-theme-toggle />
+        <div class="flex items-center gap-1 sm:gap-2">
           <app-language-switcher />
+          <volt-separator orientation="vertical" class="hidden h-5 bg-white/30 sm:block" />
+          <app-theme-toggle />
         </div>
       </div>
 
-      <nav qzNavbarMenu class="overflow-hidden px-4 md:px-8" [attr.aria-label]="i18n.t('nav.menu')">
+      <nav qzNavbarMenu class="mx-auto max-w-6xl overflow-hidden px-4 md:px-8" [attr.aria-label]="i18n.t('nav.menu')">
         @if (open()) {
           <div
             class="mb-20 flex flex-col gap-12 md:mb-8 md:flex-row md:justify-between md:gap-0"
@@ -106,7 +108,7 @@ const LINKS: readonly NavLink[] = [
                   >
                     <span
                       class="inline-block overflow-hidden whitespace-pre"
-                      [moveText]="{ y: ['100%', '0%'], opacity: [0, 1] }"
+                      [moveText]="{ y: [36, 0], opacity: [0, 1] }"
                       moveTextSplit="chars"
                       [moveTextStagger]="20"
                       [moveDuration]="1000"

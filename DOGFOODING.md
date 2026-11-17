@@ -44,7 +44,9 @@ Each entry: what happened, the workaround used here, and what the library could 
 3. **`volt-toggle-group-item`'s `class` input styles the host, not the inner `<button>`** that
    carries `data-selected`, `aria-checked` and the visual classes. Restyling the selected pill had
    to go through scoped tokens (`--primary`, `--muted`, `--radius`) plus a component stylesheet for
-   size (`src/app/layout/language-switcher.ts`). Suggestion: merge `class` into the button, or add
+   size (`src/app/layout/language-switcher.ts`). That stylesheet only reaches the inner button with
+   `ViewEncapsulation.None` (under emulated encapsulation the size rules were silently dead).
+   Suggestion: merge `class` into the button, or add
    a `buttonClass` input.
 4. **No size below `sm`** for toggle-group items (and buttons): a compact header switch needed CSS
    on the inner button.
