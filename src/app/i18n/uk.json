@@ -30,7 +30,9 @@
     "contact": "Контакти",
     "menu": "Меню",
     "language": "Мова",
-    "whatsapp": "Написати у WhatsApp"
+    "whatsapp": "Написати у WhatsApp",
+    "darkMode": "Темна тема",
+    "scrollTop": "Нагору"
   },
   "featuresSection": {
     "title": "Відмінність у естетичному догляді",

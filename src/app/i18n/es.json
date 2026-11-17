@@ -30,7 +30,9 @@
     "contact": "Contacto",
     "menu": "Menú",
     "language": "Idioma",
-    "whatsapp": "Contactar por WhatsApp"
+    "whatsapp": "Contactar por WhatsApp",
+    "darkMode": "Modo oscuro",
+    "scrollTop": "Volver arriba"
   },
   "shuffleHero": {
     "tagline": "Mejora cada día",

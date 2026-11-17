@@ -31,39 +31,39 @@ const INFO_ICONS: readonly Type<unknown>[] = [
   template: `
     <div class="fixed bottom-0 h-[800px] w-full">
       <footer
-        class="flex size-full items-center justify-center bg-gradient-to-br from-main-100 to-main-300 px-4 sm:px-6 lg:px-8"
+        class="flex size-full items-center justify-center bg-gradient-to-br from-main-100 to-main-300 px-4 dark:from-background dark:to-main-950 sm:px-6 lg:px-8"
       >
         <div class="flex h-full w-full max-w-7xl flex-col justify-between py-12">
           <div class="mt-56 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div class="space-y-4">
-              <h3 class="text-2xl font-bold text-gray-900">{{ t('footer.title') }}</h3>
-              <p class="text-gray-600">{{ t('footer.description') }}</p>
-              <div class="space-y-2 text-gray-600">
+              <h3 class="text-2xl font-bold text-foreground">{{ t('footer.title') }}</h3>
+              <p class="text-muted-foreground">{{ t('footer.description') }}</p>
+              <div class="space-y-2 text-muted-foreground">
                 <div class="flex items-center">
-                  <lmn-map-pin class="mr-2 text-main-600" [size]="20" />{{ t('footer.address') }}
+                  <lmn-map-pin class="mr-2 text-main-600 dark:text-main-400" [size]="20" />{{ t('footer.address') }}
                 </div>
                 <div class="flex items-center">
-                  <lmn-phone class="mr-2 text-main-600" [size]="20" />{{ t('footer.phone') }}
+                  <lmn-phone class="mr-2 text-main-600 dark:text-main-400" [size]="20" />{{ t('footer.phone') }}
                 </div>
                 <div class="flex items-center">
-                  <lmn-envelope class="mr-2 text-main-600" [size]="20" />{{ t('footer.email') }}
+                  <lmn-envelope class="mr-2 text-main-600 dark:text-main-400" [size]="20" />{{ t('footer.email') }}
                 </div>
               </div>
             </div>
             <div class="hidden space-y-4 md:block">
-              <h4 class="text-lg font-semibold text-gray-900">{{ t('footer.servicesTitle') }}</h4>
-              <ul class="space-y-2 text-gray-600">
+              <h4 class="text-lg font-semibold text-foreground">{{ t('footer.servicesTitle') }}</h4>
+              <ul class="space-y-2 text-muted-foreground">
                 @for (i of services; track i) {
                   <li>{{ t(key('footer.servicesList', i)) }}</li>
                 }
               </ul>
             </div>
             <div class="space-y-4">
-              <h4 class="text-lg font-semibold text-gray-900">{{ t('footer.infoTitle') }}</h4>
-              <ul class="space-y-2 text-gray-600">
+              <h4 class="text-lg font-semibold text-foreground">{{ t('footer.infoTitle') }}</h4>
+              <ul class="space-y-2 text-muted-foreground">
                 @for (i of info; track i) {
                   <li class="flex items-center">
-                    <span class="mr-2 flex text-main-600">
+                    <span class="mr-2 flex text-main-600 dark:text-main-400">
                       <ng-container *ngComponentOutlet="icons[i]!; inputs: { size: 20 }" />
                     </span>
                     {{ t(key('footer.infoList', i)) }}
@@ -72,8 +72,8 @@ const INFO_ICONS: readonly Type<unknown>[] = [
               </ul>
             </div>
           </div>
-          <div class="border-t border-gray-200 pt-8">
-            <p class="text-center text-gray-600">© {{ year }} {{ t('footer.copyright') }}</p>
+          <div class="border-t border-foreground/10 pt-8">
+            <p class="text-center text-muted-foreground">© {{ year }} {{ t('footer.copyright') }}</p>
           </div>
         </div>
       </footer>

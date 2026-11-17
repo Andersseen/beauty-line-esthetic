@@ -18,6 +18,7 @@ import { injectAppI18n, type AppMessageKey } from '../i18n/inject';
 import { LanguageSwitcher } from './language-switcher';
 import { Logo } from './logo';
 import { MenuButton } from './menu-button';
+import { ThemeToggle } from './theme-toggle';
 
 interface NavLink {
   readonly label: AppMessageKey;
@@ -52,6 +53,7 @@ const LINKS: readonly NavLink[] = [
     LanguageSwitcher,
     Logo,
     MenuButton,
+    ThemeToggle,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
@@ -59,9 +61,9 @@ const LINKS: readonly NavLink[] = [
       qzNavbar
       [(menuOpen)]="open"
       [closeMenuOnDesktop]="false"
-      class="fixed z-50 box-border w-full bg-main-500"
+      class="fixed z-50 box-border w-full bg-main-500 transition-colors duration-300 dark:bg-main-800"
     >
-      <div class="flex items-center justify-between px-2 text-xs font-light uppercase">
+      <div class="relative flex items-center justify-between px-2 text-xs font-light uppercase">
         <a [routerLink]="i18n.path('/')" class="text-main-100 no-underline" aria-label="Beauty Line">
           <app-logo />
         </a>
@@ -72,13 +74,16 @@ const LINKS: readonly NavLink[] = [
           variant="ghost"
           size="icon"
           type="button"
-          class="size-[50px] rounded-full shadow-md ring-pink-100/30 transition-all duration-200 hover:bg-main-400 hover:ring-8 data-[hover]:bg-main-400 data-[hover]:text-white focus-visible:bg-main-400"
+          class="absolute top-1/2 left-1/2 size-[50px] -translate-x-1/2 -translate-y-1/2 rounded-full shadow-md ring-pink-100/30 transition-all duration-200 hover:bg-main-400 hover:ring-8 data-[hover]:bg-main-400 data-[hover]:text-white focus-visible:bg-main-400"
           [attr.aria-label]="i18n.t('nav.menu')"
         >
           <app-menu-button [open]="open()" />
         </button>
 
-        <app-language-switcher />
+        <div class="flex items-center gap-0.5 sm:gap-1">
+          <app-theme-toggle />
+          <app-language-switcher />
+        </div>
       </div>
 
       <nav qzNavbarMenu class="overflow-hidden px-4 md:px-8" [attr.aria-label]="i18n.t('nav.menu')">

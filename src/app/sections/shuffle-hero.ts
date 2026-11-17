@@ -42,25 +42,25 @@ function shuffled(items: readonly Square[]): Square[] {
     <section class="mx-auto grid min-h-screen w-full max-w-6xl grid-cols-1 items-center gap-8 px-8 pt-28 pb-12 md:grid-cols-2">
       <div>
         <volt-badge variant="secondary" class="mb-4 text-main-700">{{ t('shuffleHero.tagline') }}</volt-badge>
-        <h1 class="text-3xl font-semibold tracking-tight text-balance text-main-950 md:text-4xl lg:text-5xl">{{ t('shuffleHero.title') }}</h1>
+        <h1 class="text-3xl font-semibold tracking-tight text-balance text-heading md:text-4xl lg:text-5xl">{{ t('shuffleHero.title') }}</h1>
 
         <div class="flex justify-center gap-8 pt-6 lg:justify-start">
           <div class="flex flex-col items-center">
-            <lmn-calendar class="text-main-600" [size]="32" />
-            <span class="mt-2 text-sm text-gray-600">{{ t('shuffleHero.features.0') }}</span>
+            <lmn-calendar class="text-main-600 dark:text-main-400" [size]="32" />
+            <span class="mt-2 text-sm text-muted-foreground">{{ t('shuffleHero.features.0') }}</span>
           </div>
           <div class="flex flex-col items-center">
-            <lmn-sparkles class="text-main-600" [size]="32" />
-            <span class="mt-2 text-sm text-gray-600">{{ t('shuffleHero.features.1') }}</span>
+            <lmn-sparkles class="text-main-600 dark:text-main-400" [size]="32" />
+            <span class="mt-2 text-sm text-muted-foreground">{{ t('shuffleHero.features.1') }}</span>
           </div>
           <div class="flex flex-col items-center">
-            <lmn-sun class="text-main-600" [size]="32" />
-            <span class="mt-2 text-sm text-gray-600">{{ t('shuffleHero.features.2') }}</span>
+            <lmn-sun class="text-main-600 dark:text-main-400" [size]="32" />
+            <span class="mt-2 text-sm text-muted-foreground">{{ t('shuffleHero.features.2') }}</span>
           </div>
         </div>
 
         <div class="flex flex-col items-start gap-4">
-          <p class="mt-6 flex items-center gap-2 text-sm font-medium text-gray-700">
+          <p class="mt-6 flex items-center gap-2 text-sm font-medium text-muted-foreground">
             <lmn-heart class="text-main-500" [size]="20" variant="filled" />
             {{ t('shuffleHero.satisfaction') }}
           </p>

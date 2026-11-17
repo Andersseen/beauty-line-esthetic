@@ -44,7 +44,7 @@ const NAMES: Readonly<Record<string, string>> = { es: 'Español', en: 'English',
        (The item's \`class\` input styles its host, not the inner button that carries
        data-selected, so tokens are the way to restyle the selected state.) */
     .switcher {
-      --primary: var(--color-main-950);
+      --primary: var(--color-main-700);
       --primary-foreground: var(--color-main-50);
       --muted: var(--color-main-100);
       --muted-foreground: var(--color-main-950);

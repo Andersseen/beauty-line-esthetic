@@ -30,7 +30,9 @@
     "contact": "Contact",
     "menu": "Menu",
     "language": "Language",
-    "whatsapp": "Contact on WhatsApp"
+    "whatsapp": "Contact on WhatsApp",
+    "darkMode": "Dark mode",
+    "scrollTop": "Back to top"
   },
   "featuresSection": {
     "title": "Excellence in Aesthetic Care",

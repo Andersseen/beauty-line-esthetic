@@ -24,8 +24,18 @@
   --color-main-950: #40111c;
 }
 
-/* Volt tokens mapped onto the brand palette (light only, like the original site). */
+/* Site-only semantic colours, as Tailwind utilities (`text-heading`, `bg-spotlight`). */
+@theme inline {
+  --color-heading: var(--heading);
+  --color-spotlight: var(--spotlight);
+}
+
+/* Volt tokens mapped onto the brand palette. Light is the default; `.dark` on <html> (set by the
+   theme switch, see src/app/layout/theme-toggle.ts) swaps in the dark set below. */
 :root {
+  color-scheme: light;
+  --heading: var(--color-main-950);
+  --spotlight: #f8e6e8;
   --primary: #d86674;
   --primary-foreground: #ffffff;
   --secondary: #fae9e9;
@@ -51,13 +61,38 @@
   --info-foreground: #ffffff;
 }
 
+/* `:root.dark`, not `.dark`: it must outrank both the `:root` block above and Volt's own `.dark`. */
+:root.dark {
+  color-scheme: dark;
+  --heading: var(--color-main-200);
+  --spotlight: rgb(216 102 116 / 0.14);
+  --primary: #d86674;
+  --primary-foreground: #ffffff;
+  --secondary: #2a141a;
+  --secondary-foreground: #fae9e9;
+  --background: #140a0c;
+  --foreground: #f6e9eb;
+  --surface: #1e0f13;
+  --surface-foreground: #f6e9eb;
+  --muted: #26131a;
+  --muted-foreground: #c9aab0;
+  --border: #3a1d25;
+  --input: #5a2d38;
+  --ring: #e48891;
+  --destructive: #e48891;
+  --destructive-foreground: #140a0c;
+  --error: #e48891;
+  --error-foreground: #140a0c;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-white font-sans text-neutral-900 antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {

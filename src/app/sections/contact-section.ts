@@ -18,11 +18,11 @@ import { Globe } from './globe';
     <section id="contact" class="flex w-full justify-center bg-background py-16 md:py-24 lg:py-32">
       <div class="container mx-auto w-full px-4 lg:px-8">
         <div class="relative h-full w-full space-y-4" moveInView="fade-up">
-          <h2 class="text-3xl font-bold tracking-tight text-main-950 sm:text-4xl md:text-5xl">{{ t('contactSection.title') }}</h2>
-          <p class="max-w-xl text-gray-600">{{ t('contactSection.description') }}</p>
-          <ul class="space-y-2 text-gray-700">
-            <li class="flex items-center gap-2"><lmn-envelope class="text-main-600" [size]="20" />{{ t('contactSection.contactInfo.0') }}</li>
-            <li class="flex items-center gap-2"><lmn-phone class="text-main-600" [size]="20" />{{ t('contactSection.contactInfo.1') }}</li>
+          <h2 class="text-3xl font-bold tracking-tight text-heading sm:text-4xl md:text-5xl">{{ t('contactSection.title') }}</h2>
+          <p class="max-w-xl text-muted-foreground">{{ t('contactSection.description') }}</p>
+          <ul class="space-y-2 text-muted-foreground">
+            <li class="flex items-center gap-2"><lmn-envelope class="text-main-600 dark:text-main-400" [size]="20" />{{ t('contactSection.contactInfo.0') }}</li>
+            <li class="flex items-center gap-2"><lmn-phone class="text-main-600 dark:text-main-400" [size]="20" />{{ t('contactSection.contactInfo.1') }}</li>
           </ul>
           <div class="flex flex-wrap gap-3 pt-2">
             <a voltButton size="lg" class="gap-2" [href]="whatsapp()" target="_blank" rel="noopener">

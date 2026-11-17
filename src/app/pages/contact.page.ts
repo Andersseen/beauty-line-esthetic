@@ -28,7 +28,7 @@ import { PageEnter } from '../ui/page-enter';
             <iframe class="size-full" title="map" loading="lazy" [src]="map"></iframe>
           </div>
           <div class="relative p-16 pt-28">
-            <button voltButton type="button" size="lg" variant="outline" class="bg-pink-50 shadow-lg" [voltPopover]="card" placement="bottom">
+            <button voltButton type="button" size="lg" variant="outline" class="bg-secondary shadow-lg" [voltPopover]="card" placement="bottom">
               {{ t('contact.buttonText') }}
             </button>
           </div>
@@ -38,7 +38,7 @@ import { PageEnter } from '../ui/page-enter';
 
     <ng-template #card>
       <volt-popover-content class="max-w-[400px] p-0">
-        <volt-card class="rounded-lg border-0 bg-neutral-100 shadow-none">
+        <volt-card class="rounded-lg border-0 bg-muted shadow-none">
           <volt-card-header class="flex flex-col gap-1">
             <p class="text-base">{{ t('contact.contact.address') }}</p>
             <p class="text-sm">{{ t('contact.contact.whatsapp') }}</p>
