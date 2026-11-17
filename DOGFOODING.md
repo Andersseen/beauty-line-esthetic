@@ -33,6 +33,17 @@ Each entry: what happened, the workaround used here, and what the library could 
    on `:root` and imports only `themes/core.css` + `themes/styles/soft.css`. Works well — a
    documented "bring your own colours" recipe would make it obvious.
 
+3. **`volt-toggle-group-item`'s `class` input styles the host, not the inner `<button>`** that
+   carries `data-selected`, `aria-checked` and the visual classes. Restyling the selected pill had
+   to go through scoped tokens (`--primary`, `--muted`, `--radius`) plus a component stylesheet for
+   size (`src/app/layout/language-switcher.ts`). Suggestion: merge `class` into the button, or add
+   a `buttonClass` input.
+4. **No size below `sm`** for toggle-group items (and buttons): a compact header switch needed CSS
+   on the inner button.
+5. **Ghost button hover is `data-[hover]:bg-accent`**, so an app's `hover:bg-*` in `class` does not
+   replace it (tailwind-merge only dedupes the same variant). Passing `data-[hover]:bg-*` works;
+   worth a line in the styling docs.
+
 ## Lumen Icons (0.2.0)
 
 1. The published package declares `@angular/core ^21.0.0` only; Angular 22 needs a

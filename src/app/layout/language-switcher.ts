@@ -1,56 +1,89 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import type { Locale } from '@etyma/core';
-import { VoltNativeButton } from '@voltui/components';
+import { VoltToggleGroup, VoltToggleGroupItem } from '@voltui/components';
 
 import { injectAppI18n } from '../i18n/inject';
 
-/** Labels shown in the switcher. Ukrainian keeps the `UA` label the site always used. */
+/** Short labels shown in the switch. Ukrainian keeps the `UA` label the site always used. */
 const LABELS: Readonly<Record<string, string>> = { es: 'ES', en: 'EN', uk: 'UA' };
+/** Accessible names, written in the language they name. */
+const NAMES: Readonly<Record<string, string>> = { es: 'Español', en: 'English', uk: 'Українська' };
 
 /**
- * Segmented ES / EN / UA switch. Switching is a navigation (Etyma keeps the current page and
- * moves to its localized URL), so the address bar always names the language on screen.
+ * ES / EN / UA segmented switch built on Volt's ToggleGroup (single selection, no deselection).
+ * Selecting is a navigation: Etyma moves to the current page's localized URL, so the selected item
+ * always follows the address bar rather than local state.
  */
 @Component({
   selector: 'app-language-switcher',
-  imports: [VoltNativeButton],
+  imports: [VoltToggleGroup, VoltToggleGroupItem],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="inline-flex rounded-md shadow-sm" role="group" [attr.aria-label]="i18n.t('nav.language')">
-      @for (locale of i18n.locales; track locale; let first = $first; let last = $last) {
-        <button
-          voltButton
-          type="button"
+    <volt-toggle-group
+      type="single"
+      [allowDeselection]="false"
+      [value]="selected()"
+      (valueChange)="switchTo($event)"
+      class="switcher gap-0 rounded-full border-0 bg-white/90 p-0.5 shadow-sm"
+      [attr.aria-label]="i18n.t('nav.language')"
+    >
+      @for (locale of i18n.locales; track locale) {
+        <volt-toggle-group-item
+          [value]="locale"
           size="sm"
-          [variant]="locale === i18n.locale() ? 'solid' : 'outline'"
-          [class]="classes(locale, first, last)"
+          [aria-label]="name(locale)"
           [attr.lang]="locale"
-          [attr.aria-pressed]="locale === i18n.locale()"
-          (click)="switchTo(locale)"
         >
           {{ label(locale) }}
-        </button>
+        </volt-toggle-group-item>
       }
-    </div>
+    </volt-toggle-group>
+  `,
+  styles: `
+    /* Volt's styling contract: re-scope its tokens instead of overriding component classes.
+       (The item's \`class\` input styles its host, not the inner button that carries
+       data-selected, so tokens are the way to restyle the selected state.) */
+    .switcher {
+      --primary: var(--color-main-950);
+      --primary-foreground: var(--color-main-50);
+      --muted: var(--color-main-100);
+      --muted-foreground: var(--color-main-950);
+      --foreground: var(--color-main-950);
+      --radius: 9999px;
+    }
+    /* Compact pills: the item's own size scale has no step below "sm". */
+    .switcher button {
+      height: 1.625rem;
+      min-width: 2.25rem;
+      padding-inline: 0.625rem;
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+    /* The selected pill is already high-contrast; keep keyboard focus as a tight inner ring. */
+    .switcher button:focus-visible {
+      --tw-ring-offset-width: 0px;
+      --tw-ring-color: var(--color-main-400);
+    }
+    .switcher button:not([data-selected]):hover {
+      background: var(--color-main-100);
+    }
   `,
 })
 export class LanguageSwitcher {
   protected readonly i18n = injectAppI18n();
+  protected readonly selected = computed(() => [this.i18n.locale()]);
 
   protected label(locale: Locale): string {
     return LABELS[locale] ?? locale.toUpperCase();
   }
 
-  protected classes(locale: Locale, first: boolean, last: boolean): string {
-    const shape = first ? 'rounded-none rounded-l-md' : last ? 'rounded-none rounded-r-md' : 'rounded-none';
-    const tone =
-      locale === this.i18n.locale()
-        ? 'border border-main-950 bg-main-950 text-main-50 hover:bg-main-900'
-        : 'bg-white text-main-950 hover:bg-main-400 hover:text-white';
-    return `${shape} ${tone}`;
+  protected name(locale: Locale): string {
+    return NAMES[locale] ?? locale;
   }
 
-  protected switchTo(locale: Locale): void {
+  protected switchTo(value: string[]): void {
+    const locale = value[0];
+    if (!locale || locale === this.i18n.locale() || !this.i18n.locales.includes(locale)) return;
     void this.i18n.setLocale(locale).catch((error: unknown) => console.error(error));
   }
 }
