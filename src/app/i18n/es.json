@@ -149,10 +149,6 @@
   "contactSection": {
     "title": "Contáctanos",
     "description": "Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible.",
-    "contactInfo": [
-      "contacto@ejemplo.com",
-      "+34 645 22 87 82"
-    ],
     "whatsapp": "Escríbenos por WhatsApp",
     "call": "Llámanos"
   },
@@ -266,8 +262,6 @@
     "title": "Centro de Estética",
     "description": "Realzando tu belleza natural desde 2020",
     "address": "Paseo Castilla 11. Alcorcón",
-    "phone": "+34 645 22 87 82",
-    "email": "info@centroestetica.com",
     "servicesTitle": "Nuestros Servicios",
     "servicesList": [
       "Tratamientos Faciales",

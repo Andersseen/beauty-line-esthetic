@@ -3,14 +3,13 @@ import { RouterLink } from '@angular/router';
 import { NgComponentOutlet } from '@angular/common';
 import { LmnClockIcon } from 'lumen-icons/clock';
 import { LmnCreditCardIcon } from 'lumen-icons/credit-card';
-import { LmnEnvelopeIcon } from 'lumen-icons/envelope';
+import { LmnMessageCircleIcon } from 'lumen-icons/message-circle';
 import { LmnMapPinIcon } from 'lumen-icons/map-pin';
-import { LmnPhoneIcon } from 'lumen-icons/phone';
 import { LmnTrophyIcon } from 'lumen-icons/trophy';
 
 import { injectAppI18n, listKey, type AppMessageKey } from '../i18n/inject';
 import { sourceCatalog } from '../i18n/i18n';
-import { BUSINESS, indicesOf } from '../shared/business';
+import { BUSINESS, indicesOf, whatsappUrl } from '../shared/business';
 import { Logo } from './logo';
 
 /** One icon per "useful information" line, in catalog order. */
@@ -34,7 +33,7 @@ const NAV: readonly { label: AppMessageKey; path: string }[] = [
  */
 @Component({
   selector: 'app-footer',
-  imports: [NgComponentOutlet, RouterLink, Logo, LmnMapPinIcon, LmnPhoneIcon, LmnEnvelopeIcon],
+  imports: [NgComponentOutlet, RouterLink, Logo, LmnMapPinIcon, LmnMessageCircleIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'relative block h-[860px] sm:h-[720px] md:h-[520px]',
@@ -54,12 +53,9 @@ const NAV: readonly { label: AppMessageKey; path: string }[] = [
                 <a class="link flex items-center gap-2" [href]="mapUrl" target="_blank" rel="noopener">
                   <lmn-map-pin class="shrink-0 text-main-700 dark:text-main-300" [size]="20" />{{ t('footer.address') }}
                 </a>
-                <a class="link flex items-center gap-2" [href]="'tel:' + phone">
-                  <lmn-phone class="shrink-0 text-main-700 dark:text-main-300" [size]="20" />{{ t('footer.phone') }}
+                <a class="link flex items-center gap-2" [href]="whatsapp()" target="_blank" rel="noopener">
+                  <lmn-message-circle class="shrink-0 text-main-700 dark:text-main-300" [size]="20" />{{ t('contact.contact.whatsapp') }}
                 </a>
-                <p class="flex items-center gap-2">
-                  <lmn-envelope class="shrink-0 text-main-700 dark:text-main-300" [size]="20" />{{ t('footer.email') }}
-                </p>
               </address>
             </div>
             <div class="space-y-4">
@@ -84,7 +80,7 @@ const NAV: readonly { label: AppMessageKey; path: string }[] = [
               </ul>
             </div>
           </div>
-          <div class="flex flex-col items-center gap-4 border-t border-foreground/15 pt-6 pb-16 md:flex-row md:justify-between md:pr-16 md:pb-0">
+          <div class="flex flex-col items-center gap-4 border-t border-foreground/15 pt-6 pb-16 md:flex-row md:justify-between md:px-16 md:pb-0">
             <div class="flex items-center gap-3">
               <span class="flex size-10 items-center justify-center overflow-hidden rounded-full bg-main-500" aria-hidden="true">
                 <app-logo class="scale-[0.55]" />
@@ -131,6 +127,9 @@ export class Footer {
   protected readonly info = indicesOf(sourceCatalog.footer.infoList);
   protected readonly icons = INFO_ICONS;
   protected readonly nav = NAV;
-  protected readonly phone = BUSINESS.phone;
   protected readonly mapUrl = BUSINESS.mapUrl;
+
+  protected whatsapp(): string {
+    return whatsappUrl(this.t('shuffleHero.actionMessage'));
+  }
 }
