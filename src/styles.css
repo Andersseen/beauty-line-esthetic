@@ -101,6 +101,37 @@
   }
 }
 
+/* Page transitions (router \`withViewTransitions\`): the old page recedes into the brand colour while
+   the new one opens as a circle from the menu button, where navigation usually starts. */
+::view-transition {
+  background: var(--color-main-500);
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  animation: page-recede 0.55s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+::view-transition-new(root) {
+  animation: page-reveal 0.8s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+@keyframes page-recede {
+  to {
+    opacity: 0.5;
+    scale: 0.94;
+    filter: blur(6px);
+  }
+}
+@keyframes page-reveal {
+  from {
+    clip-path: circle(0% at 50% 40px);
+  }
+  to {
+    clip-path: circle(150% at 50% 40px);
+  }
+}
+
 @utility text-balance {
   text-wrap: balance;
 }

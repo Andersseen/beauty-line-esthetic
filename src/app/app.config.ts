@@ -5,12 +5,13 @@ import {
   type ApplicationConfig,
 } from '@angular/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { withInMemoryScrolling } from '@angular/router';
+import { withInMemoryScrolling, withViewTransitions } from '@angular/router';
 import { provideEtymaAnalog, withLocalizedRoutes } from '@etyma/analog';
 import { provideEtyma } from '@etyma/angular';
 import { provideMovement } from 'angular-movement';
 
 import { i18n } from './i18n/i18n';
+import { onPageTransition } from './shared/view-transitions';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideFileRouter(
       withLocalizedRoutes(),
       withInMemoryScrolling({ scrollPositionRestoration: 'top', anchorScrolling: 'enabled' }),
+      withViewTransitions({ skipInitialTransition: true, onViewTransitionCreated: onPageTransition }),
     ),
     provideClientHydration(withEventReplay()),
     provideEtyma(i18n),
