@@ -25,8 +25,8 @@ const ICONS: readonly Type<unknown>[] = [LmnBeakerIcon, LmnUserCircleIcon, LmnCh
         <div class="relative flex w-full justify-center lg:w-1/2 lg:items-end xl:w-[45%]">
           <img
             src="/09.webp"
-            width="1001"
-            height="1001"
+            width="800"
+            height="1067"
             [alt]="t('featuresSection.title')"
             loading="lazy"
             class="relative h-auto w-full rounded-3xl lg:w-[86%]"

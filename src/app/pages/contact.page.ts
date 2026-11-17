@@ -7,11 +7,9 @@ import { LmnMapPinIcon } from 'lumen-icons/map-pin';
 import { LmnMessageCircleIcon } from 'lumen-icons/message-circle';
 import { LmnPhoneIcon } from 'lumen-icons/phone';
 import { VoltBadge, VoltCard, VoltCardContent, VoltNativeButton, VoltSeparator } from '@voltui/components';
-import { MoveInViewDirective } from 'angular-movement';
 
 import { injectAppI18n } from '../i18n/inject';
 import { BUSINESS, whatsappUrl } from '../shared/business';
-import { EASE_OUT } from '../shared/motion';
 import { injectPageSeo } from '../seo/page-seo';
 import { PageEnter } from '../ui/page-enter';
 
@@ -23,7 +21,6 @@ import { PageEnter } from '../ui/page-enter';
   selector: 'app-contact-page',
   imports: [
     PageEnter,
-    MoveInViewDirective,
     VoltBadge,
     VoltCard,
     VoltCardContent,
@@ -46,7 +43,7 @@ import { PageEnter } from '../ui/page-enter';
         ></div>
 
         <div class="mx-auto max-w-6xl">
-          <header class="mx-auto mb-12 max-w-2xl text-center" moveInView="fade-up">
+          <header class="mx-auto mb-12 max-w-2xl text-center">
             <volt-badge variant="secondary" class="mb-4 text-main-700 dark:text-main-300">{{ t('contact.buttonText') }}</volt-badge>
             <h1 class="text-3xl font-bold tracking-tight text-balance text-heading md:text-5xl">{{ t('contactSection.title') }}</h1>
             <p class="mt-4 text-base text-balance text-muted-foreground md:text-lg">{{ t('contactSection.description') }}</p>
@@ -55,9 +52,6 @@ import { PageEnter } from '../ui/page-enter';
           <div class="grid gap-6 lg:grid-cols-5">
             <div
               class="flex flex-col gap-4 lg:col-span-2"
-              [moveInView]="{ opacity: [0, 1], y: [24, 0] }"
-              [moveDuration]="800"
-              [moveEasing]="ease"
             >
               <volt-card class="rounded-2xl">
                 <volt-card-content class="flex flex-col gap-4 p-5">
@@ -107,10 +101,6 @@ import { PageEnter } from '../ui/page-enter';
 
             <div
               class="relative min-h-[360px] overflow-hidden rounded-3xl shadow-xl ring-1 shadow-main-900/10 ring-border lg:col-span-3 lg:min-h-[520px]"
-              [moveInView]="{ opacity: [0, 1], y: [32, 0], blur: [8, 0] }"
-              [moveDuration]="900"
-              [moveDelay]="120"
-              [moveEasing]="ease"
             >
               <iframe class="map absolute inset-0 size-full" [title]="t('contact.contact.address')" loading="lazy" [src]="map"></iframe>
             </div>
@@ -147,7 +137,6 @@ export default class ContactPage {
   protected readonly phone = BUSINESS.phone;
   protected readonly mapUrl = BUSINESS.mapUrl;
   protected readonly region = BUSINESS.address.region;
-  protected readonly ease = EASE_OUT;
   // A fixed, trusted Google Maps embed URL.
   protected readonly map = inject(DomSanitizer).bypassSecurityTrustResourceUrl(BUSINESS.mapEmbedUrl);
 

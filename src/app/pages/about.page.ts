@@ -6,11 +6,9 @@ import { LmnMessageCircleIcon } from 'lumen-icons/message-circle';
 import { LmnSparklesIcon } from 'lumen-icons/sparkles';
 import { LmnSunIcon } from 'lumen-icons/sun';
 import { VoltBadge, VoltNativeButton } from '@voltui/components';
-import { MoveInViewDirective } from 'angular-movement';
 
 import { injectAppI18n } from '../i18n/inject';
 import { whatsappUrl } from '../shared/business';
-import { EASE_OUT } from '../shared/motion';
 import { injectPageSeo } from '../seo/page-seo';
 import { PageEnter } from '../ui/page-enter';
 
@@ -19,7 +17,6 @@ import { PageEnter } from '../ui/page-enter';
   imports: [
     PageEnter,
     RouterLink,
-    MoveInViewDirective,
     VoltBadge,
     VoltNativeButton,
     LmnCalendarIcon,
@@ -45,9 +42,6 @@ import { PageEnter } from '../ui/page-enter';
         <div class="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
           <div
             class="relative"
-            [moveInView]="{ opacity: [0, 1], y: [32, 0], blur: [8, 0] }"
-            [moveDuration]="900"
-            [moveEasing]="ease"
           >
             <!-- Offset frame: a quiet accent behind the photo. -->
             <div
@@ -57,8 +51,9 @@ import { PageEnter } from '../ui/page-enter';
             <img
               src="/14.webp"
               [alt]="t('about.imageAlt')"
-              width="600"
-              height="600"
+              width="1200"
+              height="800"
+              fetchpriority="high"
               class="relative aspect-[4/5] w-full rounded-3xl object-cover shadow-xl shadow-main-900/10 md:aspect-square"
             />
             <p
@@ -71,10 +66,6 @@ import { PageEnter } from '../ui/page-enter';
 
           <div
             class="flex flex-col items-start"
-            [moveInView]="{ opacity: [0, 1], y: [24, 0] }"
-            [moveDuration]="900"
-            [moveDelay]="150"
-            [moveEasing]="ease"
           >
             <volt-badge variant="secondary" class="mb-4 text-main-700 dark:text-main-300">{{ t('nav.about') }}</volt-badge>
             <h1 class="text-3xl font-bold tracking-tight text-balance text-heading md:text-5xl">{{ t('about.title') }}</h1>
@@ -108,7 +99,6 @@ import { PageEnter } from '../ui/page-enter';
 export default class AboutPage {
   protected readonly i18n = injectAppI18n();
   protected readonly t = this.i18n.t;
-  protected readonly ease = EASE_OUT;
   protected readonly highlights = [
     { key: 'shuffleHero.features.0', icon: 'calendar' },
     { key: 'shuffleHero.features.1', icon: 'sparkles' },
